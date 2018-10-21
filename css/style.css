@@ -308,7 +308,7 @@ body {
   font-weight: bold;
 }
 #header {
-  height: 300px;
+  height: 40%;
   position: relative;
   border-bottom: 1px solid #ddd;
 }
@@ -352,12 +352,15 @@ body {
   background-color: #2d2d2d;
 }
 #header-title {
-  text-align: center;
   height: 40px;
   position: absolute;
-  top: 70%;
+  bottom: 0;
   left: 0;
   margin-top: -20px;
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
 }
 #logo,
 #subtitle {
