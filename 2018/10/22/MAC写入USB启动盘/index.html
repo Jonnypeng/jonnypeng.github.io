@@ -7,18 +7,18 @@
   
   <title>MAC写入USB启动盘 | Jonny$ Atom .▍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备； 其次，假设ISO文件路径为/Volumes/IMPORTANT/APP/ubuntu-gnome-16.04.5-desktop-amd64.iso/ubuntu-gnome-16.04.5-desktop-amd64.iso ，而我需要输出的USB路径为/Volumes/Untitled； 最后，打开终端，运行以下">
+  <meta name="description" content="首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备； 其次，假设ISO文件路径为/Path/A.iso ，而我需要输出的USB路径为/Path/USB 最后，打开终端，运行以下命令 12345sudo dd if=/Path/A.iso of=/Path/USB bs=10m#参数if- 输入文件名，就是iso的文件名#参数of- 输出文件名#参数bs- 同时设置读写块">
 <meta name="keywords" content="MAC,USB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MAC写入USB启动盘">
 <meta property="og:url" content="https://jonnypeng.github.io/2018/10/22/MAC写入USB启动盘/index.html">
 <meta property="og:site_name" content="Jonny$ Atom .▍">
-<meta property="og:description" content="首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备； 其次，假设ISO文件路径为/Volumes/IMPORTANT/APP/ubuntu-gnome-16.04.5-desktop-amd64.iso/ubuntu-gnome-16.04.5-desktop-amd64.iso ，而我需要输出的USB路径为/Volumes/Untitled； 最后，打开终端，运行以下">
+<meta property="og:description" content="首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备； 其次，假设ISO文件路径为/Path/A.iso ，而我需要输出的USB路径为/Path/USB 最后，打开终端，运行以下命令 12345sudo dd if=/Path/A.iso of=/Path/USB bs=10m#参数if- 输入文件名，就是iso的文件名#参数of- 输出文件名#参数bs- 同时设置读写块">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-22T07:00:08.000Z">
+<meta property="og:updated_time" content="2018-10-23T02:09:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MAC写入USB启动盘">
-<meta name="twitter:description" content="首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备； 其次，假设ISO文件路径为/Volumes/IMPORTANT/APP/ubuntu-gnome-16.04.5-desktop-amd64.iso/ubuntu-gnome-16.04.5-desktop-amd64.iso ，而我需要输出的USB路径为/Volumes/Untitled； 最后，打开终端，运行以下">
+<meta name="twitter:description" content="首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备； 其次，假设ISO文件路径为/Path/A.iso ，而我需要输出的USB路径为/Path/USB 最后，打开终端，运行以下命令 12345sudo dd if=/Path/A.iso of=/Path/USB bs=10m#参数if- 输入文件名，就是iso的文件名#参数of- 输出文件名#参数bs- 同时设置读写块">
   
   
     <link rel="icon" href="/favicon.png">
@@ -97,15 +97,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备；</p>
-<p>其次，假设ISO文件路径为/Volumes/IMPORTANT/APP/ubuntu-gnome-16.04.5-desktop-amd64.iso/ubuntu-gnome-16.04.5-desktop-amd64.iso ，而我需要输出的USB路径为/Volumes/Untitled；</p>
+<p>其次，假设ISO文件路径为/Path/A.iso ，而我需要输出的USB路径为/Path/USB</p>
 <p>最后，打开终端，运行以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo dd if=/Volumes/IMPORTANT/APP/ubuntu-gnome-16.04.5-desktop-am    d64.iso/ubuntu-gnome-16.04.5-desktop-amd64.iso of=/Volumes/Untitled bs=10m</span><br><span class="line"></span><br><span class="line">#参数if- 输入文件名，就是iso的文件名</span><br><span class="line">#参数of- 输出文件名</span><br><span class="line">#参数bs- 同时设置读写块的大小，单位是bytes</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo dd if=/Path/A.iso of=/Path/USB bs=10m</span><br><span class="line"></span><br><span class="line">#参数if- 输入文件名，就是iso的文件名</span><br><span class="line">#参数of- 输出文件名</span><br><span class="line">#参数bs- 同时设置读写块的大小，单位是bytes</span><br></pre></td></tr></table></figure>
 <p>等待结束，就可以安装啦</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/22/MAC写入USB启动盘/" data-id="cjnjycz5t0000d7wmuorubuv5" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/22/MAC写入USB启动盘/" data-id="cjnl36f010001r1wm3ss0fe6t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAC/">MAC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/USB/">USB</a></li></ul>
