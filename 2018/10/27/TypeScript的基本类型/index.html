@@ -7,18 +7,18 @@
   
   <title>TypeScript的基本类型 | Jonny$ Atom .▍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这两年的时间，花费了太多时间在图形绘制上，自来友为以后，由于我们这个行业的特殊性，所以前端领域在这个H5时代，主要是承接上个时代Flash的工作，所以从svg到canvas，从canvas到webgl，却较少的精力投入到DOM中，一次偶然的机会，接到一个类似APP的web项目，留个自己的时间很少，使用相对比较传统的技术完成，首先配置JSON数据，然后使用php查询url地址的上get数据，通过ge">
+  <meta name="description" content="这两年的时间，花费了太多时间在图形绘制上，自来友为以后，由于我们这个行业的特殊性，所以前端领域在这个H5时代，主要是承接上个时代Flash的工作，所以从svg到canvas，从canvas到webgl，却较少的精力投入到DOM中，一次偶然的机会，接到一个类似APP的web项目，留个自己的时间很少，使用相对比较传统的技术完成，">
 <meta name="keywords" content="TypeScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TypeScript的基本类型">
 <meta property="og:url" content="https://jonnypeng.github.io/2018/10/27/TypeScript的基本类型/index.html">
 <meta property="og:site_name" content="Jonny$ Atom .▍">
-<meta property="og:description" content="这两年的时间，花费了太多时间在图形绘制上，自来友为以后，由于我们这个行业的特殊性，所以前端领域在这个H5时代，主要是承接上个时代Flash的工作，所以从svg到canvas，从canvas到webgl，却较少的精力投入到DOM中，一次偶然的机会，接到一个类似APP的web项目，留个自己的时间很少，使用相对比较传统的技术完成，首先配置JSON数据，然后使用php查询url地址的上get数据，通过ge">
+<meta property="og:description" content="这两年的时间，花费了太多时间在图形绘制上，自来友为以后，由于我们这个行业的特殊性，所以前端领域在这个H5时代，主要是承接上个时代Flash的工作，所以从svg到canvas，从canvas到webgl，却较少的精力投入到DOM中，一次偶然的机会，接到一个类似APP的web项目，留个自己的时间很少，使用相对比较传统的技术完成，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-27T11:57:56.000Z">
+<meta property="og:updated_time" content="2018-10-27T12:01:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TypeScript的基本类型">
-<meta name="twitter:description" content="这两年的时间，花费了太多时间在图形绘制上，自来友为以后，由于我们这个行业的特殊性，所以前端领域在这个H5时代，主要是承接上个时代Flash的工作，所以从svg到canvas，从canvas到webgl，却较少的精力投入到DOM中，一次偶然的机会，接到一个类似APP的web项目，留个自己的时间很少，使用相对比较传统的技术完成，首先配置JSON数据，然后使用php查询url地址的上get数据，通过ge">
+<meta name="twitter:description" content="这两年的时间，花费了太多时间在图形绘制上，自来友为以后，由于我们这个行业的特殊性，所以前端领域在这个H5时代，主要是承接上个时代Flash的工作，所以从svg到canvas，从canvas到webgl，却较少的精力投入到DOM中，一次偶然的机会，接到一个类似APP的web项目，留个自己的时间很少，使用相对比较传统的技术完成，">
   
   
     <link rel="icon" href="/favicon.png">
@@ -96,7 +96,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这两年的时间，花费了太多时间在图形绘制上，自来友为以后，由于我们这个行业的特殊性，所以前端领域在这个H5时代，主要是承接上个时代Flash的工作，所以从svg到canvas，从canvas到webgl，却较少的精力投入到DOM中，一次偶然的机会，接到一个类似APP的web项目，留个自己的时间很少，使用相对比较传统的技术完成，首先配置JSON数据，然后使用php查询url地址的上get数据，通过get数据查询JSON文件，分别对不同模版进行渲染，耦合度低，修改方便，性能还过得去，但是问题来啦，微信的最新版本内置浏览器，当发现url跳转的时候，就会在页面底部侵入增加前进与后退，这就对用户体验产生极大的影响，微信这一败招从客观上推进了SPA单页面程序的演进，在我们制作Canvas画布的程序时候，一切都是SPA，也必须是SPA，一切都是JS中动态生成的，但是DOM就不同啦，10个左右的模版在1个页面渲染，1个模版对应成百上千的数据更新，要做到SPA，我找到Angular2,而不是AngularJS，因为这个是Google是推翻了上一个版本的基础上，重建的一个更新的版本，采用的是微软对JavaScript的超集语言TypeScript，抛开Angular来看，随着ES6的普及，TypeScript是一个能让您放心大胆使用ES6的语言，当然更不止于此，当程序变得庞大的时候，TypeScript有着比JavaScript更可读、可控、可维护、可扩展的优势，作为一个TypeScript的初学者，本着笨手笨脚的菜鸟精神，就数据类型写了部分DEMO，在原API文档的基础上增加了自己更清晰的表达与理解；</p>
+        <p>这两年的时间，花费了太多时间在图形绘制上，自来友为以后，由于我们这个行业的特殊性，所以前端领域在这个H5时代，主要是承接上个时代Flash的工作，所以从svg到canvas，从canvas到webgl，却较少的精力投入到DOM中，一次偶然的机会，接到一个类似APP的web项目，留个自己的时间很少，使用相对比较传统的技术完成，<a id="more"></a>首先配置JSON数据，然后使用php查询url地址的上get数据，通过get数据查询JSON文件，分别对不同模版进行渲染，耦合度低，修改方便，性能还过得去，但是问题来啦，微信的最新版本内置浏览器，当发现url跳转的时候，就会在页面底部侵入增加前进与后退，这就对用户体验产生极大的影响，微信这一败招从客观上推进了SPA单页面程序的演进，在我们制作Canvas画布的程序时候，一切都是SPA，也必须是SPA，一切都是JS中动态生成的，但是DOM就不同啦，10个左右的模版在1个页面渲染，1个模版对应成百上千的数据更新，要做到SPA，我找到Angular2,而不是AngularJS，因为这个是Google是推翻了上一个版本的基础上，重建的一个更新的版本，采用的是微软对JavaScript的超集语言TypeScript，抛开Angular来看，随着ES6的普及，TypeScript是一个能让您放心大胆使用ES6的语言，当然更不止于此，当程序变得庞大的时候，TypeScript有着比JavaScript更可读、可控、可维护、可扩展的优势，作为一个TypeScript的初学者，本着笨手笨脚的菜鸟精神，就数据类型写了部分DEMO，在原API文档的基础上增加了自己更清晰的表达与理解；</p>
 <h3 id="boolean-布尔值"><a href="#boolean-布尔值" class="headerlink" title="boolean 布尔值"></a>boolean 布尔值</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> status:<span class="built_in">boolean</span> = <span class="literal">false</span>;       <span class="comment">//声明一个布尔值为false</span></span><br></pre></td></tr></table></figure>
 <h3 id="number-数字"><a href="#number-数字" class="headerlink" title="number 数字"></a>number 数字</h3><p>这里与JavaScript的区别在于，JavaScript在编写number的时候，只能采用十进制与十六进制的表示法，而同为number，TypeScript可以使用二进制与八进制<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> decLiteral: <span class="built_in">number</span> = <span class="number">6</span>;       <span class="comment">//十进制</span></span><br><span class="line"><span class="keyword">let</span> hexLiteral: <span class="built_in">number</span> = <span class="number">0xf00d</span>;    <span class="comment">//十六进制</span></span><br><span class="line"><span class="keyword">let</span> binaryLiteral: <span class="built_in">number</span> = <span class="number">0b1010</span>;   <span class="comment">//二进制</span></span><br><span class="line"><span class="keyword">let</span> octalLiteral: <span class="built_in">number</span> = <span class="number">0o744</span>;       <span class="comment">//八进制</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="string-字符串"><a href="#string-字符串" class="headerlink" title="string 字符串"></a>string 字符串</h3><p>TS的字符串连接，使用``全部语句包起来，里面的变量则使用${}，{}内可以直接使用表达式<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> game:<span class="built_in">string</span> = <span class="string">"watch dogs"</span>;</span><br><span class="line"><span class="keyword">let</span> company:<span class="built_in">string</span> = <span class="string">"ubisoft"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> store = game + company;    <span class="comment">//=&gt; 与JS一样的字符串连接</span></span><br><span class="line"><span class="keyword">let</span> message = <span class="string">`<span class="subst">$&#123;game&#125;</span>由<span class="subst">$&#123;company&#125;</span>出品，价格为<span class="subst">$&#123;price&#125;</span>,打折为<span class="subst">$&#123;price * 0.6&#125;</span>`</span>;   <span class="comment">//=&gt; TS独有的字符串连接</span></span><br></pre></td></tr></table></figure></p>
@@ -128,7 +128,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/27/TypeScript的基本类型/" data-id="cjnre6pxf00000swm9vcwl2vd" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/27/TypeScript的基本类型/" data-id="cjnrea0kc00041owmzb1g5exz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
