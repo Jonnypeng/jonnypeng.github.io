@@ -97,17 +97,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>接口定义的是一个属性的类型，声明了一个接口名称，以及的属性:类型;<br>调用接口时，会对传入的参数，比对接口的属性进行同类检查，不按顺序地检查，同类型则通过编译</p>
-<h3 id="常规模式"><a href="#常规模式" class="headerlink" title="常规模式"></a>常规模式</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> priceValue &#123;    </span><br><span class="line">  price : <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPrice</span>(<span class="params">_price:priceValue</span>)</span>&#123;  </span><br><span class="line">  <span class="keyword">return</span> _price;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">getPrice(&#123;price:<span class="number">100</span>&#125;);  <span class="comment">// okay 全部符合</span></span><br><span class="line">getPrice(&#123;price:<span class="string">"100"</span>&#125;);   <span class="comment">//=&gt; error ,类型不符合,声明传入的接口类型中的“price”为”number“，而传入的是string类型</span></span><br><span class="line">getPrice(&#123;name:<span class="string">"xbox"</span>&#125;);   <span class="comment">//=&gt;error, 属性不符合，没有传入接口指定的属性</span></span><br></pre></td></tr></table></figure>
-<h3 id="只读属性"><a href="#只读属性" class="headerlink" title="只读属性"></a>只读属性</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> position &#123;    <span class="comment">//=&gt; 定义一个三维坐标</span></span><br><span class="line">  x:<span class="built_in">number</span>,</span><br><span class="line">  y:<span class="built_in">number</span>,</span><br><span class="line">  readonly z:<span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> boyPosition : position = &#123;</span><br><span class="line">  x:<span class="number">320</span>,</span><br><span class="line">  y:<span class="number">540</span>,</span><br><span class="line">  z:<span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">boyPosition.x = <span class="number">0</span>;   <span class="comment">//ok</span></span><br><span class="line">boyPosition.z = <span class="number">100</span>;   <span class="comment">//=&gt;编译器判断这是一个const或者只读属性，不能修改</span></span><br></pre></td></tr></table></figure>
-<p>以下是数组类型的只读约束</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> star:ReadonlyArray&lt;<span class="built_in">string</span>&gt; = [<span class="string">"Jonny"</span>,<span class="string">"Sonic"</span>,<span class="string">"HMV"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">///star[0] = "xbox";  //=&gt;error;</span></span><br><span class="line"><span class="comment">///star.push("ps4");   //=&gt;error;</span></span><br><span class="line"><span class="comment">// star.length = 4;    //=&gt;error;</span></span><br><span class="line"><span class="comment">/*以上代码全部错误，因为star是只读数组，任何赋值与修改，都是错误的*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//let sky:Array&lt;string&gt; = star;     //=&gt; error,甚至被赋值给其它变量都是不允许的</span></span><br><span class="line"><span class="keyword">let</span> sky:<span class="built_in">Array</span>&lt;<span class="built_in">string</span>&gt; = star <span class="keyword">as</span> <span class="built_in">Array</span>&lt;<span class="built_in">string</span>&gt;;   <span class="comment">//=&gt; okay,只有对只读数组在被赋值的同时，进行类型断言才会被通过</span></span><br></pre></td></tr></table></figure>
-<h3 id="可选模式"><a href="#可选模式" class="headerlink" title="可选模式"></a>可选模式</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> list&#123;</span><br><span class="line">  A:<span class="built_in">number</span>;</span><br><span class="line">  B?:<span class="built_in">number</span>;    <span class="comment">//定义一个可选的属性及类型，只有存在的时候，才会生效</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getList</span>(<span class="params">_list:list</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> _list;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">getList(&#123;   <span class="comment">//=&gt; ok,全部符合</span></span><br><span class="line">  A:<span class="number">100</span>,</span><br><span class="line">  B:<span class="number">200</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">getList(&#123;    <span class="comment">//=&gt;ok,没有B属性，但是B属性是可选</span></span><br><span class="line">  A:<span class="number">100</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">getList(&#123;     <span class="comment">//=&gt;error,传入了一个为定义的属性</span></span><br><span class="line">  A:<span class="number">100</span>,</span><br><span class="line">  C:<span class="number">200</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>索引签名<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> SquareConfig &#123;</span><br><span class="line">    color?: <span class="built_in">string</span>;</span><br><span class="line">    width?: <span class="built_in">number</span>;</span><br><span class="line">    [propName: <span class="built_in">string</span>]: <span class="built_in">any</span>;    <span class="comment">//除以上类型以外的所有类型都可以</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createSquare</span>(<span class="params">config: SquareConfig</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> mySquare = createSquare(&#123; colour: <span class="string">"red"</span>, width: <span class="number">100</span> &#125;)  <span class="comment">//=&gt;ok</span></span><br></pre></td></tr></table></figure></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2018/10/29/TypeScript的接口/#more">阅读更多</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/29/TypeScript的接口/" data-id="cjnu5xzoq0001jowmfxcp1alo" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/29/TypeScript的接口/" data-id="cjnwi7skr0000rlwm88021sw6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/interface/">interface</a></li></ul>
@@ -154,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/27/TypeScript的基本类型/" data-id="cjnu5xzp20006jowm4bfxw61q" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/27/TypeScript的基本类型/" data-id="cjnwi7slh0009rlwmznap3qa5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -199,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/26/TS添加Jquery/" data-id="cjnu5xzp00005jowm0x3m7otf" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/26/TS添加Jquery/" data-id="cjnwi7sl60004rlwmams4f7pu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
@@ -240,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/23/在atom增加自定义的文件类型/" data-id="cjnu5xzp9000ajowm4m5bu5t8" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/23/在atom增加自定义的文件类型/" data-id="cjnwi7sln000frlwmc1cdzx09" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/22/MAC写入USB启动盘/" data-id="cjnu5xzoe0000jowmxgui7t7f" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/22/MAC写入USB启动盘/" data-id="cjnwi7sky0001rlwm43mnx4b0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAC/">MAC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/USB/">USB</a></li></ul>
@@ -330,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/16/在Mac的旧设备中开启AirDrop/" data-id="cjnu5xzp60009jowmmnrqrwkj" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/16/在Mac的旧设备中开启AirDrop/" data-id="cjnwi7slj000arlwmymkcsbpu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Airdrop/">Airdrop</a></li></ul>
@@ -374,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/16/正则表达式获取img的src/" data-id="cjnu5xzpg000hjowmjklk0cd8" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/16/正则表达式获取img的src/" data-id="cjnwi7slu000mrlwmivyqoexs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
@@ -420,7 +418,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/16/微信内视频播放代码片断/" data-id="cjnu5xzpc000ejowm914em9lk" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/16/微信内视频播放代码片断/" data-id="cjnwi7slr000irlwmoymnuqux" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信/">微信</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信内播放视频/">微信内播放视频</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/视频/">视频</a></li></ul>
@@ -471,7 +469,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/15/如何快速地将HEXO配置到GitHub-Pages/" data-id="cjnu5xzoy0004jowmb06hwqjc" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/15/如何快速地将HEXO配置到GitHub-Pages/" data-id="cjnwi7sla0006rlwm145szkdq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-Github-Page/">Hexo Github Page</a></li></ul>
@@ -522,7 +520,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/14/hello-world/" data-id="cjnu5xzpj000mjowmss867wy2" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/14/hello-world/" data-id="cjnwi7sl80005rlwmnc4txn0p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
