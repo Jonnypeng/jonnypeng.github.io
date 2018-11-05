@@ -104,7 +104,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="cjo3xlqb9000aa6wm8o2tgc9y" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="cjo423qjf000m4zwm9x3vriq2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json-server/">json server</a></li></ul>
@@ -116,14 +116,14 @@
 
 
   
-    <article id="post-使用wget进行循环下载" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-wget范例" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/11/05/使用wget进行循环下载/" class="article-date">
+    <a href="/2018/11/05/wget范例/" class="article-date">
   <time datetime="2018-11-04T16:08:54.000Z" itemprop="datePublished">2018-11-05</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
+    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
   </div>
 
   </div>
@@ -134,7 +134,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/05/使用wget进行循环下载/">使用wget进行循环下载</a>
+      <a class="article-title" href="/2018/11/05/wget范例/">wget范例</a>
     </h1>
   
 
@@ -143,11 +143,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>如何通过规则性计算，下载符合特定规则的图片，就譬如，下载大量图片<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">num=600</span><br><span class="line"><span class="keyword">while</span>((<span class="variable">$num</span>&lt;900))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">		wget -r -p -U Mozila <span class="string">"http://www.abc.com/d/7541228<span class="variable">$&#123;num&#125;</span>.jpg"</span></span><br><span class="line">		<span class="built_in">let</span> <span class="string">"num++"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<p>使用wget下载整个网站</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -c -r -np -k -L -p -U Mozila <span class="string">"http://abc.com/a/"</span></span><br></pre></td></tr></table></figure>
+<p>参数说明：<br>-c 断点续传<br>-r 递归下载，下载指定网页某一目录下（包括子目录）的所有文件<br>-nd 递归下载时不创建一层一层的目录，把所有的文件下载到当前目录<br>-np 递归下载时不搜索上层目录，如wget -c -r <a href="http://www.xxx.org/pub/path/" target="_blank" rel="noopener">www.xxx.org/pub/path/</a><br>没有加参数-np，就会同时下载path的上一级目录pub下的其它文件<br>-k 将绝对链接转为相对链接，下载整个站点后脱机浏览网页，最好加上这个参数<br>-L 递归时不进入其它主机，如wget -c -r <a href="http://www.xxx.org/" target="_blank" rel="noopener">www.xxx.org/</a><br>如果网站内有一个这样的链接：<br><a href="http://www.yyy.org，不加参数-L，就会像大火烧山一样，会递归下载www.yyy.org网站" target="_blank" rel="noopener">www.yyy.org，不加参数-L，就会像大火烧山一样，会递归下载www.yyy.org网站</a><br>-p 下载网页所需的所有文件，如图片等<br>-A 指定要下载的文件样式列表，多个样式用逗号分隔<br>-i 后面跟一个文件，文件内指明要下载的URL</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/11/05/使用wget进行循环下载/" data-id="cjo3xlqb60009a6wmohyz4eke" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/11/05/wget范例/" data-id="cjo423qiv00054zwmy9r5hcve" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BASH/">BASH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
@@ -194,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/29/TypeScript的接口/" data-id="cjo3xlqaz0005a6wmxdi964xx" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/29/TypeScript的接口/" data-id="cjo423qix00064zwmqr9dr9ar" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/interface/">interface</a></li></ul>
@@ -241,7 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/27/TypeScript的基本类型/" data-id="cjo3xlqax0004a6wmsizl7yqc" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/27/TypeScript的基本类型/" data-id="cjo423qis00044zwm2hpyvg0u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -286,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/26/TS添加Jquery/" data-id="cjo3xlqap0001a6wmzqoeqze3" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/26/TS添加Jquery/" data-id="cjo423qid00004zwmv3ys6jfg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
@@ -327,7 +330,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/23/在atom增加自定义的文件类型/" data-id="cjo3xlqbg000ha6wmquvwkgms" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/23/在atom增加自定义的文件类型/" data-id="cjo423qj7000e4zwm5yo4t2fn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -372,7 +375,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/22/MAC写入USB启动盘/" data-id="cjo3xlqai0000a6wm0nmx3qn6" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/22/MAC写入USB启动盘/" data-id="cjo423qik00014zwm92u72rgh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAC/">MAC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/USB/">USB</a></li></ul>
@@ -417,7 +420,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/16/在Mac的旧设备中开启AirDrop/" data-id="cjo3xlqbc000ea6wmfdxzgdhc" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/16/在Mac的旧设备中开启AirDrop/" data-id="cjo423qjb000h4zwmwp9lubqa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Airdrop/">Airdrop</a></li></ul>
@@ -461,7 +464,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/16/正则表达式获取img的src/" data-id="cjo3xlqbn000na6wmmuoiwppa" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/16/正则表达式获取img的src/" data-id="cjo423qjk000r4zwmbqex9aj9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
@@ -507,7 +510,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/16/微信内视频播放代码片断/" data-id="cjo3xlqbp000qa6wmiszec1pv" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/16/微信内视频播放代码片断/" data-id="cjo423qji000o4zwm2lu6ol1x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信/">微信</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信内播放视频/">微信内播放视频</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/视频/">视频</a></li></ul>
@@ -580,7 +583,7 @@
           </li>
         
           <li>
-            <a href="/2018/11/05/使用wget进行循环下载/">使用wget进行循环下载</a>
+            <a href="/2018/11/05/wget范例/">wget范例</a>
           </li>
         
           <li>

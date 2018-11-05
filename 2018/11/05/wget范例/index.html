@@ -5,18 +5,20 @@
   
 
   
-  <title>Jonny$ Atom .▍</title>
+  <title>wget范例 | Jonny$ Atom .▍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jonny Peng&apos;s personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jonny$ Atom .▍">
-<meta property="og:url" content="https://jonnypeng.github.io/page/2/index.html">
+  <meta name="description" content="如何通过规则性计算，下载符合特定规则的图片，就譬如，下载大量图片123456num=600while(($num&amp;lt;900))do		wget -r -p -U Mozila &quot;http://www.abc.com/d/7541228$&amp;#123;num&amp;#125;.jpg&quot;		let &quot;num++&quot;done 使用wget下载整个网站 1wget -c -r -np -k -L -p -U M">
+<meta name="keywords" content="BASH,Linux,Shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wget范例">
+<meta property="og:url" content="https://jonnypeng.github.io/2018/11/05/wget范例/index.html">
 <meta property="og:site_name" content="Jonny$ Atom .▍">
-<meta property="og:description" content="Jonny Peng&apos;s personal blog">
+<meta property="og:description" content="如何通过规则性计算，下载符合特定规则的图片，就譬如，下载大量图片123456num=600while(($num&amp;lt;900))do		wget -r -p -U Mozila &quot;http://www.abc.com/d/7541228$&amp;#123;num&amp;#125;.jpg&quot;		let &quot;num++&quot;done 使用wget下载整个网站 1wget -c -r -np -k -L -p -U M">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-05T08:41:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jonny$ Atom .▍">
-<meta name="twitter:description" content="Jonny Peng&apos;s personal blog">
+<meta name="twitter:title" content="wget范例">
+<meta name="twitter:description" content="如何通过规则性计算，下载符合特定规则的图片，就譬如，下载大量图片123456num=600while(($num&amp;lt;900))do		wget -r -p -U Mozila &quot;http://www.abc.com/d/7541228$&amp;#123;num&amp;#125;.jpg&quot;		let &quot;num++&quot;done 使用wget下载整个网站 1wget -c -r -np -k -L -p -U M">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,16 +70,14 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-如何快速地将HEXO配置到GitHub-Pages" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-wget范例" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/15/如何快速地将HEXO配置到GitHub-Pages/" class="article-date">
-  <time datetime="2018-10-15T08:25:40.000Z" itemprop="datePublished">2018-10-15</time>
+    <a href="/2018/11/05/wget范例/" class="article-date">
+  <time datetime="2018-11-04T16:08:54.000Z" itemprop="datePublished">2018-11-05</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
+    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
   </div>
 
   </div>
@@ -87,8 +87,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/15/如何快速地将HEXO配置到GitHub-Pages/">如何快速地将HEXO配置到GitHub Pages</a>
+    <h1 class="article-title" itemprop="name">
+      wget范例
     </h1>
   
 
@@ -96,88 +96,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">https://github.com/hexojs/hexo</a></li>
-<li><a href="https://hexo.io/docs/" target="_blank" rel="noopener">https://hexo.io/docs/</a><h3 id="教程导语"><a href="#教程导语" class="headerlink" title="教程导语"></a>教程导语</h3><em>当您在阅读这个教程的时候，是假设您已经具备安装及其使用node.js,npm,git,github的基础之上的，如果您对这些还不了解，请对其进行了解并能够简单使用，才能正确理解本教程的内容，本教程的主体部分来源<a href="https://gist.github.com/btfak/18938572f5df000ebe06fbd1872e4e39" target="_blank" rel="noopener">这位大神</a>,本人也只是第一次使用HEXO，完全属于菜鸟级别，也在不断的学习之中，这篇文章就作为博客的第二篇文章吧，只是作部分修改与添加，感谢原作者简易且有用的教程</em></li>
-</ul>
-<h3 id="1-Install-Hexo-安装HEXO"><a href="#1-Install-Hexo-安装HEXO" class="headerlink" title="1. Install Hexo 安装HEXO"></a>1. Install Hexo <em>安装HEXO</em></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line">$ hexo -v</span><br><span class="line">hexo-cli: 0.1.9</span><br><span class="line">os: Darwin 14.3.0 darwin x64</span><br><span class="line">http_parser: 2.3</span><br><span class="line">node: 0.12.7</span><br><span class="line">v8: 3.28.71.19</span><br><span class="line">uv: 1.6.1</span><br><span class="line">zlib: 1.2.8</span><br><span class="line">modules: 14</span><br><span class="line">openssl: 1.0.1p</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/10/15/如何快速地将HEXO配置到GitHub-Pages/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/15/如何快速地将HEXO配置到GitHub-Pages/" data-id="cjo423qj4000a4zwmbu7ovgnt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-Github-Page/">Hexo Github Page</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/14/hello-world/" class="article-date">
-  <time datetime="2018-10-14T08:25:40.000Z" itemprop="datePublished">2018-10-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>如何通过规则性计算，下载符合特定规则的图片，就譬如，下载大量图片<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">num=600</span><br><span class="line"><span class="keyword">while</span>((<span class="variable">$num</span>&lt;900))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">		wget -r -p -U Mozila <span class="string">"http://www.abc.com/d/7541228<span class="variable">$&#123;num&#125;</span>.jpg"</span></span><br><span class="line">		<span class="built_in">let</span> <span class="string">"num++"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<p>使用wget下载整个网站</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -c -r -np -k -L -p -U Mozila <span class="string">"http://abc.com/a/"</span></span><br></pre></td></tr></table></figure>
+<p>参数说明：<br>-c 断点续传<br>-r 递归下载，下载指定网页某一目录下（包括子目录）的所有文件<br>-nd 递归下载时不创建一层一层的目录，把所有的文件下载到当前目录<br>-np 递归下载时不搜索上层目录，如wget -c -r <a href="http://www.xxx.org/pub/path/" target="_blank" rel="noopener">www.xxx.org/pub/path/</a><br>没有加参数-np，就会同时下载path的上一级目录pub下的其它文件<br>-k 将绝对链接转为相对链接，下载整个站点后脱机浏览网页，最好加上这个参数<br>-L 递归时不进入其它主机，如wget -c -r <a href="http://www.xxx.org/" target="_blank" rel="noopener">www.xxx.org/</a><br>如果网站内有一个这样的链接：<br><a href="http://www.yyy.org，不加参数-L，就会像大火烧山一样，会递归下载www.yyy.org网站" target="_blank" rel="noopener">www.yyy.org，不加参数-L，就会像大火烧山一样，会递归下载www.yyy.org网站</a><br>-p 下载网页所需的所有文件，如图片等<br>-A 指定要下载的文件样式列表，多个样式用逗号分隔<br>-i 后面跟一个文件，文件内指明要下载的URL</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/14/hello-world/" data-id="cjo423qj100094zwmolkath0z" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/11/05/wget范例/" data-id="cjo423qiv00054zwmy9r5hcve" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BASH/">BASH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
 
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/05/前端模拟后端数据的神器Json-Server/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端模拟后端数据的神器json-Server
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/10/29/TypeScript的接口/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TypeScript的接口</div>
+    </a>
+  
+</nav>
 
   
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
+</article>
 
 </section>
         
