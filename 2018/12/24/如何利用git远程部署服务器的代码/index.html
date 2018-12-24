@@ -5,18 +5,20 @@
   
 
   
-  <title>归档: 2018 | Jonny$ Atom .▍</title>
+  <title>如何利用git远程部署服务器的代码 | Jonny$ Atom .▍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jonny Peng&apos;s personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jonny$ Atom .▍">
-<meta property="og:url" content="https://jonnypeng.github.io/archives/2018/index.html">
+  <meta name="description" content="使用场景ftp部署代码很麻烦，因为需要隔离出已经修改与为修改的部分，并进行上传，但是git很方便，如果在远程服务器已经绑定了ssh免密码登陆就更加方便，只需要推送，就可以将代码部署到服务器,而且不用去区分哪一些是修改过的，哪一些是没有修改过的。 远程服务目录结构1234567891011121314151617├── html  └── myApp // 项目   └── site // 这是工作">
+<meta name="keywords" content="git,git部署服务器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何利用git远程部署服务器的代码">
+<meta property="og:url" content="https://jonnypeng.github.io/2018/12/24/如何利用git远程部署服务器的代码/index.html">
 <meta property="og:site_name" content="Jonny$ Atom .▍">
-<meta property="og:description" content="Jonny Peng&apos;s personal blog">
+<meta property="og:description" content="使用场景ftp部署代码很麻烦，因为需要隔离出已经修改与为修改的部分，并进行上传，但是git很方便，如果在远程服务器已经绑定了ssh免密码登陆就更加方便，只需要推送，就可以将代码部署到服务器,而且不用去区分哪一些是修改过的，哪一些是没有修改过的。 远程服务目录结构1234567891011121314151617├── html  └── myApp // 项目   └── site // 这是工作">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-24T07:41:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jonny$ Atom .▍">
-<meta name="twitter:description" content="Jonny Peng&apos;s personal blog">
+<meta name="twitter:title" content="如何利用git远程部署服务器的代码">
+<meta name="twitter:description" content="使用场景ftp部署代码很麻烦，因为需要隔离出已经修改与为修改的部分，并进行上传，但是git很方便，如果在远程服务器已经绑定了ssh免密码登陆就更加方便，只需要推送，就可以将代码部署到服务器,而且不用去区分哪一些是修改过的，哪一些是没有修改过的。 远程服务目录结构1234567891011121314151617├── html  └── myApp // 项目   └── site // 这是工作">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,216 +70,66 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/12/24/如何利用git远程部署服务器的代码/" class="archive-article-date">
-  <time datetime="2018-12-24T07:04:43.000Z" itemprop="datePublished">12月 24</time>
+        <section id="main"><article id="post-如何利用git远程部署服务器的代码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/24/如何利用git远程部署服务器的代码/" class="article-date">
+  <time datetime="2018-12-24T07:04:43.000Z" itemprop="datePublished">2018-12-24</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/教程/">教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/24/如何利用git远程部署服务器的代码/">如何利用git远程部署服务器的代码</a>
+    <h1 class="article-title" itemprop="name">
+      如何利用git远程部署服务器的代码
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" class="archive-article-date">
-  <time datetime="2018-11-11T03:26:50.000Z" itemprop="datePublished">11月 11</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/">TypeScript模式下为PIXI添加Matter物理引擎的尝试</a>
-    </h1>
-  
+        <h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>ftp部署代码很麻烦，因为需要隔离出已经修改与为修改的部分，并进行上传，但是git很方便，如果在远程服务器已经绑定了ssh免密码登陆就更加方便，只需要推送，就可以将代码部署到服务器,而且不用去区分哪一些是修改过的，哪一些是没有修改过的。</p>
+<h3 id="远程服务目录结构"><a href="#远程服务目录结构" class="headerlink" title="远程服务目录结构"></a>远程服务目录结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">├── html</span><br><span class="line">  └── myApp // 项目</span><br><span class="line">   └── site // 这是工作区,手工创建空目录</span><br><span class="line">       ├── index.php</span><br><span class="line">       ├── test2.php</span><br><span class="line">       ├── test3.php</span><br><span class="line">       └── test.php</span><br><span class="line">   └── gitLab // 这是版本区</span><br><span class="line">        ├── branches</span><br><span class="line">        ├── config</span><br><span class="line">        ├── description</span><br><span class="line">        ├── HEAD</span><br><span class="line">        ├── hooks // post-receive钩子代码写在这里面</span><br><span class="line">        ├── index</span><br><span class="line">        ├── info</span><br><span class="line">        ├── objects</span><br><span class="line">        └── refs</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>在远程gitLab目录中的hooks，创建文件post-receive，写如下代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定我的代码检出目录,就是工作区</span></span><br><span class="line">DIR=/var/www/html/myApp/site</span><br><span class="line">git --work-tree=<span class="variable">$&#123;DIR&#125;</span> clean -fd</span><br><span class="line"><span class="comment"># 直接强制检出</span></span><br><span class="line">git --work-tree=<span class="variable">$&#123;DIR&#125;</span> checkout --force</span><br></pre></td></tr></table></figure>
+<p>这个文件请授权<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R u+x post-receive</span><br></pre></td></tr></table></figure></p>
+<p>将工作区授权<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R a=wxr site</span><br></pre></td></tr></table></figure></p>
+<p>然后返回本地计算机，添加远程库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin root@abc.com:/var/www/html/myApp/gitLab</span><br></pre></td></tr></table></figure></p>
+<p>最后就是各种推送，我着这里就不再赘述</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/11/09/typeScript的类/" class="archive-article-date">
-  <time datetime="2018-11-09T14:32:30.000Z" itemprop="datePublished">11月 9</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/09/typeScript的类/">typeScript的类</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/11/05/前端模拟后端数据的神器Json-Server/" class="archive-article-date">
-  <time datetime="2018-11-05T06:20:33.000Z" itemprop="datePublished">11月 5</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jonnypeng.github.io/2018/12/24/如何利用git远程部署服务器的代码/" data-id="cjq1z9hg80011vswmadq3iy2x" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/05/前端模拟后端数据的神器Json-Server/">前端模拟后端数据的神器json-Server</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/11/05/wget范例/" class="archive-article-date">
-  <time datetime="2018-11-04T16:08:54.000Z" itemprop="datePublished">11月 5</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/05/wget范例/">wget范例</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TypeScript模式下为PIXI添加Matter物理引擎的尝试</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/29/TypeScript的接口/" class="archive-article-date">
-  <time datetime="2018-10-29T10:06:48.000Z" itemprop="datePublished">10月 29</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/29/TypeScript的接口/">TypeScript的接口</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/27/TypeScript的基本类型/" class="archive-article-date">
-  <time datetime="2018-10-27T08:05:16.000Z" itemprop="datePublished">10月 27</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/27/TypeScript的基本类型/">TypeScript的基本类型</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/26/TS添加Jquery/" class="archive-article-date">
-  <time datetime="2018-10-26T10:12:47.000Z" itemprop="datePublished">10月 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/26/TS添加Jquery/">TS添加Jquery</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/23/在atom增加自定义的文件类型/" class="archive-article-date">
-  <time datetime="2018-10-23T02:29:34.000Z" itemprop="datePublished">10月 23</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/23/在atom增加自定义的文件类型/">在atom增加自定义的文件类型</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/22/MAC写入USB启动盘/" class="archive-article-date">
-  <time datetime="2018-10-22T06:46:05.000Z" itemprop="datePublished">10月 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/22/MAC写入USB启动盘/">MAC写入USB启动盘</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/page/2/">下一页 &raquo;</a>
-  </nav>
 
 </section>
         
