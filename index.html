@@ -70,6 +70,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-解决angluar在Node服务器上的路由问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/22/解决angluar在Node服务器上的路由问题/" class="article-date">
+  <time datetime="2019-01-22T14:13:57.000Z" itemprop="datePublished">2019-01-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/教程/">教程</a>►<a class="article-category-link" href="/categories/教程/代码片段/">代码片段</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/22/解决angluar在Node服务器上的路由问题/">解决angluar在Node服务器上的路由问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>官方教程中没有涉及到node服务器对angluar的编译文件解决路由的问题，其实原理与apahce是一样的，当路由返回404的时候，应该让路由再直接找index.html这个源文件，具体代码如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 这里是设置中间件，让编译文件的静态文件可以被获取 */</span></span><br><span class="line">app.use(express.static(<span class="string">"dist/w-app"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 这里是不管url地址是什么，路由都统一在index.html上进行查询，然后获取到真实的Angluar的路由 */</span></span><br><span class="line">app.get(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    res.sendFile(path.join(__dirname,<span class="string">'dist/w-app/index.html'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"server is running"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jonnypeng.github.io/2019/01/22/解决angluar在Node服务器上的路由问题/" data-id="cjr7un7mo001bmnwm6mf6xg2r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar/">angluar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar-404/">angluar 404</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-如何利用git远程部署服务器的代码" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/12/24/如何利用git远程部署服务器的代码/" class="article-date">
@@ -106,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/12/24/如何利用git远程部署服务器的代码/" data-id="cjqvr0z2b000sb2wm0on6rjg6" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/12/24/如何利用git远程部署服务器的代码/" data-id="cjr7un7mv001emnwmovm94ihw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li></ul>
@@ -153,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="cjqvr0z1d0005b2wm2jbygfql" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="cjr7un7nh001qmnwm1hskiidp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matter-js/">Matter.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -201,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/11/09/typeScript的类/" data-id="cjqvr0z1r000bb2wmly10pkkm" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/11/09/typeScript的类/" data-id="cjr7un7kf0005mnwmgzhs8wri" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/class/">class</a></li></ul>
@@ -247,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="cjqvr0z21000ib2wm6pnq8kfs" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="cjr7un7ki0006mnwmskik0xw0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json-server/">json server</a></li></ul>
@@ -293,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/11/05/wget范例/" data-id="cjqvr0z1w000fb2wmvow0mqqz" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/11/05/wget范例/" data-id="cjr7un7ks000amnwmqi74trgf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BASH/">BASH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
@@ -340,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/29/TypeScript的接口/" data-id="cjqvr0z1j0007b2wm9f1ax6a3" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/29/TypeScript的接口/" data-id="cjr7un7kc0004mnwmvo0ebxzk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/interface/">interface</a></li></ul>
@@ -387,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/27/TypeScript的基本类型/" data-id="cjqvr0z1g0006b2wm1f5h0zq4" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/27/TypeScript的基本类型/" data-id="cjr7un7k20001mnwmipmg48mk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -432,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/26/TS添加Jquery/" data-id="cjqvr0z150002b2wmbhjs03m5" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/26/TS添加Jquery/" data-id="cjr7un7n6001lmnwmmg48xnr3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
@@ -473,56 +517,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/23/在atom增加自定义的文件类型/" data-id="cjqvr0z29000pb2wmecungsoq" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/23/在atom增加自定义的文件类型/" data-id="cjr7un7kx000emnwmg1eyfvgn" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-MAC写入USB启动盘" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/22/MAC写入USB启动盘/" class="article-date">
-  <time datetime="2018-10-22T06:46:05.000Z" itemprop="datePublished">2018-10-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/MAC写入USB启动盘/">MAC写入USB启动盘</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备；</p>
-<p>其次，假设ISO文件路径为/Path/A.iso ，而我需要输出的USB路径为/Path/USB</p>
-<p>最后，打开终端，运行以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo dd if=/Path/A.iso of=/Path/USB bs=10m</span><br><span class="line"></span><br><span class="line">#参数if- 输入文件名，就是iso的文件名</span><br><span class="line">#参数of- 输出文件名</span><br><span class="line">#参数bs- 同时设置读写块的大小，单位是bytes</span><br></pre></td></tr></table></figure>
-<p>等待结束，就可以安装啦</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/22/MAC写入USB启动盘/" data-id="cjqvr0z0w0000b2wm02ahq3nm" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAC/">MAC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/USB/">USB</a></li></ul>
-
     </footer>
   </div>
   
@@ -545,7 +542,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/代码片段/">代码片段</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/代码片段/">代码片段</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/教程/代码片段/">代码片段</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -555,7 +552,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Airdrop/">Airdrop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BASH/">BASH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-Github-Page/">Hexo Github Page</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matter-js/">Matter.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USB/">USB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/class/">class</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interface/">interface</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json-server/">json server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信/">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信内播放视频/">微信内播放视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/视频/">视频</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Airdrop/">Airdrop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BASH/">BASH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-Github-Page/">Hexo Github Page</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matter-js/">Matter.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USB/">USB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angluar/">angluar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angluar-404/">angluar 404</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/class/">class</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interface/">interface</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json-server/">json server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信/">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信内播放视频/">微信内播放视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/视频/">视频</a></li></ul>
     </div>
   </div>
 
@@ -565,7 +562,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Airdrop/" style="font-size: 10px;">Airdrop</a> <a href="/tags/BASH/" style="font-size: 10px;">BASH</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HEXO/" style="font-size: 15px;">HEXO</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hexo-Github-Page/" style="font-size: 10px;">Hexo Github Page</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MAC/" style="font-size: 10px;">MAC</a> <a href="/tags/Matter-js/" style="font-size: 10px;">Matter.js</a> <a href="/tags/PIXI-js/" style="font-size: 10px;">PIXI.js</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/USB/" style="font-size: 10px;">USB</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/git部署服务器/" style="font-size: 10px;">git部署服务器</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/json-server/" style="font-size: 10px;">json server</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/微信/" style="font-size: 10px;">微信</a> <a href="/tags/微信内播放视频/" style="font-size: 10px;">微信内播放视频</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a>
+      <a href="/tags/Airdrop/" style="font-size: 10px;">Airdrop</a> <a href="/tags/BASH/" style="font-size: 10px;">BASH</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HEXO/" style="font-size: 15px;">HEXO</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hexo-Github-Page/" style="font-size: 10px;">Hexo Github Page</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MAC/" style="font-size: 10px;">MAC</a> <a href="/tags/Matter-js/" style="font-size: 10px;">Matter.js</a> <a href="/tags/PIXI-js/" style="font-size: 10px;">PIXI.js</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/USB/" style="font-size: 10px;">USB</a> <a href="/tags/angluar/" style="font-size: 10px;">angluar</a> <a href="/tags/angluar-404/" style="font-size: 10px;">angluar 404</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/git部署服务器/" style="font-size: 10px;">git部署服务器</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/json-server/" style="font-size: 10px;">json server</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/微信/" style="font-size: 10px;">微信</a> <a href="/tags/微信内播放视频/" style="font-size: 10px;">微信内播放视频</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a>
     </div>
   </div>
 
@@ -574,7 +571,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li></ul>
     </div>
   </div>
 
@@ -585,6 +582,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/01/22/解决angluar在Node服务器上的路由问题/">解决angluar在Node服务器上的路由问题</a>
+          </li>
         
           <li>
             <a href="/2018/12/24/如何利用git远程部署服务器的代码/">如何利用git远程部署服务器的代码</a>
@@ -600,10 +601,6 @@
         
           <li>
             <a href="/2018/11/05/前端模拟后端数据的神器Json-Server/">前端模拟后端数据的神器json-Server</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/05/wget范例/">wget范例</a>
           </li>
         
       </ul>

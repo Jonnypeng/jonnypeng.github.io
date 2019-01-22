@@ -5,20 +5,20 @@
   
 
   
-  <title>Hello World | Jonny$ Atom .▍</title>
+  <title>解决angluar在Node服务器上的路由问题 | Jonny$ Atom .▍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="HEXO,Hexo">
+  <meta name="description" content="官方教程中没有涉及到node服务器对angluar的编译文件解决路由的问题，其实原理与apahce是一样的，当路由返回404的时候，应该让路由再直接找index.html这个源文件，具体代码如下 123456789101112131415var express = require(&quot;express&quot;);var app = express();var path = require(&quot;path&quot;);/">
+<meta name="keywords" content="angluar,node.js,angluar 404">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://jonnypeng.github.io/2018/10/14/hello-world/index.html">
+<meta property="og:title" content="解决angluar在Node服务器上的路由问题">
+<meta property="og:url" content="https://jonnypeng.github.io/2019/01/22/解决angluar在Node服务器上的路由问题/index.html">
 <meta property="og:site_name" content="Jonny$ Atom .▍">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="官方教程中没有涉及到node服务器对angluar的编译文件解决路由的问题，其实原理与apahce是一样的，当路由返回404的时候，应该让路由再直接找index.html这个源文件，具体代码如下 123456789101112131415var express = require(&quot;express&quot;);var app = express();var path = require(&quot;path&quot;);/">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-16T08:51:22.000Z">
+<meta property="og:updated_time" content="2019-01-22T14:22:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="解决angluar在Node服务器上的路由问题">
+<meta name="twitter:description" content="官方教程中没有涉及到node服务器对angluar的编译文件解决路由的问题，其实原理与apahce是一样的，当路由返回404的时候，应该让路由再直接找index.html这个源文件，具体代码如下 123456789101112131415var express = require(&quot;express&quot;);var app = express();var path = require(&quot;path&quot;);/">
   
   
     <link rel="icon" href="/favicon.png">
@@ -70,14 +70,14 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-解决angluar在Node服务器上的路由问题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/14/hello-world/" class="article-date">
-  <time datetime="2018-10-14T08:25:40.000Z" itemprop="datePublished">2018-10-14</time>
+    <a href="/2019/01/22/解决angluar在Node服务器上的路由问题/" class="article-date">
+  <time datetime="2019-01-22T14:13:57.000Z" itemprop="datePublished">2019-01-22</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
+    <a class="article-category-link" href="/categories/教程/">教程</a>►<a class="article-category-link" href="/categories/教程/代码片段/">代码片段</a>
   </div>
 
   </div>
@@ -88,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      解决angluar在Node服务器上的路由问题
     </h1>
   
 
@@ -96,23 +96,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>官方教程中没有涉及到node服务器对angluar的编译文件解决路由的问题，其实原理与apahce是一样的，当路由返回404的时候，应该让路由再直接找index.html这个源文件，具体代码如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 这里是设置中间件，让编译文件的静态文件可以被获取 */</span></span><br><span class="line">app.use(express.static(<span class="string">"dist/w-app"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 这里是不管url地址是什么，路由都统一在index.html上进行查询，然后获取到真实的Angluar的路由 */</span></span><br><span class="line">app.get(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    res.sendFile(path.join(__dirname,<span class="string">'dist/w-app/index.html'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"server is running"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/14/hello-world/" data-id="cjr7un7kp0009mnwm6flgxoae" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/01/22/解决angluar在Node服务器上的路由问题/" data-id="cjr7un7mo001bmnwm6mf6xg2r" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar/">angluar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar-404/">angluar 404</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
 
     </footer>
   </div>
@@ -120,15 +113,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/10/15/如何快速地将HEXO配置到GitHub-Pages/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          如何快速地将HEXO配置到GitHub Pages
-        
-      </div>
-    </a>
   
+    <a href="/2018/12/24/如何利用git远程部署服务器的代码/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">如何利用git远程部署服务器的代码</div>
+    </a>
   
 </nav>
 
