@@ -5,20 +5,20 @@
   
 
   
-  <title>前端模拟后端数据的神器json-Server | Jonny$ Atom .▍</title>
+  <title>使用node对文件夹递归解析为json | Jonny$ Atom .▍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="install Json Server1npm install -g json-server 在指定目录下创建db.json123456789&amp;#123;  &quot;posts&quot;: [    &amp;#123; &quot;id&quot;: 1, &quot;title&quot;: &quot;json-server&quot;, &quot;author&quot;: &quot;typicode&quot; &amp;#125;  ],  &quot;comments&quot;: [    &amp;#123; &quot;id&quot;: 1, &quot;">
-<meta name="keywords" content="json server">
+  <meta name="description" content="使用场景：工作中经常制作H5广告，需要做预加载机制，而文件数据需要通过外部进行加载，使用node的fs模块，可以快速地生成json文件，下面是代码解读;">
+<meta name="keywords" content="node,fs,path,json">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端模拟后端数据的神器json-Server">
-<meta property="og:url" content="https://jonnypeng.github.io/2018/11/05/前端模拟后端数据的神器Json-Server/index.html">
+<meta property="og:title" content="使用node对文件夹递归解析为json">
+<meta property="og:url" content="https://jonnypeng.github.io/2019/01/30/使用node对文件夹递归解析为json/index.html">
 <meta property="og:site_name" content="Jonny$ Atom .▍">
-<meta property="og:description" content="install Json Server1npm install -g json-server 在指定目录下创建db.json123456789&amp;#123;  &quot;posts&quot;: [    &amp;#123; &quot;id&quot;: 1, &quot;title&quot;: &quot;json-server&quot;, &quot;author&quot;: &quot;typicode&quot; &amp;#125;  ],  &quot;comments&quot;: [    &amp;#123; &quot;id&quot;: 1, &quot;">
+<meta property="og:description" content="使用场景：工作中经常制作H5广告，需要做预加载机制，而文件数据需要通过外部进行加载，使用node的fs模块，可以快速地生成json文件，下面是代码解读;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-05T06:35:29.000Z">
+<meta property="og:updated_time" content="2019-01-30T06:28:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端模拟后端数据的神器json-Server">
-<meta name="twitter:description" content="install Json Server1npm install -g json-server 在指定目录下创建db.json123456789&amp;#123;  &quot;posts&quot;: [    &amp;#123; &quot;id&quot;: 1, &quot;title&quot;: &quot;json-server&quot;, &quot;author&quot;: &quot;typicode&quot; &amp;#125;  ],  &quot;comments&quot;: [    &amp;#123; &quot;id&quot;: 1, &quot;">
+<meta name="twitter:title" content="使用node对文件夹递归解析为json">
+<meta name="twitter:description" content="使用场景：工作中经常制作H5广告，需要做预加载机制，而文件数据需要通过外部进行加载，使用node的fs模块，可以快速地生成json文件，下面是代码解读;">
   
   
     <link rel="icon" href="/favicon.png">
@@ -70,14 +70,14 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-前端模拟后端数据的神器Json-Server" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-使用node对文件夹递归解析为json" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/11/05/前端模拟后端数据的神器Json-Server/" class="article-date">
-  <time datetime="2018-11-05T06:20:33.000Z" itemprop="datePublished">2018-11-05</time>
+    <a href="/2019/01/30/使用node对文件夹递归解析为json/" class="article-date">
+  <time datetime="2019-01-30T06:07:34.000Z" itemprop="datePublished">2019-01-30</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
+    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
   </div>
 
   </div>
@@ -88,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      前端模拟后端数据的神器json-Server
+      使用node对文件夹递归解析为json
     </h1>
   
 
@@ -96,18 +96,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="install-Json-Server"><a href="#install-Json-Server" class="headerlink" title="install Json Server"></a>install Json Server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g json-server</span><br></pre></td></tr></table></figure>
-<h3 id="在指定目录下创建db-json"><a href="#在指定目录下创建db-json" class="headerlink" title="在指定目录下创建db.json"></a>在指定目录下创建db.json</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"posts"</span>: [</span><br><span class="line">    &#123; <span class="attr">"id"</span>: <span class="number">1</span>, <span class="attr">"title"</span>: <span class="string">"json-server"</span>, <span class="attr">"author"</span>: <span class="string">"typicode"</span> &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"comments"</span>: [</span><br><span class="line">    &#123; <span class="attr">"id"</span>: <span class="number">1</span>, <span class="attr">"body"</span>: <span class="string">"some comment"</span>, <span class="attr">"postId"</span>: <span class="number">1</span> &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"profile"</span>: &#123; <span class="attr">"name"</span>: <span class="string">"typicode"</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="启动服务并监听文件"><a href="#启动服务并监听文件" class="headerlink" title="启动服务并监听文件"></a>启动服务并监听文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json-server --watch db.json</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/typicode/json-server" target="_blank" rel="noopener">项目文档</a></p>
+        <p>使用场景：工作中经常制作H5广告，需要做预加载机制，而文件数据需要通过外部进行加载，使用node的fs模块，可以快速地生成json文件，下面是代码解读;</p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);  </span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> customUrl = &#123;</span><br><span class="line">    relative: <span class="string">"../../src/assets/airWar/images"</span>,     <span class="comment">//以本文件作为一个入口，定义读取目录的相对地址</span></span><br><span class="line">    stitching: <span class="string">"assets/airWar/images"</span>,   <span class="comment">//定义工程项目所对应的读取目录的地址，用来拼接字符串</span></span><br><span class="line">    output:path.join(__dirname,<span class="string">"../output"</span>)    <span class="comment">//定义一个文件输出目录，用来输出json文件</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> url = path.join(__dirname, customUrl.relative);   <span class="comment">//将读取目录从相对地址转换为绝对地址</span></span><br><span class="line"><span class="keyword">var</span> results = &#123;</span><br><span class="line">    data:[]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">readDir(url);   <span class="comment">// 初始化载入数据，下面的代码被封装为函数，目的是为了递归循环，再传入新的参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">readDir</span>(<span class="params">_url</span>) </span>&#123;</span><br><span class="line">    fs.readdir(_url, <span class="function"><span class="keyword">function</span> (<span class="params">err, files</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(err);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        files.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">filename</span>) </span>&#123;     <span class="comment">// 循环文件列表</span></span><br><span class="line">            <span class="keyword">let</span> isHide = (<span class="regexp">/^\./</span>).test(filename);    <span class="comment">// 判断是否是隐藏文件</span></span><br><span class="line">            <span class="keyword">if</span> (!isHide) &#123;</span><br><span class="line">                <span class="keyword">let</span> fsStats = fs.statSync(<span class="string">`<span class="subst">$&#123;_url&#125;</span>/<span class="subst">$&#123;filename&#125;</span>`</span>);     <span class="comment">// 用来判断是文件夹或者文件</span></span><br><span class="line">                <span class="keyword">if</span> (fsStats.isDirectory()) &#123;     <span class="comment">// 如果是文件夹</span></span><br><span class="line">                    customUrl.stitching += <span class="string">`/<span class="subst">$&#123;filename&#125;</span>`</span>;      <span class="comment">//重新定义需要拼接的字符串</span></span><br><span class="line">                    readDir(<span class="string">`<span class="subst">$&#123;_url&#125;</span>/<span class="subst">$&#123;filename&#125;</span>`</span>);       <span class="comment">// 重新返回函数头部，再重新解析数据</span></span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (fsStats.isFile()) &#123;</span><br><span class="line">                    results.data.push(<span class="string">`<span class="subst">$&#123;customUrl.stitching&#125;</span>/<span class="subst">$&#123;filename&#125;</span>`</span>);    <span class="comment">// 直接推送到需要写入的json文件内容中</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 然后将文件写入，首先需要将写入的内容先转为json格式 */</span></span><br><span class="line">    fs.writeFile(<span class="string">`<span class="subst">$&#123;customUrl.output&#125;</span>/manifest.json`</span>,<span class="built_in">JSON</span>.stringify(results),<span class="function"><span class="keyword">function</span> (<span class="params">err</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">console</span>.log(err);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`文件创建成功`</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="cjrit8chv000e8rqwny95oqel" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/01/30/使用node对文件夹递归解析为json/" data-id="cjrit8cie000r8rqwbwskbo21" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json-server/">json server</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fs/">fs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/path/">path</a></li></ul>
 
     </footer>
   </div>
@@ -115,19 +114,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/11/09/typeScript的类/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          typeScript的类
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/11/05/wget范例/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/01/22/解决angluar在Node服务器上的路由问题/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">wget范例</div>
+      <div class="article-nav-title">解决angluar在Node服务器上的路由问题</div>
     </a>
   
 </nav>
