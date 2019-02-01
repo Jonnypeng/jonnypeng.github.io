@@ -96,13 +96,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 缓冲区分配 */</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">const Buffer: &#123;</span></span><br><span class="line"><span class="comment">    new (str: string, encoding?: string): Buffer;</span></span><br><span class="line"><span class="comment">    new (size: number): Buffer;</span></span><br><span class="line"><span class="comment">    new (array: Uint8Array): Buffer;</span></span><br><span class="line"><span class="comment">    new (arrayBuffer: ArrayBuffer | SharedArrayBuffer): Buffer;</span></span><br><span class="line"><span class="comment">    new (array: any[]): Buffer;</span></span><br><span class="line"><span class="comment">    new (buffer: Buffer): Buffer;</span></span><br><span class="line"><span class="comment">    ... 11 more ...;</span></span><br><span class="line"><span class="comment">    poolSize: number;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> buf1 = Buffer.alloc(<span class="number">10</span>);   <span class="comment">// &lt;Buffer 00 00 00 00 00 00 00 00 00 00&gt;</span></span><br><span class="line"><span class="keyword">const</span> buf2 = Buffer.alloc(<span class="number">10</span>,<span class="number">12</span>);   <span class="comment">// &lt;Buffer 0c 0c 0c 0c 0c 0c 0c 0c 0c 0c&gt;</span></span><br><span class="line"><span class="keyword">const</span> buf3 = Buffer.allocUnsafe(<span class="number">10</span>); <span class="comment">//非安全、非填充式的分配，可能会包含敏感区域&lt;Buffer 68 7b 04 03 01 00 00 00 80 7b&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 构建一个缓冲区，并同时创建缓冲区的数据 */</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">const Buffer: &#123;</span></span><br><span class="line"><span class="comment">    new (str: string, encoding?: string): Buffer;</span></span><br><span class="line"><span class="comment">    new (size: number): Buffer;</span></span><br><span class="line"><span class="comment">    new (array: Uint8Array): Buffer;</span></span><br><span class="line"><span class="comment">    new (arrayBuffer: ArrayBuffer | SharedArrayBuffer): Buffer;</span></span><br><span class="line"><span class="comment">    new (array: any[]): Buffer;</span></span><br><span class="line"><span class="comment">    new (buffer: Buffer): Buffer;</span></span><br><span class="line"><span class="comment">    ... 11 more ...;</span></span><br><span class="line"><span class="comment">    poolSize: number;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> buf4 = Buffer.from([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);  <span class="comment">//&lt;Buffer 01 02 03 04&gt;</span></span><br><span class="line"><span class="keyword">const</span> buf5 = Buffer.from(<span class="string">"ABC"</span>,<span class="string">"utf8"</span>);   <span class="comment">//&lt;Buffer 41 42 43&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 缓冲区写入 */</span></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">(method) Buffer.write(string: string, offset?: number, length?: number, encoding?: string): number</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> input_1 =  buf1.write(<span class="string">"HelloWorld"</span>,<span class="number">0</span>,<span class="number">10</span>,<span class="string">"utf8"</span>)   <span class="comment">//你已经写入了10</span></span><br><span class="line">buf2.write(<span class="string">"Jonny"</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="string">'utf8'</span>);</span><br><span class="line"><span class="keyword">var</span> out = buf1.toString(<span class="string">"utf8"</span>,<span class="number">0</span>,<span class="number">9</span>);   <span class="comment">//HelloWorl </span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 缓冲区转换为字符串与JSON */</span></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">    (method) Buffer.toJSON(): &#123;</span></span><br><span class="line"><span class="comment">    type: "Buffer";</span></span><br><span class="line"><span class="comment">    data: any[];</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    (method) Buffer.toString(encoding?: string, start?: number, end?: number): string</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> out1 = buf1.toJSON();    <span class="comment">//&#123;type: 'Buffer', data: [ 72, 101, 108, 108, 111, 87, 111, 114, 108, 100 ] &#125;</span></span><br><span class="line"><span class="keyword">var</span> str = buf2.toString(<span class="string">'utf8'</span>,<span class="number">0</span>,<span class="number">6</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 缓冲区合并 */</span></span><br><span class="line"><span class="comment">/* (method) concat(list: Uint8Array[], totalLength?: number): Buffer */</span></span><br><span class="line"><span class="keyword">var</span> totalBuffer = Buffer.concat([buf1,buf2],<span class="number">10</span>);   <span class="comment">//HelloWorld</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 缓冲区比较 */</span></span><br><span class="line"><span class="comment">/*(method) Buffer.compare(otherBuffer: Uint8Array, targetStart?: number, targetEnd?: number, sourceStart?: number, sourceEnd?: number): number */</span></span><br><span class="line"><span class="keyword">var</span> buf6 = Buffer.from(<span class="string">"ABC"</span>);</span><br><span class="line"><span class="keyword">var</span> buf7 = Buffer.from(<span class="string">"DEF"</span>);</span><br><span class="line"><span class="keyword">var</span> buf8 = Buffer.from(<span class="string">"ABC"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result1 = buf6.compare(buf7);   <span class="comment">// result1 &lt; 1;表示buf6在buf7之前</span></span><br><span class="line"><span class="keyword">var</span> result2 = buf7.compare(buf6);   <span class="comment">// result2 &gt; 1;表示buf7在buf6之后</span></span><br><span class="line"><span class="keyword">var</span> result3 = buf8.compare(buf6);   <span class="comment">// result3 = 0,表示buf8与buf6相同</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 拷贝缓冲区 */</span></span><br><span class="line"><span class="comment">/*(method) Buffer.copy(targetBuffer: Uint8Array, targetStart?: number, sourceStart?: number, sourceEnd?: number): number */</span></span><br><span class="line"></span><br><span class="line">buf6.copy(buf7,<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>);  </span><br><span class="line"><span class="keyword">var</span> result4 = buf7.toString();  <span class="comment">// 将buf6的AB 拷贝到 buf7 的 1 位之后，buf7变成DAB</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 缓冲区裁剪 */</span></span><br><span class="line"><span class="comment">// (method) Buffer.slice(start?: number, end?: number): Buffer    这个end准确地说是length，而不是索引位置</span></span><br><span class="line"><span class="keyword">var</span> buf9 = buf8.slice(<span class="number">0</span>,<span class="number">2</span>);   <span class="comment">// 返回一个新的缓冲区，但是它和旧的缓冲区指向同一个内存，并按照slice定义的方法进行裁剪</span></span><br></pre></td></tr></table></figure>
-
+        <p>JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。</p>
+<p>但在处理像TCP流或文件流时，必须使用到二进制数据。因此在 Node.js中，定义了一个 Buffer 类，该类用来创建一个专门存放二进制数据的缓存区。</p>
+<p>在 Node.js 中，Buffer 类是随 Node 内核一起发布的核心库。Buffer 库为 Node.js 带来了一种存储原始数据的方法，可以让 Node.js 处理二进制数据，每当需要在 Node.js 中处理I/O操作中移动的数据时，就有可能使用 Buffer 库。原始数据存储在 Buffer 类的实例中。一个 Buffer 类似于一个整数数组，但它对应于 V8 堆内存之外的一块原始内存。</p>
+<ul>
+<li>在v6.0之前创建Buffer对象直接使用new Buffer()构造函数来创建对象实例，但是Buffer对内存的权限操作相比很大，可以直接捕获一些敏感信息，所以在v6.0以后，官方文档里面建议使用 Buffer.from() 接口去创建Buffer对象。*</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/01/node缓冲区/#more">阅读更多</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/02/01/node缓冲区/" data-id="cjrli3xff00056swmw44lrfad" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/02/01/node缓冲区/" data-id="cjrliex8p000g9awmdz2fix11" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/缓冲区/">缓冲区</a></li></ul>
@@ -149,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/01/31/node-js的循环下载/" data-id="cjrli3xg2000h6swmyq2oy71p" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/01/31/node-js的循环下载/" data-id="cjrliex8k000c9awmtnx1qyfl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/循环下载/">循环下载</a></li></ul>
@@ -196,7 +204,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/01/30/使用node对文件夹递归解析为json/" data-id="cjrli3xg6000m6swmjou6ip3o" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/01/30/使用node对文件夹递归解析为json/" data-id="cjrliex92000q9awm0q3ap4mx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fs/">fs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/path/">path</a></li></ul>
@@ -240,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/01/22/解决angluar在Node服务器上的路由问题/" data-id="cjrli3xio00376swmppjoj1so" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/01/22/解决angluar在Node服务器上的路由问题/" data-id="cjrliex9v001d9awm3b0glb5v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar/">angluar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar-404/">angluar 404</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
@@ -288,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/12/24/如何利用git远程部署服务器的代码/" data-id="cjrli3xgx00116swm22mj0u74" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/12/24/如何利用git远程部署服务器的代码/" data-id="cjrliex9i00139awmtx4jj5bz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li></ul>
@@ -335,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="cjrli3xfr000a6swm1jxuv3dt" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="cjrliex8600089awmlm6avi7d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matter-js/">Matter.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -383,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/11/09/typeScript的类/" data-id="cjrli3xfx000e6swmebajzyqj" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/11/09/typeScript的类/" data-id="cjrliex8v000j9awm2ur8q4ai" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/class/">class</a></li></ul>
@@ -429,7 +437,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="cjrli3xgq000v6swmhefbqp57" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="cjrliex96000t9awmj5fsl2ei" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json-server/">json server</a></li></ul>
@@ -475,7 +483,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/11/05/wget范例/" data-id="cjrli3xfp00096swm3htfjiy7" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/11/05/wget范例/" data-id="cjrliex8z000o9awm0yg8n9wj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BASH/">BASH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
@@ -522,7 +530,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/29/TypeScript的接口/" data-id="cjrli3xgu000y6swm2y2nglt8" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2018/10/29/TypeScript的接口/" data-id="cjrliex8200079awm3jvq3a5s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/interface/">interface</a></li></ul>
