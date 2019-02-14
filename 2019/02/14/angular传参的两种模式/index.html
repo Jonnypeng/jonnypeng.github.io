@@ -5,20 +5,20 @@
   
 
   
-  <title>angular辅助路由 | Jonny$ Atom .▍</title>
+  <title>angular传参的两种模式 | Jonny$ Atom .▍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="辅助路由是指在路由出口router-outlet中指定一个name标识符，从而将相应的组件映射道匹配的name的路由上，看路由配置 12345678910const routes: Routes = [  &amp;#123;path:&apos;&apos;,redirectTo:&apos;/home&apos;,pathMatch:&apos;full&apos;&amp;#125;,  &amp;#123;path:&apos;chat&apos;,component:ChatCompone">
+  <meta name="description" content="第一种，使用path/router?id=的模式">
 <meta name="keywords" content="angular,angular router,angular 路由">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angular辅助路由">
-<meta property="og:url" content="https://jonnypeng.github.io/2019/02/14/angular辅助路由/index.html">
+<meta property="og:title" content="angular传参的两种模式">
+<meta property="og:url" content="https://jonnypeng.github.io/2019/02/14/angular传参的两种模式/index.html">
 <meta property="og:site_name" content="Jonny$ Atom .▍">
-<meta property="og:description" content="辅助路由是指在路由出口router-outlet中指定一个name标识符，从而将相应的组件映射道匹配的name的路由上，看路由配置 12345678910const routes: Routes = [  &amp;#123;path:&apos;&apos;,redirectTo:&apos;/home&apos;,pathMatch:&apos;full&apos;&amp;#125;,  &amp;#123;path:&apos;chat&apos;,component:ChatCompone">
+<meta property="og:description" content="第一种，使用path/router?id=的模式">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-14T07:43:37.000Z">
+<meta property="og:updated_time" content="2019-02-14T09:37:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angular辅助路由">
-<meta name="twitter:description" content="辅助路由是指在路由出口router-outlet中指定一个name标识符，从而将相应的组件映射道匹配的name的路由上，看路由配置 12345678910const routes: Routes = [  &amp;#123;path:&apos;&apos;,redirectTo:&apos;/home&apos;,pathMatch:&apos;full&apos;&amp;#125;,  &amp;#123;path:&apos;chat&apos;,component:ChatCompone">
+<meta name="twitter:title" content="angular传参的两种模式">
+<meta name="twitter:description" content="第一种，使用path/router?id=的模式">
   
   
     <link rel="icon" href="/favicon.png">
@@ -70,10 +70,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-angular辅助路由" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-angular传参的两种模式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/02/14/angular辅助路由/" class="article-date">
-  <time datetime="2019-02-14T07:34:01.000Z" itemprop="datePublished">2019-02-14</time>
+    <a href="/2019/02/14/angular传参的两种模式/" class="article-date">
+  <time datetime="2019-02-14T03:30:19.000Z" itemprop="datePublished">2019-02-14</time>
 </a>
     
   <div class="article-category">
@@ -88,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      angular辅助路由
+      angular传参的两种模式
     </h1>
   
 
@@ -96,15 +96,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>辅助路由是指在路由出口router-outlet中指定一个name标识符，从而将相应的组件映射道匹配的name的路由上，看路由配置</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes: Routes = [</span><br><span class="line">  &#123;path:<span class="string">''</span>,redirectTo:<span class="string">'/home'</span>,pathMatch:<span class="string">'full'</span>&#125;,</span><br><span class="line">  &#123;path:<span class="string">'chat'</span>,component:ChatComponent,outlet:<span class="string">'aux'</span>&#125;,</span><br><span class="line">  &#123;path:<span class="string">'home'</span>,component:HomeComponent&#125;,</span><br><span class="line">  &#123;path:<span class="string">'product/:id'</span>,component:ProductComponent,children:[</span><br><span class="line">    &#123;path:<span class="string">''</span>,component:ProductDescComponent&#125;,</span><br><span class="line">    &#123;path:<span class="string">'seller/:id'</span>,component:SellerInfoComponent&#125;</span><br><span class="line">  ]&#125;,</span><br><span class="line">  &#123;path:<span class="string">'**'</span>,component:Code404Component&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-<p>入口模版<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/']"</span>&gt;</span>主页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/product',1]"</span>&gt;</span>商品详情<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"商品详情"</span> (<span class="attr">click</span>)=<span class="string">"toProductDetails()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;aux:'chat'&#125;&#125;]"</span>&gt;</span>开始聊天<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;aux:null&#125;&#125;]"</span>&gt;</span>结束聊天<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span> <span class="attr">name</span>=<span class="string">"aux"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>当点击开始聊天时，chat组件就会映射到匹配name的相应路由出口上去,在配置辅助路由同时，也可以配置主路由<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;primary:'home',aux:'chat'&#125;&#125;]"</span>&gt;</span>开始聊天<span class="tag">&lt;/<span class="name">a</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span> <span class="attr">name</span>=<span class="string">"aux"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+        <h3 id="第一种，使用path-router-id-的模式"><a href="#第一种，使用path-router-id-的模式" class="headerlink" title="第一种，使用path/router?id=的模式"></a>第一种，使用path/router?id=的模式</h3><a id="more"></a>
+<p>跳转页面的入口<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/product']"</span> [<span class="attr">queryParams</span>]=<span class="string">"&#123;id:1&#125;"</span>&gt;</span>PRODUCT<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>被跳转页面的控制器<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ActivatedRoute &#125; <span class="keyword">from</span> <span class="string">'@angular/router'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-product'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./product.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./product.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> ProductComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> productId:<span class="built_in">number</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> routeInfo: ActivatedRoute</span></span><br><span class="line"><span class="params">  </span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="keyword">this</span>.productId = <span class="keyword">this</span>.routeInfo.snapshot.queryParams[<span class="string">"id"</span>];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="第二种，使用path-id的模式"><a href="#第二种，使用path-id的模式" class="headerlink" title="第二种，使用path/id的模式"></a>第二种，使用path/id的模式</h3><p>路由配置文件<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes: Routes = [</span><br><span class="line">  &#123;path:<span class="string">''</span>,component:HomeComponent&#125;,</span><br><span class="line">  &#123;path:<span class="string">'product/:id'</span>,component:ProductComponent&#125;,</span><br><span class="line">  &#123;path:<span class="string">'**'</span>,component:Code404Component&#125;</span><br><span class="line">;</span><br></pre></td></tr></table></figure></p>
+<p>跳转页面<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/product',1]"</span>&gt;</span>PRODUCT<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>被跳转控制器,参数快照模式<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ActivatedRoute &#125; <span class="keyword">from</span> <span class="string">'@angular/router'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-product'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./product.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./product.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> ProductComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> productId:<span class="built_in">number</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> routeInfo: ActivatedRoute</span></span><br><span class="line"><span class="params">  </span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="keyword">this</span>.productId = <span class="keyword">this</span>.routeInfo.snapshot.params[<span class="string">"id"</span>];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>跳转控制器<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.router.navigate([<span class="string">'/product'</span>,<span class="number">3</span>]);</span><br></pre></td></tr></table></figure></p>
+<p>被跳转控制器，参数订阅模式<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ActivatedRoute ,Params&#125; <span class="keyword">from</span> <span class="string">'@angular/router'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-product'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./product.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./product.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> ProductComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> productId:<span class="built_in">number</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> routeInfo: ActivatedRoute</span></span><br><span class="line"><span class="params">  </span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="keyword">this</span>.routeInfo.params.subscribe(</span><br><span class="line">      (params:Params) =&gt; <span class="keyword">this</span>.productId = params[<span class="string">"id"</span>]</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/02/14/angular辅助路由/" data-id="cjs4fl613000gnbwm78q6uadw" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/02/14/angular传参的两种模式/" data-id="cjs4fl61f000unbwmig1ss7td" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -115,19 +119,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/02/14/angular路由守卫/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/02/14/angular子路由配置/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          angular路由守卫
+          angular子路由配置
         
       </div>
     </a>
   
   
-    <a href="/2019/02/14/angular子路由配置/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/02/01/node缓冲区/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">angular子路由配置</div>
+      <div class="article-nav-title">node缓冲区</div>
     </a>
   
 </nav>
