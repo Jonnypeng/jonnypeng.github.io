@@ -5,19 +5,20 @@
   
 
   
-  <title>在atom增加自定义的文件类型 | Jonny$ Atom .▍</title>
+  <title>angular子路由配置 | Jonny$ Atom .▍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="找到atom的config.cson，写入 123456789101112customFileTypes:  &amp;quot;source.css&amp;quot;: [    &amp;quot;wxss&amp;quot;  ]  &amp;quot;source.js&amp;quot;: [    &amp;quot;wxs&amp;quot;    &amp;quot;ts&amp;quot;  ]  &amp;quot;text.html.basic&amp;quot;:">
+  <meta name="description" content="子路由是组件下新增一个子路由组件，可以通过指令完成初始化 1ng generate component crisis-center/crisis-center 把组件模板修改成这样： 12&amp;lt;h2&amp;gt;CRISIS CENTER&amp;lt;/h2&amp;gt;&amp;lt;router-outlet&amp;gt;&amp;lt;/router-outlet&amp;gt; CrisisCenterComponent 和 AppC">
+<meta name="keywords" content="angular,angular router,angular 路由">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在atom增加自定义的文件类型">
-<meta property="og:url" content="https://jonnypeng.github.io/2018/10/23/在atom增加自定义的文件类型/index.html">
+<meta property="og:title" content="angular子路由配置">
+<meta property="og:url" content="https://jonnypeng.github.io/2019/02/14/angular子路由配置/index.html">
 <meta property="og:site_name" content="Jonny$ Atom .▍">
-<meta property="og:description" content="找到atom的config.cson，写入 123456789101112customFileTypes:  &amp;quot;source.css&amp;quot;: [    &amp;quot;wxss&amp;quot;  ]  &amp;quot;source.js&amp;quot;: [    &amp;quot;wxs&amp;quot;    &amp;quot;ts&amp;quot;  ]  &amp;quot;text.html.basic&amp;quot;:">
+<meta property="og:description" content="子路由是组件下新增一个子路由组件，可以通过指令完成初始化 1ng generate component crisis-center/crisis-center 把组件模板修改成这样： 12&amp;lt;h2&amp;gt;CRISIS CENTER&amp;lt;/h2&amp;gt;&amp;lt;router-outlet&amp;gt;&amp;lt;/router-outlet&amp;gt; CrisisCenterComponent 和 AppC">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-23T02:34:07.000Z">
+<meta property="og:updated_time" content="2019-02-14T06:49:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在atom增加自定义的文件类型">
-<meta name="twitter:description" content="找到atom的config.cson，写入 123456789101112customFileTypes:  &amp;quot;source.css&amp;quot;: [    &amp;quot;wxss&amp;quot;  ]  &amp;quot;source.js&amp;quot;: [    &amp;quot;wxs&amp;quot;    &amp;quot;ts&amp;quot;  ]  &amp;quot;text.html.basic&amp;quot;:">
+<meta name="twitter:title" content="angular子路由配置">
+<meta name="twitter:description" content="子路由是组件下新增一个子路由组件，可以通过指令完成初始化 1ng generate component crisis-center/crisis-center 把组件模板修改成这样： 12&amp;lt;h2&amp;gt;CRISIS CENTER&amp;lt;/h2&amp;gt;&amp;lt;router-outlet&amp;gt;&amp;lt;/router-outlet&amp;gt; CrisisCenterComponent 和 AppC">
   
   
     <link rel="icon" href="/favicon.png">
@@ -69,12 +70,16 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-在atom增加自定义的文件类型" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-angular子路由配置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/23/在atom增加自定义的文件类型/" class="article-date">
-  <time datetime="2018-10-23T02:29:34.000Z" itemprop="datePublished">2018-10-23</time>
+    <a href="/2019/02/14/angular子路由配置/" class="article-date">
+  <time datetime="2019-02-14T06:35:55.000Z" itemprop="datePublished">2019-02-14</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -83,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      在atom增加自定义的文件类型
+      angular子路由配置
     </h1>
   
 
@@ -91,35 +96,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>找到atom的config.cson，写入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">customFileTypes:</span><br><span class="line">  &quot;source.css&quot;: [</span><br><span class="line">    &quot;wxss&quot;</span><br><span class="line">  ]</span><br><span class="line">  &quot;source.js&quot;: [</span><br><span class="line">    &quot;wxs&quot;</span><br><span class="line">    &quot;ts&quot;</span><br><span class="line">  ]</span><br><span class="line">  &quot;text.html.basic&quot;: [</span><br><span class="line">    &quot;wxml&quot;</span><br><span class="line">  ]</span><br><span class="line">#以上代码显示，我添加了4个了类型，分别是小程序的3个类型，还有一个TypeScript类型，分别延用传统html／css／js格式</span><br></pre></td></tr></table></figure>
-<p>然后保存，即可在着4中文件类型中实现高亮</p>
+        <p>子路由是组件下新增一个子路由组件，可以通过指令完成初始化</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng generate component crisis-center/crisis-center</span><br></pre></td></tr></table></figure>
+<p>把组件模板修改成这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>CRISIS CENTER<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>CrisisCenterComponent 和 AppComponent 有下列共同点：</p>
+<ul>
+<li>它是危机中心特性区的根，正如 AppComponent 是整个应用的根。</li>
+<li>它是危机管理特性区的壳，正如 AppComponent 是管理高层工作流的壳。</li>
+</ul>
+<a id="more"></a>
+<p>完整例子</p>
+<p>AppRoutingModule<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes: Routes = [</span><br><span class="line">  &#123;path:<span class="string">''</span>,redirectTo:<span class="string">'/home'</span>,pathMatch:<span class="string">'full'</span>&#125;,</span><br><span class="line">  &#123;path:<span class="string">'home'</span>,component:HomeComponent&#125;,</span><br><span class="line">  &#123;path:<span class="string">'product/:id'</span>,component:ProductComponent,children:[</span><br><span class="line">    &#123;path:<span class="string">''</span>,component:ProductDescComponent&#125;,</span><br><span class="line">    &#123;path:<span class="string">'seller/:id'</span>,component:SellerInfoComponent&#125;</span><br><span class="line">  ]&#125;,</span><br><span class="line">  &#123;path:<span class="string">'**'</span>,component:Code404Component&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure></p>
+<p>productComponent<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  这是一个商品详情组件</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  商品ID是&#123;&#123;productId&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['./']"</span>&gt;</span>商品描述<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['./seller',99]"</span>&gt;</span>销售员信息<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>seller-info.component.html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  销售员ID是&#123;&#123;sellerId&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>sellerInfoComponent<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ActivatedRoute &#125; <span class="keyword">from</span> <span class="string">'@angular/router'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-seller-info'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./seller-info.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./seller-info.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> SellerInfoComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  <span class="keyword">private</span> sellerId:<span class="built_in">number</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> routeInfo:ActivatedRoute</span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="keyword">this</span>.sellerId = <span class="keyword">this</span>.routeInfo.snapshot.params[<span class="string">'id'</span>];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/23/在atom增加自定义的文件类型/" data-id="cjs49jfbi00136pwm284qyqh7" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/02/14/angular子路由配置/" data-id="cjs49jfac00056pwm28wqat5m" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2018/10/26/TS添加Jquery/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          TS添加Jquery
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/10/22/MAC写入USB启动盘/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/02/14/angular传参的三种模式/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">MAC写入USB启动盘</div>
+      <div class="article-nav-title">angular传参的两种模式</div>
     </a>
   
 </nav>
