@@ -5,18 +5,20 @@
   
 
   
-  <title>Jonny$ Atom .▍</title>
+  <title>angular辅助路由 | Jonny$ Atom .▍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jonny Peng&apos;s personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jonny$ Atom .▍">
-<meta property="og:url" content="https://jonnypeng.github.io/page/3/index.html">
+  <meta name="description" content="辅助路由是指在路由出口router-outlet中指定一个name标识符，从而将相应的组件映射道匹配的name的路由上，看路由配置 12345678910const routes: Routes = [  &amp;#123;path:&apos;&apos;,redirectTo:&apos;/home&apos;,pathMatch:&apos;full&apos;&amp;#125;,  &amp;#123;path:&apos;chat&apos;,component:ChatCompone">
+<meta name="keywords" content="angular,angular router,angular 路由">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular辅助路由">
+<meta property="og:url" content="https://jonnypeng.github.io/2019/02/14/angular辅助路由/index.html">
 <meta property="og:site_name" content="Jonny$ Atom .▍">
-<meta property="og:description" content="Jonny Peng&apos;s personal blog">
+<meta property="og:description" content="辅助路由是指在路由出口router-outlet中指定一个name标识符，从而将相应的组件映射道匹配的name的路由上，看路由配置 12345678910const routes: Routes = [  &amp;#123;path:&apos;&apos;,redirectTo:&apos;/home&apos;,pathMatch:&apos;full&apos;&amp;#125;,  &amp;#123;path:&apos;chat&apos;,component:ChatCompone">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-14T07:43:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jonny$ Atom .▍">
-<meta name="twitter:description" content="Jonny Peng&apos;s personal blog">
+<meta name="twitter:title" content="angular辅助路由">
+<meta name="twitter:description" content="辅助路由是指在路由出口router-outlet中指定一个name标识符，从而将相应的组件映射道匹配的name的路由上，看路由配置 12345678910const routes: Routes = [  &amp;#123;path:&apos;&apos;,redirectTo:&apos;/home&apos;,pathMatch:&apos;full&apos;&amp;#125;,  &amp;#123;path:&apos;chat&apos;,component:ChatCompone">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,16 +70,14 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-如何快速地将HEXO配置到GitHub-Pages" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-angular辅助路由" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/15/如何快速地将HEXO配置到GitHub-Pages/" class="article-date">
-  <time datetime="2018-10-15T08:25:40.000Z" itemprop="datePublished">2018-10-15</time>
+    <a href="/2019/02/14/angular辅助路由/" class="article-date">
+  <time datetime="2019-02-14T07:34:01.000Z" itemprop="datePublished">2019-02-14</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
+    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
   </div>
 
   </div>
@@ -87,8 +87,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/15/如何快速地将HEXO配置到GitHub-Pages/">如何快速地将HEXO配置到GitHub Pages</a>
+    <h1 class="article-title" itemprop="name">
+      angular辅助路由
     </h1>
   
 
@@ -96,88 +96,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">https://github.com/hexojs/hexo</a></li>
-<li><a href="https://hexo.io/docs/" target="_blank" rel="noopener">https://hexo.io/docs/</a><h3 id="教程导语"><a href="#教程导语" class="headerlink" title="教程导语"></a>教程导语</h3><em>当您在阅读这个教程的时候，是假设您已经具备安装及其使用node.js,npm,git,github的基础之上的，如果您对这些还不了解，请对其进行了解并能够简单使用，才能正确理解本教程的内容，本教程的主体部分来源<a href="https://gist.github.com/btfak/18938572f5df000ebe06fbd1872e4e39" target="_blank" rel="noopener">这位大神</a>,本人也只是第一次使用HEXO，完全属于菜鸟级别，也在不断的学习之中，这篇文章就作为博客的第二篇文章吧，只是作部分修改与添加，感谢原作者简易且有用的教程</em></li>
-</ul>
-<h3 id="1-Install-Hexo-安装HEXO"><a href="#1-Install-Hexo-安装HEXO" class="headerlink" title="1. Install Hexo 安装HEXO"></a>1. Install Hexo <em>安装HEXO</em></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line">$ hexo -v</span><br><span class="line">hexo-cli: 0.1.9</span><br><span class="line">os: Darwin 14.3.0 darwin x64</span><br><span class="line">http_parser: 2.3</span><br><span class="line">node: 0.12.7</span><br><span class="line">v8: 3.28.71.19</span><br><span class="line">uv: 1.6.1</span><br><span class="line">zlib: 1.2.8</span><br><span class="line">modules: 14</span><br><span class="line">openssl: 1.0.1p</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/10/15/如何快速地将HEXO配置到GitHub-Pages/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/15/如何快速地将HEXO配置到GitHub-Pages/" data-id="cjs4bmtlr0017q4wmllwfl55o" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-Github-Page/">Hexo Github Page</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/14/hello-world/" class="article-date">
-  <time datetime="2018-10-14T08:25:40.000Z" itemprop="datePublished">2018-10-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>辅助路由是指在路由出口router-outlet中指定一个name标识符，从而将相应的组件映射道匹配的name的路由上，看路由配置</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes: Routes = [</span><br><span class="line">  &#123;path:<span class="string">''</span>,redirectTo:<span class="string">'/home'</span>,pathMatch:<span class="string">'full'</span>&#125;,</span><br><span class="line">  &#123;path:<span class="string">'chat'</span>,component:ChatComponent,outlet:<span class="string">'aux'</span>&#125;,</span><br><span class="line">  &#123;path:<span class="string">'home'</span>,component:HomeComponent&#125;,</span><br><span class="line">  &#123;path:<span class="string">'product/:id'</span>,component:ProductComponent,children:[</span><br><span class="line">    &#123;path:<span class="string">''</span>,component:ProductDescComponent&#125;,</span><br><span class="line">    &#123;path:<span class="string">'seller/:id'</span>,component:SellerInfoComponent&#125;</span><br><span class="line">  ]&#125;,</span><br><span class="line">  &#123;path:<span class="string">'**'</span>,component:Code404Component&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>入口模版<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/']"</span>&gt;</span>主页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/product',1]"</span>&gt;</span>商品详情<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"商品详情"</span> (<span class="attr">click</span>)=<span class="string">"toProductDetails()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;aux:'chat'&#125;&#125;]"</span>&gt;</span>开始聊天<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;aux:null&#125;&#125;]"</span>&gt;</span>结束聊天<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span> <span class="attr">name</span>=<span class="string">"aux"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>当点击开始聊天时，chat组件就会映射到匹配name的相应路由出口上去,在配置辅助路由同时，也可以配置主路由<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;primary:'home',aux:'chat'&#125;&#125;]"</span>&gt;</span>开始聊天<span class="tag">&lt;/<span class="name">a</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span> <span class="attr">name</span>=<span class="string">"aux"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/14/hello-world/" data-id="cjs4bmtl9000oq4wm7dtnn76z" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/02/14/angular辅助路由/" data-id="cjs4bmtkp0008q4wm4n0axc8z" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
 
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/14/angular子路由配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">angular子路由配置</div>
+    </a>
+  
+</nav>
 
   
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
+</article>
 
 </section>
         
