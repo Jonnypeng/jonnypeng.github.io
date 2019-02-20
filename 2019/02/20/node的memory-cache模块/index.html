@@ -5,20 +5,20 @@
   
 
   
-  <title>MAC写入USB启动盘 | Jonny$ Atom .▍</title>
+  <title>node的memory-cache模块 | Jonny$ Atom .▍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备； 其次，假设ISO文件路径为/Path/A.iso ，而我需要输出的USB路径为/Path/USB 最后，打开终端，运行以下命令 12345sudo dd if=/Path/A.iso of=/Path/USB bs=10m#参数if- 输入文件名，就是iso的文件名#参数of- 输出文件名#参数bs- 同时设置读写块">
-<meta name="keywords" content="MAC,USB">
+  <meta name="description" content="A simple in-memory cache for node.js这是一个运用内存进行缓存的node.js模块 安装npm install memory-cache --save 用法">
+<meta name="keywords" content="node,memory-cahce,node的全局缓存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MAC写入USB启动盘">
-<meta property="og:url" content="https://jonnypeng.github.io/2018/10/22/MAC写入USB启动盘/index.html">
+<meta property="og:title" content="node的memory-cache模块">
+<meta property="og:url" content="https://jonnypeng.github.io/2019/02/20/node的memory-cache模块/index.html">
 <meta property="og:site_name" content="Jonny$ Atom .▍">
-<meta property="og:description" content="首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备； 其次，假设ISO文件路径为/Path/A.iso ，而我需要输出的USB路径为/Path/USB 最后，打开终端，运行以下命令 12345sudo dd if=/Path/A.iso of=/Path/USB bs=10m#参数if- 输入文件名，就是iso的文件名#参数of- 输出文件名#参数bs- 同时设置读写块">
+<meta property="og:description" content="A simple in-memory cache for node.js这是一个运用内存进行缓存的node.js模块 安装npm install memory-cache --save 用法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-23T02:09:04.000Z">
+<meta property="og:updated_time" content="2019-02-20T09:17:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MAC写入USB启动盘">
-<meta name="twitter:description" content="首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备； 其次，假设ISO文件路径为/Path/A.iso ，而我需要输出的USB路径为/Path/USB 最后，打开终端，运行以下命令 12345sudo dd if=/Path/A.iso of=/Path/USB bs=10m#参数if- 输入文件名，就是iso的文件名#参数of- 输出文件名#参数bs- 同时设置读写块">
+<meta name="twitter:title" content="node的memory-cache模块">
+<meta name="twitter:description" content="A simple in-memory cache for node.js这是一个运用内存进行缓存的node.js模块 安装npm install memory-cache --save 用法">
   
   
     <link rel="icon" href="/favicon.png">
@@ -70,14 +70,14 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-MAC写入USB启动盘" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-node的memory-cache模块" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/22/MAC写入USB启动盘/" class="article-date">
-  <time datetime="2018-10-22T06:46:05.000Z" itemprop="datePublished">2018-10-22</time>
+    <a href="/2019/02/20/node的memory-cache模块/" class="article-date">
+  <time datetime="2019-02-20T07:56:10.000Z" itemprop="datePublished">2019-02-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
+    <a class="article-category-link" href="/categories/文档翻译/">文档翻译</a>
   </div>
 
   </div>
@@ -88,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      MAC写入USB启动盘
+      node的memory-cache模块
     </h1>
   
 
@@ -96,19 +96,83 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备；</p>
-<p>其次，假设ISO文件路径为/Path/A.iso ，而我需要输出的USB路径为/Path/USB</p>
-<p>最后，打开终端，运行以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo dd if=/Path/A.iso of=/Path/USB bs=10m</span><br><span class="line"></span><br><span class="line">#参数if- 输入文件名，就是iso的文件名</span><br><span class="line">#参数of- 输出文件名</span><br><span class="line">#参数bs- 同时设置读写块的大小，单位是bytes</span><br></pre></td></tr></table></figure>
-<p>等待结束，就可以安装啦</p>
+        <p>A simple in-memory cache for node.js<br>这是一个运用内存进行缓存的node.js模块</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>npm install memory-cache --save
+</code></pre><h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cache = <span class="built_in">require</span>(<span class="string">'memory-cache'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开始使用缓存</span></span><br><span class="line"></span><br><span class="line">cache.put(<span class="string">'foo'</span>, <span class="string">'bar'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(cache.get(<span class="string">'foo'</span>));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cache.put(<span class="string">'houdini'</span>, <span class="string">'disappear'</span>, <span class="number">100</span>, <span class="function"><span class="keyword">function</span>(<span class="params">key, value</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key + <span class="string">' did '</span> + value);</span><br><span class="line">&#125;); <span class="comment">// Time in ms</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Houdini will now '</span> + cache.get(<span class="string">'houdini'</span>));</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Houdini is '</span> + cache.get(<span class="string">'houdini'</span>));</span><br><span class="line">&#125;, <span class="number">200</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// create new cache instance</span></span><br><span class="line"><span class="keyword">var</span> newCache = <span class="keyword">new</span> cache.Cache();</span><br><span class="line"></span><br><span class="line">newCache.put(<span class="string">'foo'</span>, <span class="string">'newbaz'</span>);</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo in old cache is '</span> + cache.get(<span class="string">'foo'</span>));</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo in new cache is '</span> + newCache.get(<span class="string">'foo'</span>));</span><br><span class="line">&#125;, <span class="number">200</span>);</span><br></pre></td></tr></table></figure>
+<p>打印结果如下</p>
+<pre><code>bar
+Houdini will now disappear
+houdini did disappear
+Houdini is null
+foo in old cache is baz
+foo in new cache is newbaz
+</code></pre><h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="put-function-key-value-time-timeoutCallback"><a href="#put-function-key-value-time-timeoutCallback" class="headerlink" title="put = function(key, value, time, timeoutCallback)"></a>put = function(key, value, time, timeoutCallback)</h3><ul>
+<li>key 键</li>
+<li>value 值</li>
+<li>time 时间，以ms为单位</li>
+<li>timeoutCallback 这是一个可选的回调函数，在条目过期后，传入key与value进行触发(<code>function(key, value) {}</code>)</li>
+<li>Returns the cached value</li>
+</ul>
+<h3 id="get-function-key"><a href="#get-function-key" class="headerlink" title="get = function(key)"></a>get = function(key)</h3><ul>
+<li>传入键，即可检索相应的值</li>
+<li>如果没有缓存，则返回<code>null</code></li>
+</ul>
+<h3 id="del-function-key"><a href="#del-function-key" class="headerlink" title="del = function(key)"></a>del = function(key)</h3><ul>
+<li>删除一个键，返回一个boolean，以确定是否成功删除此健</li>
+</ul>
+<h3 id="clear-function"><a href="#clear-function" class="headerlink" title="clear = function()"></a>clear = function()</h3><ul>
+<li>删除所有的键</li>
+</ul>
+<h3 id="size-function"><a href="#size-function" class="headerlink" title="size = function()"></a>size = function()</h3><ul>
+<li>返回缓存的当前状态下的条目数量,源码如下：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.size = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> _size;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="memsize-function"><a href="#memsize-function" class="headerlink" title="memsize = function()"></a>memsize = function()</h3><ul>
+<li>马上在内存中检索条目数</li>
+<li>使用 <code>== size()</code> 去判断是否相等，然后使用 <code>setTimeout</code> 去移除错误，源码如下：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.memsize = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> size = <span class="number">0</span>,</span><br><span class="line">      key;</span><br><span class="line">    <span class="keyword">for</span> (key <span class="keyword">in</span> _cache) &#123;</span><br><span class="line">      size++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> size;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="debug-function-bool"><a href="#debug-function-bool" class="headerlink" title="debug = function(bool)"></a>debug = function(bool)</h3><ul>
+<li>开启调试模式</li>
+</ul>
+<h3 id="hits-function"><a href="#hits-function" class="headerlink" title="hits = function()"></a>hits = function()</h3><ul>
+<li>在调试模式下，返回命中的数量</li>
+</ul>
+<h3 id="misses-function"><a href="#misses-function" class="headerlink" title="misses = function()"></a>misses = function()</h3><ul>
+<li>在调试模式下，返回未命中的数量</li>
+</ul>
+<h3 id="keys-function"><a href="#keys-function" class="headerlink" title="keys = function()"></a>keys = function()</h3><ul>
+<li>返回所有的键</li>
+</ul>
+<h3 id="exportJson-function"><a href="#exportJson-function" class="headerlink" title="exportJson = function()"></a>exportJson = function()</h3><ul>
+<li>以JSON格式返回所有的缓存数据</li>
+<li>所有timeoutCallbacks将被忽略</li>
+</ul>
+<h3 id="importJson-function-json-string-options-skipDuplicates-boolean"><a href="#importJson-function-json-string-options-skipDuplicates-boolean" class="headerlink" title="importJson = function(json: string, options: { skipDuplicates: boolean })"></a>importJson = function(json: string, options: { skipDuplicates: boolean })</h3><ul>
+<li>合并以前导出的所有数据</li>
+<li>导入之前的任何现有条目都将保留在缓存中</li>
+<li>所有重复的键都将被覆盖, 除非 <code>skipDuplicates</code> 为 <code>true</code></li>
+<li>被导出的所有条目都会在导入时到期(但是它们的回调函数都不会被调用)</li>
+<li>可选 <code>options</code>:<ul>
+<li><code>skipDuplicates</code>: 为 <code>true</code>, 所有重复的键会被忽略. 默认 to <code>false</code>.</li>
+</ul>
+</li>
+<li>返回最新的size</li>
+</ul>
+<h3 id="Cache-function"><a href="#Cache-function" class="headerlink" title="Cache = function()"></a>Cache = function()</h3><ul>
+<li>Cache 构造函数</li>
+<li>当声明模块导入 <code>require(&#39;cache&#39;)</code> 就会返回一个默认的实例</li>
+<li>而 <code>require(&#39;cache&#39;).Cache</code> 则是一个类</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2018/10/22/MAC写入USB启动盘/" data-id="cjscwpmv50006o7wmjor4dgz6" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/02/20/node的memory-cache模块/" data-id="cjscwpmvq000mo7wm46hdeln3" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAC/">MAC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/USB/">USB</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/memory-cahce/">memory-cahce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node的全局缓存/">node的全局缓存</a></li></ul>
 
     </footer>
   </div>
@@ -116,19 +180,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/10/23/在atom增加自定义的文件类型/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          在atom增加自定义的文件类型
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/10/16/在Mac的旧设备中开启AirDrop/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/02/18/express的compression/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">在Mac的旧设备中开启AirDrop</div>
+      <div class="article-nav-title">express的compression</div>
     </a>
   
 </nav>
