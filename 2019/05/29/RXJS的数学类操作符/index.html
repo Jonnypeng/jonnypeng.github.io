@@ -5,18 +5,20 @@
   
 
   
-  <title>归档: 2019 | Jonny$ Atom .▍</title>
+  <title>RXJS的数学类操作符 | Jonny$ Atom .▍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jonny Peng&apos;s personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jonny$ Atom .▍">
-<meta property="og:url" content="https://jonnypeng.github.io/archives/2019/index.html">
+  <meta name="description" content="count： 统计数据个数顾名思义，就是统计上游数据流所产生的数据的个数 1234567891011var  source = of(1,2,3,4,5).pipe(  concat(of(6,7,8)))source = source.pipe(  count())source.subscribe(x=&amp;gt;&amp;#123;  console.log(x);   //8&amp;#125;) max和mi">
+<meta name="keywords" content="rxjs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RXJS的数学类操作符">
+<meta property="og:url" content="https://jonnypeng.github.io/2019/05/29/RXJS的数学类操作符/index.html">
 <meta property="og:site_name" content="Jonny$ Atom .▍">
-<meta property="og:description" content="Jonny Peng&apos;s personal blog">
+<meta property="og:description" content="count： 统计数据个数顾名思义，就是统计上游数据流所产生的数据的个数 1234567891011var  source = of(1,2,3,4,5).pipe(  concat(of(6,7,8)))source = source.pipe(  count())source.subscribe(x=&amp;gt;&amp;#123;  console.log(x);   //8&amp;#125;) max和mi">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-29T08:57:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jonny$ Atom .▍">
-<meta name="twitter:description" content="Jonny Peng&apos;s personal blog">
+<meta name="twitter:title" content="RXJS的数学类操作符">
+<meta name="twitter:description" content="count： 统计数据个数顾名思义，就是统计上游数据流所产生的数据的个数 1234567891011var  source = of(1,2,3,4,5).pipe(  concat(of(6,7,8)))source = source.pipe(  count())source.subscribe(x=&amp;gt;&amp;#123;  console.log(x);   //8&amp;#125;) max和mi">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,216 +70,69 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/29/测试webgl目前所使用显卡信息/" class="archive-article-date">
-  <time datetime="2019-05-29T07:51:28.000Z" itemprop="datePublished">5月 29</time>
+        <section id="main"><article id="post-RXJS的数学类操作符" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/29/RXJS的数学类操作符/" class="article-date">
+  <time datetime="2019-05-29T07:42:15.000Z" itemprop="datePublished">2019-05-29</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/教程/">教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/29/测试webgl目前所使用显卡信息/">测试webgl目前所使用显卡信息</a>
+    <h1 class="article-title" itemprop="name">
+      RXJS的数学类操作符
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/29/RXJS的数学类操作符/" class="archive-article-date">
-  <time datetime="2019-05-29T07:42:15.000Z" itemprop="datePublished">5月 29</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/29/RXJS的数学类操作符/">RXJS的数学类操作符</a>
-    </h1>
-  
+        <h3 id="count：-统计数据个数"><a href="#count：-统计数据个数" class="headerlink" title="count： 统计数据个数"></a>count： 统计数据个数</h3><p>顾名思义，就是统计上游数据流所产生的数据的个数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  source = <span class="keyword">of</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>).pipe(</span><br><span class="line">  concat(<span class="keyword">of</span>(<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>))</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">source = source.pipe(</span><br><span class="line">  count()</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">source.subscribe(<span class="function"><span class="params">x</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);   <span class="comment">//8</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="max和min-最大值与最小值"><a href="#max和min-最大值与最小值" class="headerlink" title="max和min 最大值与最小值"></a>max和min 最大值与最小值</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="keyword">of</span>(&#123;</span><br><span class="line">    name:<span class="string">"xbox"</span>,</span><br><span class="line">    year:<span class="number">2001</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name:<span class="string">"xbox"</span>,</span><br><span class="line">    year:<span class="number">2005</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name:<span class="string">"xbox"</span>,</span><br><span class="line">    year:<span class="number">2008</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name:<span class="string">"xbox"</span>,</span><br><span class="line">    year:<span class="number">2012</span></span><br><span class="line">  &#125;).pipe(</span><br><span class="line">  min(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a.year - b.year)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">s.subscribe(<span class="function"><span class="params">x</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);  <span class="comment">//&#123;name: "xbox", year: 2001&#125;</span></span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/29/node保存图片/" class="archive-article-date">
-  <time datetime="2019-05-29T03:00:38.000Z" itemprop="datePublished">5月 29</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/29/node保存图片/">node保存图片</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/24/pixi的webgl导出异常/" class="archive-article-date">
-  <time datetime="2019-05-24T02:04:42.000Z" itemprop="datePublished">5月 24</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jonnypeng.github.io/2019/05/29/RXJS的数学类操作符/" data-id="cjw94ik1d0005cbwmc77qpgtt" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/24/pixi的webgl导出异常/">pixi的webgl导出异常</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/" class="archive-article-date">
-  <time datetime="2019-05-14T09:03:42.000Z" itemprop="datePublished">5月 14</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/">pix.js的canvas超出容器如何解除事件绑定</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rxjs/">rxjs</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/29/测试webgl目前所使用显卡信息/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          测试webgl目前所使用显卡信息
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/29/node保存图片/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node保存图片</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/20/node的memory-cache模块/" class="archive-article-date">
-  <time datetime="2019-02-20T07:56:10.000Z" itemprop="datePublished">2月 20</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/20/node的memory-cache模块/">node的memory-cache模块</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/18/express的compression/" class="archive-article-date">
-  <time datetime="2019-02-18T06:10:26.000Z" itemprop="datePublished">2月 18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/18/express的compression/">express的compression</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/18/pm2启动node监听80端口/" class="archive-article-date">
-  <time datetime="2019-02-18T03:21:26.000Z" itemprop="datePublished">2月 18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/18/pm2启动node监听80端口/">pm2启动node监听80端口</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/14/angular路由守卫/" class="archive-article-date">
-  <time datetime="2019-02-14T07:50:29.000Z" itemprop="datePublished">2月 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/14/angular路由守卫/">angular路由守卫</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/14/angular辅助路由/" class="archive-article-date">
-  <time datetime="2019-02-14T07:34:01.000Z" itemprop="datePublished">2月 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/14/angular辅助路由/">angular辅助路由</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/">下一页 &raquo;</a>
-  </nav>
 
 </section>
         
