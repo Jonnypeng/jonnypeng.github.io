@@ -5,18 +5,20 @@
   
 
   
-  <title>Tag: path | Jonny$ Atom .▍</title>
+  <title>node保存图片 | Jonny$ Atom .▍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jonny Peng&apos;s personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jonny$ Atom .▍">
-<meta property="og:url" content="https://jonnypeng.github.io/tags/path/index.html">
+  <meta name="description" content="环境是前端发出一张BASE64编码的图片，后端将base64建立缓冲区，并转为字符串，通过fs进行写入 123456789let headImgSave = function (image)&amp;#123;    let binaryData = Buffer.from(image,&quot;base64&quot;).toString(&quot;binary&quot;);    let openid = Math.random().">
+<meta name="keywords" content="NODE,binaryData">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node保存图片">
+<meta property="og:url" content="https://jonnypeng.github.io/2019/05/29/node保存图片/index.html">
 <meta property="og:site_name" content="Jonny$ Atom .▍">
-<meta property="og:description" content="Jonny Peng&apos;s personal blog">
+<meta property="og:description" content="环境是前端发出一张BASE64编码的图片，后端将base64建立缓冲区，并转为字符串，通过fs进行写入 123456789let headImgSave = function (image)&amp;#123;    let binaryData = Buffer.from(image,&quot;base64&quot;).toString(&quot;binary&quot;);    let openid = Math.random().">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-29T03:07:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jonny$ Atom .▍">
-<meta name="twitter:description" content="Jonny Peng&apos;s personal blog">
+<meta name="twitter:title" content="node保存图片">
+<meta name="twitter:description" content="环境是前端发出一张BASE64编码的图片，后端将base64建立缓冲区，并转为字符串，通过fs进行写入 123456789let headImgSave = function (image)&amp;#123;    let binaryData = Buffer.from(image,&quot;base64&quot;).toString(&quot;binary&quot;);    let openid = Math.random().">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,40 +70,58 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/01/30/使用node对文件夹递归解析为json/" class="archive-article-date">
-  <time datetime="2019-01-30T06:07:34.000Z" itemprop="datePublished">1月 30</time>
+        <section id="main"><article id="post-node保存图片" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/29/node保存图片/" class="article-date">
+  <time datetime="2019-05-29T03:00:38.000Z" itemprop="datePublished">2019-05-29</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/30/使用node对文件夹递归解析为json/">使用node对文件夹递归解析为json</a>
+    <h1 class="article-title" itemprop="name">
+      node保存图片
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>环境是前端发出一张BASE64编码的图片，后端将base64建立缓冲区，并转为字符串，通过fs进行写入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> headImgSave = <span class="function"><span class="keyword">function</span> (<span class="params">image</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> binaryData = Buffer.from(image,<span class="string">"base64"</span>).toString(<span class="string">"binary"</span>);</span><br><span class="line">    <span class="keyword">let</span> openid = <span class="built_in">Math</span>.random().toString(<span class="number">26</span>).substr(<span class="number">2</span>,<span class="number">8</span>);</span><br><span class="line">    <span class="keyword">let</span> imgPath = path.join(__dirname, <span class="string">`upload`</span>);</span><br><span class="line">    <span class="keyword">let</span> headImg = <span class="string">`<span class="subst">$&#123;imgPath&#125;</span>/<span class="subst">$&#123;openid&#125;</span>.jpg`</span>;</span><br><span class="line">        fs.writeFile(headImg,binaryData,<span class="string">'binary'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">err</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jonnypeng.github.io/2019/05/29/node保存图片/" data-id="cjw8nhvzj000gh6wm2xao91b4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NODE/">NODE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/binaryData/">binaryData</a></li></ul>
 
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/24/pixi的webgl导出异常/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">pixi的webgl导出异常</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         
