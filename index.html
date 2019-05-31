@@ -102,7 +102,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/05/29/测试webgl目前所使用显卡信息/" data-id="cjw94ik3h002ccbwm7hd2bu3v" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/05/29/测试webgl目前所使用显卡信息/" data-id="cjwc9gpyn0023pewmtm2fajcx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webgl/">webgl</a></li></ul>
@@ -142,12 +142,15 @@
       
         <h3 id="count：-统计数据个数"><a href="#count：-统计数据个数" class="headerlink" title="count： 统计数据个数"></a>count： 统计数据个数</h3><p>顾名思义，就是统计上游数据流所产生的数据的个数</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  source = <span class="keyword">of</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>).pipe(</span><br><span class="line">  concat(<span class="keyword">of</span>(<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>))</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">source = source.pipe(</span><br><span class="line">  count()</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">source.subscribe(<span class="function"><span class="params">x</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);   <span class="comment">//8</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="max和min-最大值与最小值"><a href="#max和min-最大值与最小值" class="headerlink" title="max和min 最大值与最小值"></a>max和min 最大值与最小值</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="keyword">of</span>(&#123;</span><br><span class="line">    name:<span class="string">"xbox"</span>,</span><br><span class="line">    year:<span class="number">2001</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name:<span class="string">"xbox"</span>,</span><br><span class="line">    year:<span class="number">2005</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name:<span class="string">"xbox"</span>,</span><br><span class="line">    year:<span class="number">2008</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name:<span class="string">"xbox"</span>,</span><br><span class="line">    year:<span class="number">2012</span></span><br><span class="line">  &#125;).pipe(</span><br><span class="line">  min(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a.year - b.year)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">s.subscribe(<span class="function"><span class="params">x</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);  <span class="comment">//&#123;name: "xbox", year: 2001&#125;</span></span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
-
+        
+          <p class="article-more-link">
+            <a href="/2019/05/29/RXJS的数学类操作符/#more">阅读更多</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/05/29/RXJS的数学类操作符/" data-id="cjw94ik1d0005cbwmc77qpgtt" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/05/29/RXJS的数学类操作符/" data-id="cjwc9gpwb0000pewmzlw73kje" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rxjs/">rxjs</a></li></ul>
@@ -190,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/05/29/node保存图片/" data-id="cjw94ik2m0016cbwmyfsyer7l" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/05/29/node保存图片/" data-id="cjwc9gpxs000ypewmfy5hcrgr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NODE/">NODE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/binaryData/">binaryData</a></li></ul>
@@ -234,7 +237,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/05/24/pixi的webgl导出异常/" data-id="cjw94ik2j0012cbwmf81fyxmy" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/05/24/pixi的webgl导出异常/" data-id="cjwc9gpxv0012pewmkqfs96cy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI/">PIXI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebGL/">WebGL</a></li></ul>
@@ -278,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/" data-id="cjw94ik2g000ycbwm4pol2rzj" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/" data-id="cjwc9gpy6001ipewm6jhupwg8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li></ul>
@@ -327,7 +330,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/02/20/node的memory-cache模块/" data-id="cjw94ik2r001dcbwmf3hlpjyo" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/02/20/node的memory-cache模块/" data-id="cjwc9gpxq000vpewmneoj4l86" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/memory-cahce/">memory-cahce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node的全局缓存/">node的全局缓存</a></li></ul>
@@ -381,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/02/18/express的compression/" data-id="cjw94ik1t000fcbwmrnehrys3" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/02/18/express的compression/" data-id="cjwc9gpx8000cpewm6zykadxv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compress/">compress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gizp/">gizp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
@@ -425,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/02/18/pm2启动node监听80端口/" data-id="cjw94ik2p001acbwmepx1jfb4" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/02/18/pm2启动node监听80端口/" data-id="cjwc9gpxx0016pewm5ipe2oc8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/80端口/">80端口</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pm2/">pm2</a></li></ul>
@@ -486,7 +489,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/02/14/angular路由守卫/" data-id="cjw94ik1n000acbwmn0ymcw3n" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/02/14/angular路由守卫/" data-id="cjwc9gpxb000gpewm7krpp3i7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -532,7 +535,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jonnypeng.github.io/2019/02/14/angular辅助路由/" data-id="cjw94ik23000lcbwm8ga79l7n" class="article-share-link">Share</a>
+      <a data-url="https://jonnypeng.github.io/2019/02/14/angular辅助路由/" data-id="cjwc9gpxj000mpewmqyd9ehsa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
