@@ -70,6 +70,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-angular辅助路由" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/14/angular辅助路由/" class="article-date">
+  <time datetime="2019-02-14T07:34:01.000Z" itemprop="datePublished">2019-02-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/14/angular辅助路由/">angular辅助路由</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>辅助路由是指在路由出口router-outlet中指定一个name标识符，从而将相应的组件映射道匹配的name的路由上，看路由配置</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes: Routes = [</span><br><span class="line">  &#123;path:<span class="string">''</span>,redirectTo:<span class="string">'/home'</span>,pathMatch:<span class="string">'full'</span>&#125;,</span><br><span class="line">  &#123;path:<span class="string">'chat'</span>,component:ChatComponent,outlet:<span class="string">'aux'</span>&#125;,</span><br><span class="line">  &#123;path:<span class="string">'home'</span>,component:HomeComponent&#125;,</span><br><span class="line">  &#123;path:<span class="string">'product/:id'</span>,component:ProductComponent,children:[</span><br><span class="line">    &#123;path:<span class="string">''</span>,component:ProductDescComponent&#125;,</span><br><span class="line">    &#123;path:<span class="string">'seller/:id'</span>,component:SellerInfoComponent&#125;</span><br><span class="line">  ]&#125;,</span><br><span class="line">  &#123;path:<span class="string">'**'</span>,component:Code404Component&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>入口模版<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/']"</span>&gt;</span>主页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/product',1]"</span>&gt;</span>商品详情<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"商品详情"</span> (<span class="attr">click</span>)=<span class="string">"toProductDetails()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;aux:'chat'&#125;&#125;]"</span>&gt;</span>开始聊天<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;aux:null&#125;&#125;]"</span>&gt;</span>结束聊天<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span> <span class="attr">name</span>=<span class="string">"aux"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>当点击开始聊天时，chat组件就会映射到匹配name的相应路由出口上去,在配置辅助路由同时，也可以配置主路由<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;primary:'home',aux:'chat'&#125;&#125;]"</span>&gt;</span>开始聊天<span class="tag">&lt;/<span class="name">a</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span> <span class="attr">name</span>=<span class="string">"aux"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular辅助路由/" data-id="ckgd2ekdq000jigy57w9ad6nl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-angular子路由配置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/02/14/angular子路由配置/" class="article-date">
@@ -113,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular子路由配置/" data-id="ckbu7xmqj000duny5dxmhvpq5" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular子路由配置/" data-id="ckgd2ekdl000cigy5yloyd1c2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -160,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular传参的两种模式/" data-id="ckbu7xmqh000cuny5n0och9kx" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular传参的两种模式/" data-id="ckgd2ekdk000bigy5yqm6dvid" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -210,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/01/node缓冲区/" data-id="ckbu7xmqx0016uny51y3sq9vm" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/01/node缓冲区/" data-id="ckgd2eke00016igy5zzu2yfv2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/缓冲区/">缓冲区</a></li></ul>
@@ -257,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/01/31/node-js的循环下载/" data-id="ckbu7xmqt000wuny5cb3grpef" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/01/31/node-js的循环下载/" data-id="ckgd2ekdv000wigy5h9w2oxqr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/循环下载/">循环下载</a></li></ul>
@@ -304,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/01/30/使用node对文件夹递归解析为json/" data-id="ckbu7xmrb0023uny536wco16y" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/01/30/使用node对文件夹递归解析为json/" data-id="ckgd2ekef0026igy5c864lzlk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fs/">fs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/path/">path</a></li></ul>
@@ -348,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/01/22/解决angluar在Node服务器上的路由问题/" data-id="ckbu7xmrt0034uny5ddkocnbq" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/01/22/解决angluar在Node服务器上的路由问题/" data-id="ckgd2eket0031igy5sqwriixh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar/">angluar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar-404/">angluar 404</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
@@ -396,7 +442,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/12/24/如何利用git远程部署服务器的代码/" data-id="ckbu7xmri002muny5d8shzicc" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/12/24/如何利用git远程部署服务器的代码/" data-id="ckgd2ekej002gigy5grg8f8dy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li></ul>
@@ -443,7 +489,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="ckbu7xmqe0007uny5n1uvdlhm" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="ckgd2ekdh0007igy5gzasxnk8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matter-js/">Matter.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -491,56 +537,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/09/typeScript的类/" data-id="ckbu7xmr4001muny5v1410qc7" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/09/typeScript的类/" data-id="ckgd2eke7001migy5x99gl090" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/class/">class</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-前端模拟后端数据的神器Json-Server" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/05/前端模拟后端数据的神器Json-Server/" class="article-date">
-  <time datetime="2018-11-05T06:20:33.000Z" itemprop="datePublished">2018-11-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/05/前端模拟后端数据的神器Json-Server/">前端模拟后端数据的神器json-Server</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="install-Json-Server"><a href="#install-Json-Server" class="headerlink" title="install Json Server"></a>install Json Server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g json-server</span><br></pre></td></tr></table></figure>
-<h3 id="在指定目录下创建db-json"><a href="#在指定目录下创建db-json" class="headerlink" title="在指定目录下创建db.json"></a>在指定目录下创建db.json</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"posts"</span>: [</span><br><span class="line">    &#123; <span class="attr">"id"</span>: <span class="number">1</span>, <span class="attr">"title"</span>: <span class="string">"json-server"</span>, <span class="attr">"author"</span>: <span class="string">"typicode"</span> &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"comments"</span>: [</span><br><span class="line">    &#123; <span class="attr">"id"</span>: <span class="number">1</span>, <span class="attr">"body"</span>: <span class="string">"some comment"</span>, <span class="attr">"postId"</span>: <span class="number">1</span> &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"profile"</span>: &#123; <span class="attr">"name"</span>: <span class="string">"typicode"</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="启动服务并监听文件"><a href="#启动服务并监听文件" class="headerlink" title="启动服务并监听文件"></a>启动服务并监听文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json-server --watch db.json</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/typicode/json-server" target="_blank" rel="noopener">项目文档</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="ckbu7xmre002buny5ypek4u1r" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json-server/">json server</a></li></ul>
 
     </footer>
   </div>
@@ -574,7 +574,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/80端口/">80端口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Airdrop/">Airdrop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BASH/">BASH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-Github-Page/">Hexo Github Page</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matter-js/">Matter.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NODE/">NODE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PIXI/">PIXI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USB/">USB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGL/">WebGL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angluar/">angluar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angluar-404/">angluar 404</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular-路由/">angular 路由</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/binaryData/">binaryData</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/class/">class</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compress/">compress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fs/">fs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gizp/">gizp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5/">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interface/">interface</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json-server/">json server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memory-cahce/">memory-cahce</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta/">meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node的全局缓存/">node的全局缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/path/">path</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phaser/">phaser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pm2/">pm2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rxjs/">rxjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/three-js/">three.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vsc/">vsc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webgl/">webgl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/循环下载/">循环下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信/">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信内播放视频/">微信内播放视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/缓冲区/">缓冲区</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/视频/">视频</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/80端口/">80端口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Airdrop/">Airdrop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BASH/">BASH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-Github-Page/">Hexo Github Page</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matter-js/">Matter.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NODE/">NODE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PIXI/">PIXI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USB/">USB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGL/">WebGL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angluar/">angluar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angluar-404/">angluar 404</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular-路由/">angular 路由</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/binaryData/">binaryData</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/class/">class</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compress/">compress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fs/">fs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gizp/">gizp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5/">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interface/">interface</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json-server/">json server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memory-cahce/">memory-cahce</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta/">meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node的全局缓存/">node的全局缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/path/">path</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phaser/">phaser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pm2/">pm2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rxjs/">rxjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/three-js/">three.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vsc/">vsc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webgl/">webgl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双指针/">双指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/循环下载/">循环下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信/">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信内播放视频/">微信内播放视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/缓冲区/">缓冲区</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/视频/">视频</a></li></ul>
     </div>
   </div>
 
@@ -584,7 +584,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/80端口/" style="font-size: 10px;">80端口</a> <a href="/tags/Airdrop/" style="font-size: 10px;">Airdrop</a> <a href="/tags/BASH/" style="font-size: 10px;">BASH</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HEXO/" style="font-size: 13.33px;">HEXO</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hexo-Github-Page/" style="font-size: 10px;">Hexo Github Page</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MAC/" style="font-size: 10px;">MAC</a> <a href="/tags/Matter-js/" style="font-size: 10px;">Matter.js</a> <a href="/tags/NODE/" style="font-size: 10px;">NODE</a> <a href="/tags/PIXI/" style="font-size: 10px;">PIXI</a> <a href="/tags/PIXI-js/" style="font-size: 13.33px;">PIXI.js</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/TypeScript/" style="font-size: 16.67px;">TypeScript</a> <a href="/tags/USB/" style="font-size: 10px;">USB</a> <a href="/tags/WebGL/" style="font-size: 10px;">WebGL</a> <a href="/tags/angluar/" style="font-size: 10px;">angluar</a> <a href="/tags/angluar-404/" style="font-size: 10px;">angluar 404</a> <a href="/tags/angular/" style="font-size: 16.67px;">angular</a> <a href="/tags/angular-router/" style="font-size: 16.67px;">angular router</a> <a href="/tags/angular-路由/" style="font-size: 16.67px;">angular 路由</a> <a href="/tags/binaryData/" style="font-size: 10px;">binaryData</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/compress/" style="font-size: 10px;">compress</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fs/" style="font-size: 10px;">fs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/git部署服务器/" style="font-size: 10px;">git部署服务器</a> <a href="/tags/gizp/" style="font-size: 10px;">gizp</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/json-server/" style="font-size: 10px;">json server</a> <a href="/tags/memory-cahce/" style="font-size: 10px;">memory-cahce</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/node/" style="font-size: 20px;">node</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/node的全局缓存/" style="font-size: 10px;">node的全局缓存</a> <a href="/tags/path/" style="font-size: 10px;">path</a> <a href="/tags/phaser/" style="font-size: 10px;">phaser</a> <a href="/tags/pm2/" style="font-size: 10px;">pm2</a> <a href="/tags/rxjs/" style="font-size: 10px;">rxjs</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/three-js/" style="font-size: 10px;">three.js</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vsc/" style="font-size: 10px;">vsc</a> <a href="/tags/webgl/" style="font-size: 10px;">webgl</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/循环下载/" style="font-size: 10px;">循环下载</a> <a href="/tags/微信/" style="font-size: 13.33px;">微信</a> <a href="/tags/微信内播放视频/" style="font-size: 10px;">微信内播放视频</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/缓冲区/" style="font-size: 10px;">缓冲区</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a>
+      <a href="/tags/80端口/" style="font-size: 10px;">80端口</a> <a href="/tags/Airdrop/" style="font-size: 10px;">Airdrop</a> <a href="/tags/BASH/" style="font-size: 10px;">BASH</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HEXO/" style="font-size: 13.33px;">HEXO</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hexo-Github-Page/" style="font-size: 10px;">Hexo Github Page</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MAC/" style="font-size: 10px;">MAC</a> <a href="/tags/Matter-js/" style="font-size: 10px;">Matter.js</a> <a href="/tags/NODE/" style="font-size: 10px;">NODE</a> <a href="/tags/PIXI/" style="font-size: 10px;">PIXI</a> <a href="/tags/PIXI-js/" style="font-size: 13.33px;">PIXI.js</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/TypeScript/" style="font-size: 16.67px;">TypeScript</a> <a href="/tags/USB/" style="font-size: 10px;">USB</a> <a href="/tags/WebGL/" style="font-size: 10px;">WebGL</a> <a href="/tags/angluar/" style="font-size: 10px;">angluar</a> <a href="/tags/angluar-404/" style="font-size: 10px;">angluar 404</a> <a href="/tags/angular/" style="font-size: 16.67px;">angular</a> <a href="/tags/angular-router/" style="font-size: 16.67px;">angular router</a> <a href="/tags/angular-路由/" style="font-size: 16.67px;">angular 路由</a> <a href="/tags/binaryData/" style="font-size: 10px;">binaryData</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/compress/" style="font-size: 10px;">compress</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fs/" style="font-size: 10px;">fs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/git部署服务器/" style="font-size: 10px;">git部署服务器</a> <a href="/tags/gizp/" style="font-size: 10px;">gizp</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/json-server/" style="font-size: 10px;">json server</a> <a href="/tags/memory-cahce/" style="font-size: 10px;">memory-cahce</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/node/" style="font-size: 20px;">node</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/node的全局缓存/" style="font-size: 10px;">node的全局缓存</a> <a href="/tags/path/" style="font-size: 10px;">path</a> <a href="/tags/phaser/" style="font-size: 10px;">phaser</a> <a href="/tags/pm2/" style="font-size: 10px;">pm2</a> <a href="/tags/rxjs/" style="font-size: 10px;">rxjs</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/three-js/" style="font-size: 10px;">three.js</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vsc/" style="font-size: 10px;">vsc</a> <a href="/tags/webgl/" style="font-size: 10px;">webgl</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/双指针/" style="font-size: 10px;">双指针</a> <a href="/tags/循环下载/" style="font-size: 10px;">循环下载</a> <a href="/tags/微信/" style="font-size: 13.33px;">微信</a> <a href="/tags/微信内播放视频/" style="font-size: 10px;">微信内播放视频</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/缓冲区/" style="font-size: 10px;">缓冲区</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a>
     </div>
   </div>
 
@@ -593,7 +593,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li></ul>
     </div>
   </div>
 
@@ -604,6 +604,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/10/17/颜色分类/">颜色分类</a>
+          </li>
         
           <li>
             <a href="/2019/12/09/编程练习/">编程练习</a>
@@ -619,10 +623,6 @@
         
           <li>
             <a href="/2019/10/17/来自Chrome的puppeteer/">来自Chrome的puppeteer</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/29/判断浏览器用户代理/">判断浏览器用户代理</a>
           </li>
         
       </ul>
