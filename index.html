@@ -97,31 +97,12 @@
 <p>注意:<br>不能使用代码库中的排序函数来解决这道题。</p>
 <p>示例:</p>
 <p>输入: [2,0,2,1,1,0]<br>输出: [0,0,1,1,2,2]</p>
-<p><code>`</code> js<br>/**</p>
-<ul>
-<li>@param {number[]} nums</li>
-<li>@return {void} Do not return anything, modify nums in-place instead.<br>*/<br>var sortColors = function (nums) {<br> let p0 = 0;  //指向0的偏移量，交换元素后向后偏移<br> let p1 = 0; //指向1的偏移量，交换元素后向后偏移<br> nums.forEach((x, i) =&gt; {<pre><code>//当x==1，交换元素，只偏移p1
-if(x === 1){
-    [nums[p1], nums[i]] = [nums[i], nums[p1]];
-    ++p1;
-}
-//当x==0,交换元素,整体偏移  
-if (x === 0) {
-    [nums[p0], nums[i]] = [nums[i], nums[p0]];
-    // 当发生p0小于p1时，再循环p1
-    if(p0&lt;p1){
-        [nums[p1], nums[i]] = [nums[i], nums[p1]];
-    }
-    ++p0;
-    ++p1;
-}
-</code></pre> })<br>}<br><code></code></li>
-</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;void&#125; Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> sortColors = <span class="function"><span class="keyword">function</span> (<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> p0 = <span class="number">0</span>;  <span class="comment">//指向0的偏移量，交换元素后向后偏移</span></span><br><span class="line">    <span class="keyword">let</span> p1 = <span class="number">0</span>; <span class="comment">//指向1的偏移量，交换元素后向后偏移</span></span><br><span class="line">    nums.forEach(<span class="function">(<span class="params">x, i</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">//当x==1，交换元素，只偏移p1</span></span><br><span class="line">        <span class="keyword">if</span>(x === <span class="number">1</span>)&#123;</span><br><span class="line">            [nums[p1], nums[i]] = [nums[i], nums[p1]];</span><br><span class="line">            ++p1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//当x==0,交换元素,整体偏移  </span></span><br><span class="line">        <span class="keyword">if</span> (x === <span class="number">0</span>) &#123;</span><br><span class="line">            [nums[p0], nums[i]] = [nums[i], nums[p0]];</span><br><span class="line">            <span class="comment">// 当发生p0小于p1时，再循环p1</span></span><br><span class="line">            <span class="keyword">if</span>(p0&lt;p1)&#123;</span><br><span class="line">                [nums[p1], nums[i]] = [nums[i], nums[p1]];</span><br><span class="line">            &#125;</span><br><span class="line">            ++p0;</span><br><span class="line">            ++p1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2020/10/17/颜色分类/" data-id="ckgd2ekew0034igy58h72ik8b" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2020/10/17/颜色分类/" data-id="ckgd2q09a0038twy51degu83g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/双指针/">双指针</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
@@ -164,7 +145,7 @@ if (x === 0) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/12/09/编程练习/" data-id="ckgd2ekex0038igy5wq5j51rg" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/12/09/编程练习/" data-id="ckgd2q0970031twy5tln87o8p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -206,7 +187,7 @@ if (x === 0) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/11/18/phaser的魔性/" data-id="ckgd2eke8001qigy503amasmq" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/11/18/phaser的魔性/" data-id="ckgd2q08g0019twy53sg1mvh2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phaser/">phaser</a></li></ul>
@@ -246,7 +227,7 @@ if (x === 0) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/11/10/你所不知道的JavaScript/" data-id="ckgd2ekej002eigy5whnhqvbk" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/11/10/你所不知道的JavaScript/" data-id="ckgd2q08u0026twy5pea88rqi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -305,7 +286,7 @@ if (x === 0) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/10/17/来自Chrome的puppeteer/" data-id="ckgd2ekfu006qigy5czngndyh" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/10/17/来自Chrome的puppeteer/" data-id="ckgd2q0a9006qtwy55whx65in" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
@@ -344,7 +325,7 @@ if (x === 0) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/07/29/判断浏览器用户代理/" data-id="ckgd2ekeg0029igy5qskwokf6" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/07/29/判断浏览器用户代理/" data-id="ckgd2q08x002btwy5b9k5ysol" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信/">微信</a></li></ul>
@@ -386,7 +367,7 @@ if (x === 0) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/07/29/h5禁止缩放与双击选中/" data-id="ckgd2ekdt000rigy5yjeivqs8" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/07/29/h5禁止缩放与双击选中/" data-id="ckgd2q088000rtwy5s4b00clx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/">h5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/meta/">meta</a></li></ul>
@@ -433,7 +414,7 @@ if (x === 0) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/07/18/vim配置/" data-id="ckgd2ekee0023igy5e7axfozd" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/07/18/vim配置/" data-id="ckgd2q08p001utwy5bwxh5pey" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
@@ -477,7 +458,7 @@ if (x === 0) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/07/18/vsc-config配置/" data-id="ckgd2ekea001uigy5aqbhvdsi" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/07/18/vsc-config配置/" data-id="ckgd2q08r001xtwy5i8p8r1i1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vsc/">vsc</a></li></ul>
@@ -525,7 +506,7 @@ if (x === 0) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/07/18/webpack简易配置/" data-id="ckgd2ekeb001xigy5duu9xk72" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/07/18/webpack简易配置/" data-id="ckgd2q08s001ztwy5yk96562d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
