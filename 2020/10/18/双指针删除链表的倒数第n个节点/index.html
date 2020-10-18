@@ -5,18 +5,20 @@
   
 
   
-  <title>归档 | 重影对话</title>
+  <title>双指针删除链表的倒数第n个节点 | 重影对话</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jonny Peng&apos;s personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="重影对话">
-<meta property="og:url" content="https://www.jonnypeng.com/archives/page/4/index.html">
+  <meta name="description" content="题目给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。 示例： 给定一个链表: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, 和 n = 2. 当删除了倒数第二个节点后，链表变为 1-&amp;gt;2-&amp;gt;3-&amp;gt;5.说明： 给定的 n 保证是有效的。 进阶： 你能尝试使用一趟扫描实现吗？">
+<meta name="keywords" content="链表,双指针,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="双指针删除链表的倒数第n个节点">
+<meta property="og:url" content="https://www.jonnypeng.com/2020/10/18/双指针删除链表的倒数第n个节点/index.html">
 <meta property="og:site_name" content="重影对话">
-<meta property="og:description" content="Jonny Peng&apos;s personal blog">
+<meta property="og:description" content="题目给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。 示例： 给定一个链表: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, 和 n = 2. 当删除了倒数第二个节点后，链表变为 1-&amp;gt;2-&amp;gt;3-&amp;gt;5.说明： 给定的 n 保证是有效的。 进阶： 你能尝试使用一趟扫描实现吗？">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-10-18T03:34:16.014Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重影对话">
-<meta name="twitter:description" content="Jonny Peng&apos;s personal blog">
+<meta name="twitter:title" content="双指针删除链表的倒数第n个节点">
+<meta name="twitter:description" content="题目给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。 示例： 给定一个链表: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, 和 n = 2. 当删除了倒数第二个节点后，链表变为 1-&amp;gt;2-&amp;gt;3-&amp;gt;5.说明： 给定的 n 保证是有效的。 进阶： 你能尝试使用一趟扫描实现吗？">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,216 +70,64 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/11/09/typeScript的类/" class="archive-article-date">
-  <time datetime="2018-11-09T14:32:30.000Z" itemprop="datePublished">11月 9</time>
+        <section id="main"><article id="post-双指针删除链表的倒数第n个节点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/18/双指针删除链表的倒数第n个节点/" class="article-date">
+  <time datetime="2020-10-18T03:31:28.000Z" itemprop="datePublished">2020-10-18</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/09/typeScript的类/">typeScript的类</a>
+    <h1 class="article-title" itemprop="name">
+      双指针删除链表的倒数第n个节点
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/11/05/前端模拟后端数据的神器Json-Server/" class="archive-article-date">
-  <time datetime="2018-11-05T06:20:33.000Z" itemprop="datePublished">11月 5</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/05/前端模拟后端数据的神器Json-Server/">前端模拟后端数据的神器json-Server</a>
-    </h1>
-  
+        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。</p>
+<p>示例：</p>
+<p>给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 n = 2.</p>
+<p>当删除了倒数第二个节点后，链表变为 1-&gt;2-&gt;3-&gt;5.<br>说明：</p>
+<p>给定的 n 保证是有效的。</p>
+<p>进阶：</p>
+<p>你能尝试使用一趟扫描实现吗？</p>
+<a id="more"></a>
+<p><a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list" target="_blank" rel="noopener">题目链接</a></p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>这里使用双指针，指针的位置为双指针的区间（0…n),先使用for循环找到0到n的指针，设置一个指针指向x=0，设置一个指针指向n，双指针以同样的速度进行移动，当n指针指向的节点的next为null的时候，就会停止，然后删除x指针指向的节点，双端进行拼接即可</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * function ListNode(val, next) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = (val===undefined ? 0 : val)</span></span><br><span class="line"><span class="comment"> *     this.next = (next===undefined ? null : next)</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> removeNthFromEnd = <span class="function"><span class="keyword">function</span> (<span class="params">head, n</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//当节点只有一个的情况</span></span><br><span class="line">  <span class="keyword">if</span> (head.next === <span class="literal">null</span>) &#123;</span><br><span class="line">        head = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//当节点只有两个，且n===1的情况</span></span><br><span class="line">    <span class="keyword">if</span> (head.next.next === <span class="literal">null</span> &amp;&amp; n === <span class="number">1</span>) &#123;</span><br><span class="line">        head.next.next = <span class="literal">null</span>;</span><br><span class="line">        head.next = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//当节点只有两个，且n===2的情况</span></span><br><span class="line">    <span class="keyword">if</span> (head.next.next === <span class="literal">null</span> &amp;&amp; n === <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> _head = head.next;</span><br><span class="line">        head = <span class="literal">null</span>;</span><br><span class="line">        head = _head;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> prevNode;  <span class="comment">//被删除节点的上一个节点</span></span><br><span class="line">    <span class="keyword">let</span> nextNode;   <span class="comment">//被删除节点的下一个节点</span></span><br><span class="line">    <span class="keyword">let</span> deleteNode;  <span class="comment">//被删除节点</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> firstNode = head;   <span class="comment">//可以移动的x指针节点</span></span><br><span class="line">    <span class="keyword">let</span> pointer = head;    </span><br><span class="line">    <span class="keyword">let</span> lastNode;   <span class="comment">//可以移动的最后一个指针节点</span></span><br><span class="line">    <span class="comment">//查找n指针</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        lastNode = pointer;</span><br><span class="line">        pointer = lastNode.next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//双指针移动，并赋值给被可删除节点</span></span><br><span class="line">    <span class="keyword">while</span> (lastNode.next !== <span class="literal">null</span>) &#123;</span><br><span class="line">        prevNode = firstNode;</span><br><span class="line">        firstNode = firstNode.next;</span><br><span class="line">        nextNode = firstNode.next;</span><br><span class="line">        lastNode = lastNode.next;</span><br><span class="line">        deleteNode = firstNode.val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(prevNode!==<span class="literal">undefined</span>)&#123;</span><br><span class="line">        prevNode.next = nextNode;</span><br><span class="line">        prevNode.next = nextNode;</span><br><span class="line">        firstNode = <span class="literal">null</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> _firstNode = firstNode.next;</span><br><span class="line">        firstNode = <span class="literal">null</span>;</span><br><span class="line">        head = _firstNode;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/11/05/wget范例/" class="archive-article-date">
-  <time datetime="2018-11-04T16:08:54.000Z" itemprop="datePublished">11月 5</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/05/wget范例/">wget范例</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/29/TypeScript的接口/" class="archive-article-date">
-  <time datetime="2018-10-29T10:06:48.000Z" itemprop="datePublished">10月 29</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2020/10/18/双指针删除链表的倒数第n个节点/" data-id="ckgek290v002bf8y5snhvz1rq" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/29/TypeScript的接口/">TypeScript的接口</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/27/TypeScript的基本类型/" class="archive-article-date">
-  <time datetime="2018-10-27T08:05:16.000Z" itemprop="datePublished">10月 27</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/27/TypeScript的基本类型/">TypeScript的基本类型</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/双指针/">双指针</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/链表/">链表</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/17/颜色分类/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">颜色分类</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/26/TS添加Jquery/" class="archive-article-date">
-  <time datetime="2018-10-26T10:12:47.000Z" itemprop="datePublished">10月 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/26/TS添加Jquery/">TS添加Jquery</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/23/在atom增加自定义的文件类型/" class="archive-article-date">
-  <time datetime="2018-10-23T02:29:34.000Z" itemprop="datePublished">10月 23</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/23/在atom增加自定义的文件类型/">在atom增加自定义的文件类型</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/22/MAC写入USB启动盘/" class="archive-article-date">
-  <time datetime="2018-10-22T06:46:05.000Z" itemprop="datePublished">10月 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/22/MAC写入USB启动盘/">MAC写入USB启动盘</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/16/在Mac的旧设备中开启AirDrop/" class="archive-article-date">
-  <time datetime="2018-10-16T09:04:13.000Z" itemprop="datePublished">10月 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/16/在Mac的旧设备中开启AirDrop/">在Mac的旧设备中开启AirDrop</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/16/正则表达式获取img的src/" class="archive-article-date">
-  <time datetime="2018-10-16T08:43:57.000Z" itemprop="datePublished">10月 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/16/正则表达式获取img的src/">正则表达式获取img的src</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/archives/page/3/">&laquo; 上一页</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/5/">下一页 &raquo;</a>
-  </nav>
 
 </section>
         
