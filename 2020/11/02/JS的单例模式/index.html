@@ -5,18 +5,19 @@
   
 
   
-  <title>Tag: class | 重影对话</title>
+  <title>JS的单例模式 | 重影对话</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jonny Peng&apos;s personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="重影对话">
-<meta property="og:url" content="https://www.jonnypeng.com/tags/class/index.html">
+  <meta name="description" content="设计模式  单例模式是指每一个类只会生成一个实例，这样可以节省开销，也容易进行业务管理，首先以TS来一段单例实现 123456789101112131415161718192021class Scene&amp;#123;    public name:string;    private static instance:Scene;     private constructor(name:strin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS的单例模式">
+<meta property="og:url" content="https://www.jonnypeng.com/2020/11/02/JS的单例模式/index.html">
 <meta property="og:site_name" content="重影对话">
-<meta property="og:description" content="Jonny Peng&apos;s personal blog">
+<meta property="og:description" content="设计模式  单例模式是指每一个类只会生成一个实例，这样可以节省开销，也容易进行业务管理，首先以TS来一段单例实现 123456789101112131415161718192021class Scene&amp;#123;    public name:string;    private static instance:Scene;     private constructor(name:strin">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-11-02T08:42:46.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重影对话">
-<meta name="twitter:description" content="Jonny Peng&apos;s personal blog">
+<meta name="twitter:title" content="JS的单例模式">
+<meta name="twitter:description" content="设计模式  单例模式是指每一个类只会生成一个实例，这样可以节省开销，也容易进行业务管理，首先以TS来一段单例实现 123456789101112131415161718192021class Scene&amp;#123;    public name:string;    private static instance:Scene;     private constructor(name:strin">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,40 +69,68 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/11/09/typeScript的类/" class="archive-article-date">
-  <time datetime="2018-11-09T14:32:30.000Z" itemprop="datePublished">11月 9</time>
+        <section id="main"><article id="post-JS的单例模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/02/JS的单例模式/" class="article-date">
+  <time datetime="2020-11-02T02:47:01.000Z" itemprop="datePublished">2020-11-02</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/09/typeScript的类/">typeScript的类</a>
+    <h1 class="article-title" itemprop="name">
+      JS的单例模式
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>设计模式</li>
+</ul>
+<p>单例模式是指每一个类只会生成一个实例，这样可以节省开销，也容易进行业务管理，首先以TS来一段单例实现</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Scene&#123;</span><br><span class="line">    <span class="keyword">public</span> name:<span class="built_in">string</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> instance:Scene; </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">constructor</span>(<span class="params">name:<span class="built_in">string</span></span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> getInstance():Scene&#123;</span><br><span class="line">        <span class="keyword">if</span>(!Scene.instance)&#123;</span><br><span class="line">            Scene.instance = <span class="keyword">new</span> Scene(<span class="string">"Jonny"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Scene.instance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//let a = new Scene("jonny"); //编译错误</span></span><br><span class="line"><span class="keyword">let</span> a = Scene.getInstance();</span><br><span class="line"><span class="keyword">let</span> b = Scene.getInstance();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a===b);   <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>再来看一下ES5实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Scene</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'jonny'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Scene.instance = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">Scene.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Scene.instance.name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Scene.getInstance = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!Scene.instance)&#123;</span><br><span class="line">       Scene.instance = <span class="keyword">new</span> Scene(); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Scene.instance;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = Scene.getInstance();</span><br><span class="line"><span class="keyword">var</span> b = Scene.getInstance();</span><br><span class="line"><span class="built_in">console</span>.log(a===b); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(a.getName()); <span class="comment">//'jonny'</span></span><br></pre></td></tr></table></figure>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2020/11/02/JS的单例模式/" data-id="ckh0b11r5000264y55t2hots0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/02/JS的策略模式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JS的策略模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/01/对象创建模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">对象创建模式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         

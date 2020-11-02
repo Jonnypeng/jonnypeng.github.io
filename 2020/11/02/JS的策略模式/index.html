@@ -5,18 +5,19 @@
   
 
   
-  <title>Tag: class | 重影对话</title>
+  <title>JS的策略模式 | 重影对话</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jonny Peng&apos;s personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="重影对话">
-<meta property="og:url" content="https://www.jonnypeng.com/tags/class/index.html">
+  <meta name="description" content="设计模式  策略模式分为两部分，一部分是环境类，另一部分是策略类，环境类是接受命令的入口，策略类是无数策略的集合，通过策略模式将环境类与策略类连通，在环境的策略方法中可以自由替换策略">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS的策略模式">
+<meta property="og:url" content="https://www.jonnypeng.com/2020/11/02/JS的策略模式/index.html">
 <meta property="og:site_name" content="重影对话">
-<meta property="og:description" content="Jonny Peng&apos;s personal blog">
+<meta property="og:description" content="设计模式  策略模式分为两部分，一部分是环境类，另一部分是策略类，环境类是接受命令的入口，策略类是无数策略的集合，通过策略模式将环境类与策略类连通，在环境的策略方法中可以自由替换策略">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-11-02T08:51:26.727Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重影对话">
-<meta name="twitter:description" content="Jonny Peng&apos;s personal blog">
+<meta name="twitter:title" content="JS的策略模式">
+<meta name="twitter:description" content="设计模式  策略模式分为两部分，一部分是环境类，另一部分是策略类，环境类是接受命令的入口，策略类是无数策略的集合，通过策略模式将环境类与策略类连通，在环境的策略方法中可以自由替换策略">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,40 +69,56 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/11/09/typeScript的类/" class="archive-article-date">
-  <time datetime="2018-11-09T14:32:30.000Z" itemprop="datePublished">11月 9</time>
+        <section id="main"><article id="post-JS的策略模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/02/JS的策略模式/" class="article-date">
+  <time datetime="2020-11-02T08:43:36.000Z" itemprop="datePublished">2020-11-02</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/09/typeScript的类/">typeScript的类</a>
+    <h1 class="article-title" itemprop="name">
+      JS的策略模式
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>设计模式</li>
+</ul>
+<p>策略模式分为两部分，一部分是环境类，另一部分是策略类，环境类是接受命令的入口，策略类是无数策略的集合，通过策略模式将环境类与策略类连通，在环境的策略方法中可以自由替换策略</p>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 策略集合</span></span><br><span class="line"><span class="keyword">var</span> strategies = &#123;</span><br><span class="line">    <span class="string">'S'</span>:<span class="function"><span class="keyword">function</span> (<span class="params">salary</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> salary*<span class="number">4</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'A'</span>:<span class="function"><span class="keyword">function</span> (<span class="params">salary</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> salary*<span class="number">2</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'B'</span>:<span class="function"><span class="keyword">function</span> (<span class="params">salary</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> salary*<span class="number">6</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'D'</span>:<span class="function"><span class="keyword">function</span> (<span class="params">salary</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> salary*<span class="number">8</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 环境入口</span></span><br><span class="line"><span class="keyword">var</span> context = <span class="function"><span class="keyword">function</span> (<span class="params">levle,salary</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> strategies[levle](salary);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据参数执行不同的环境策略</span></span><br><span class="line">context(<span class="string">'S'</span>,<span class="number">500</span>);</span><br><span class="line">context(<span class="string">'B'</span>,<span class="number">500</span>);</span><br><span class="line">context(<span class="string">'D'</span>,<span class="number">500</span>);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2020/11/02/JS的策略模式/" data-id="ckh0b11r0000064y52a7wcs0t" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/11/02/JS的单例模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JS的单例模式</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         

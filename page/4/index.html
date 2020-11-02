@@ -70,6 +70,98 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-解决angluar在Node服务器上的路由问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/22/解决angluar在Node服务器上的路由问题/" class="article-date">
+  <time datetime="2019-01-22T14:13:57.000Z" itemprop="datePublished">2019-01-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/教程/">教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/22/解决angluar在Node服务器上的路由问题/">解决angluar在Node服务器上的路由问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>官方教程中没有涉及到node服务器对angluar的编译文件解决路由的问题，其实原理与apahce是一样的，当路由返回404的时候，应该让路由再直接找index.html这个源文件，具体代码如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 这里是设置中间件，让编译文件的静态文件可以被获取 */</span></span><br><span class="line">app.use(express.static(<span class="string">"dist/w-app"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 这里是不管url地址是什么，路由都统一在index.html上进行查询，然后获取到真实的Angluar的路由 */</span></span><br><span class="line">app.get(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    res.sendFile(path.join(__dirname,<span class="string">'dist/w-app/index.html'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"server is running"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2019/01/22/解决angluar在Node服务器上的路由问题/" data-id="ckh0b11so003664y572ef3dd3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar/">angluar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar-404/">angluar 404</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-如何利用git远程部署服务器的代码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/24/如何利用git远程部署服务器的代码/" class="article-date">
+  <time datetime="2018-12-24T07:04:43.000Z" itemprop="datePublished">2018-12-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/教程/">教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/24/如何利用git远程部署服务器的代码/">如何利用git远程部署服务器的代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>ftp部署代码很麻烦，因为需要隔离出已经修改与为修改的部分，并进行上传，但是git很方便，如果在远程服务器已经绑定了ssh免密码登陆就更加方便，只需要推送，就可以将代码部署到服务器,而且不用去区分哪一些是修改过的，哪一些是没有修改过的。</p>
+<h3 id="远程服务目录结构"><a href="#远程服务目录结构" class="headerlink" title="远程服务目录结构"></a>远程服务目录结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">├── html</span><br><span class="line">  └── myApp // 项目</span><br><span class="line">   └── site // 这是工作区,手工创建空目录</span><br><span class="line">       ├── index.php</span><br><span class="line">       ├── test2.php</span><br><span class="line">       ├── test3.php</span><br><span class="line">       └── test.php</span><br><span class="line">   └── gitLab // 这是版本区</span><br><span class="line">        ├── branches</span><br><span class="line">        ├── config</span><br><span class="line">        ├── description</span><br><span class="line">        ├── HEAD</span><br><span class="line">        ├── hooks // post-receive钩子代码写在这里面</span><br><span class="line">        ├── index</span><br><span class="line">        ├── info</span><br><span class="line">        ├── objects</span><br><span class="line">        └── refs</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/12/24/如何利用git远程部署服务器的代码/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2018/12/24/如何利用git远程部署服务器的代码/" data-id="ckh0b11sf002m64y5n9gv50ue" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-TypeScript模式下为PIXI添加Matter物理引擎的尝试" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" class="article-date">
@@ -105,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="ckgyutz8y00077ry55d0w01f5" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="ckh0b11rc000964y50hl46itw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matter-js/">Matter.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -153,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/09/typeScript的类/" data-id="ckgyutz9o001m7ry56d725ymc" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/09/typeScript的类/" data-id="ckh0b11s2001o64y5quubwkiz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/class/">class</a></li></ul>
@@ -199,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="ckgyutz9x00277ry5wkw6kqa0" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="ckh0b11sb002964y5hlnvfqoi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json-server/">json server</a></li></ul>
@@ -245,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/05/wget范例/" data-id="ckgyutz9s001x7ry5m1ny186d" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/05/wget范例/" data-id="ckh0b11s5001z64y53qf0i7ao" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BASH/">BASH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
@@ -292,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/29/TypeScript的接口/" data-id="ckgyutz91000c7ry57vh448ir" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/29/TypeScript的接口/" data-id="ckh0b11rh000d64y5xzry4jv3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/interface/">interface</a></li></ul>
@@ -339,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/27/TypeScript的基本类型/" data-id="ckgyutzbc006v7ry5r3vz7bb2" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/27/TypeScript的基本类型/" data-id="ckh0b11ts006x64y57ucpulcv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -384,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/26/TS添加Jquery/" data-id="ckgyutz8x00067ry5l6oz2qbx" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/26/TS添加Jquery/" data-id="ckh0b11rb000864y5v9fy82ap" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
@@ -425,101 +517,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/23/在atom增加自定义的文件类型/" data-id="ckgyutza1002k7ry5jnc4oqbk" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/23/在atom增加自定义的文件类型/" data-id="ckh0b11se002j64y5nmaty2xn" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-MAC写入USB启动盘" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/22/MAC写入USB启动盘/" class="article-date">
-  <time datetime="2018-10-22T06:46:05.000Z" itemprop="datePublished">2018-10-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/MAC写入USB启动盘/">MAC写入USB启动盘</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备；</p>
-<p>其次，假设ISO文件路径为/Path/A.iso ，而我需要输出的USB路径为/Path/USB</p>
-<p>最后，打开终端，运行以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo dd if=/Path/A.iso of=/Path/USB bs=10m</span><br><span class="line"></span><br><span class="line">#参数if- 输入文件名，就是iso的文件名</span><br><span class="line">#参数of- 输出文件名</span><br><span class="line">#参数bs- 同时设置读写块的大小，单位是bytes</span><br></pre></td></tr></table></figure>
-<p>等待结束，就可以安装啦</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/22/MAC写入USB启动盘/" data-id="ckgyutz8u00037ry5w4ktpsh6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAC/">MAC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/USB/">USB</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-在Mac的旧设备中开启AirDrop" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/16/在Mac的旧设备中开启AirDrop/" class="article-date">
-  <time datetime="2018-10-16T09:04:13.000Z" itemprop="datePublished">2018-10-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/16/在Mac的旧设备中开启AirDrop/">在Mac的旧设备中开启AirDrop</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>运行 Terminal,并执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1</span><br></pre></td></tr></table></figure></p>
-<p>如果你以后希望关闭AirDrop，则执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.NetworkBrowser BrowseAllInterfaces 0</span><br></pre></td></tr></table></figure></p>
-<p>如果你在Mac上开启了AirDrop，则直接在Finder中可以找到AirDrop</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/16/在Mac的旧设备中开启AirDrop/" data-id="ckgyutza0002h7ry5co6hliuk" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Airdrop/">Airdrop</a></li></ul>
-
     </footer>
   </div>
   
@@ -584,6 +584,14 @@
       <ul>
         
           <li>
+            <a href="/2020/11/02/JS的策略模式/">JS的策略模式</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/02/JS的单例模式/">JS的单例模式</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/01/对象创建模式/">对象创建模式</a>
           </li>
         
@@ -593,14 +601,6 @@
         
           <li>
             <a href="/2020/10/17/颜色分类/">颜色分类</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/09/编程练习/">编程练习</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/18/phaser的魔性/">phaser的魔性</a>
           </li>
         
       </ul>
