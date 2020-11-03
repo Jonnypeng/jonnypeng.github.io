@@ -70,6 +70,106 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-来自Chrome的puppeteer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/17/来自Chrome的puppeteer/" class="article-date">
+  <time datetime="2019-10-17T01:30:51.000Z" itemprop="datePublished">2019-10-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Docs/">Docs</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/17/来自Chrome的puppeteer/">来自Chrome的puppeteer</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png" height="200" align="right"></p>
+<h6 id="API-FAQ-Contributing-Troubleshooting"><a href="#API-FAQ-Contributing-Troubleshooting" class="headerlink" title="API | FAQ | Contributing | Troubleshooting"></a><a href="https://github.com/GoogleChrome/puppeteer/blob/v1.20.0/docs/api.md" target="_blank" rel="noopener">API</a> | <a href="#faq">FAQ</a> | <a href="https://github.com/GoogleChrome/puppeteer/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing</a> | <a href="https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md" target="_blank" rel="noopener">Troubleshooting</a></h6><blockquote>
+<p>Puppeteer is a Node library which provides a high-level API to control Chrome or Chromium over the <a href="https://chromedevtools.github.io/devtools-protocol/" target="_blank" rel="noopener">DevTools Protocol</a>. Puppeteer runs <a href="https://developers.google.com/web/updates/2017/04/headless-chrome" target="_blank" rel="noopener">headless</a> by default, but can be configured to run full (non-headless) Chrome or Chromium.</p>
+</blockquote>
+<!-- [START usecases] -->
+<h6 id="What-can-I-do"><a href="#What-can-I-do" class="headerlink" title="What can I do?"></a>What can I do?</h6><p>Most things that you can do manually in the browser can be done using Puppeteer! Here are a few examples to get you started:</p>
+<ul>
+<li>Generate screenshots and PDFs of pages.</li>
+<li>Crawl a SPA (Single-Page Application) and generate pre-rendered content (i.e. “SSR” (Server-Side Rendering)).</li>
+<li>Automate form submission, UI testing, keyboard input, etc.</li>
+<li>Create an up-to-date, automated testing environment. Run your tests directly in the latest version of Chrome using the latest JavaScript and browser features.</li>
+<li>Capture a <a href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference" target="_blank" rel="noopener">timeline trace</a> of your site to help diagnose performance issues.</li>
+<li>Test Chrome Extensions.<!-- [END usecases] -->
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2019/10/17/来自Chrome的puppeteer/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2019/10/17/来自Chrome的puppeteer/" data-id="ckh1pwe0z0073pcy5clgtq89k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-判断浏览器用户代理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/29/判断浏览器用户代理/" class="article-date">
+  <time datetime="2019-07-29T15:32:10.000Z" itemprop="datePublished">2019-07-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/29/判断浏览器用户代理/">判断浏览器用户代理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>见代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> weixin = is_weixin();</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">is_weixin</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">if</span>(ua.match(<span class="regexp">/MicroMessenger/i</span>)==<span class="string">"micromessenger"</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2019/07/29/判断浏览器用户代理/" data-id="ckh1pwdzb0029pcy5gqx1y9kp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信/">微信</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-h5禁止缩放与双击选中" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/29/h5禁止缩放与双击选中/" class="article-date">
@@ -100,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/07/29/h5禁止缩放与双击选中/" data-id="ckh0b11rp000t64y58r8g8e2h" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/07/29/h5禁止缩放与双击选中/" data-id="ckh1pwdyp000rpcy53m3h77mt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/">h5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/meta/">meta</a></li></ul>
@@ -147,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/07/18/vim配置/" data-id="ckh0b11s7002164y5tduw1ydp" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/07/18/vim配置/" data-id="ckh1pwdz90022pcy51g8flqvu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
@@ -191,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/07/18/vsc-config配置/" data-id="ckh0b11s3001s64y5mcbmplpn" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/07/18/vsc-config配置/" data-id="ckh1pwdz4001spcy5tdsebf76" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vsc/">vsc</a></li></ul>
@@ -239,7 +339,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/07/18/webpack简易配置/" data-id="ckh0b11s4001v64y5qg0lah5i" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/07/18/webpack简易配置/" data-id="ckh1pwdz6001wpcy5zrqxcmpe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
@@ -287,7 +387,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/06/16/three-js的线与三角形的笔记/" data-id="ckh0b11s0001l64y5mcmt9p4w" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/06/16/three-js的线与三角形的笔记/" data-id="ckh1pwdz3001opcy5sfzezav8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/three-js/">three.js</a></li></ul>
@@ -331,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/05/29/测试webgl目前所使用显卡信息/" data-id="ckh0b11sm003064y5942re71n" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/05/29/测试webgl目前所使用显卡信息/" data-id="ckh1pwdzp0035pcy5jnjn8s3k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webgl/">webgl</a></li></ul>
@@ -379,7 +479,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/05/29/RXJS的数学类操作符/" data-id="ckh0b11r8000564y5o8dfhuit" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/05/29/RXJS的数学类操作符/" data-id="ckh1pwdy70006pcy55ltfxtam" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rxjs/">rxjs</a></li></ul>
@@ -422,98 +522,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/05/29/node保存图片/" data-id="ckh0b11rq000x64y5seyl1d2l" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/05/29/node保存图片/" data-id="ckh1pwdyu0013pcy58juqeqrc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NODE/">NODE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/binaryData/">binaryData</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-pixi的webgl导出异常" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/24/pixi的webgl导出异常/" class="article-date">
-  <time datetime="2019-05-24T02:04:42.000Z" itemprop="datePublished">2019-05-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/24/pixi的webgl导出异常/">pixi的webgl导出异常</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Canvas导出图片是没有问题的，但是WebGL模式下导出图片，在IOS上会导致上下逆转，如何解决这个问题，PIXI有专门的插件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> img = app.renderer.plugins.extract.image(app.stage);</span><br></pre></td></tr></table></figure></p>
-<p>这样的话，就不用先导出base64，然后再创建图片，而且也不会发生上下逆转</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/05/24/pixi的webgl导出异常/" data-id="ckh0b11rx001b64y5pqwmfwiv" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI/">PIXI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebGL/">WebGL</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-pix-js的canvas超出容器如何解除时间绑定" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/" class="article-date">
-  <time datetime="2019-05-14T09:03:42.000Z" itemprop="datePublished">2019-05-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/">pix.js的canvas超出容器如何解除事件绑定</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>废话少说，来一段</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">renderer.plugins.interaction.autoPreventDefault = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/" data-id="ckh0b11ry001e64y56s8womoh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li></ul>
 
     </footer>
   </div>
@@ -579,6 +591,14 @@
       <ul>
         
           <li>
+            <a href="/2020/11/03/JS观察者模式/">JS观察者模式</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/03/JS代理模式/">JS代理模式</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/02/JS的策略模式/">JS的策略模式</a>
           </li>
         
@@ -588,14 +608,6 @@
         
           <li>
             <a href="/2020/11/01/对象创建模式/">对象创建模式</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/18/双指针删除链表的倒数第n个节点/">双指针删除链表的倒数第n个节点</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/17/颜色分类/">颜色分类</a>
           </li>
         
       </ul>

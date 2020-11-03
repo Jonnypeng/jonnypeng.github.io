@@ -5,19 +5,19 @@
   
 
   
-  <title>我的案例 | 重影对话</title>
+  <title>JS代理模式 | 重影对话</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="评测系统 Civa4s店 Civa航运 Civa审判 Civa农场 Civa蜜园 Civa万圣节 Civa木场 Civa餐厅 Civa飞镖 Civa玩具店 Civa小火车 Civa糖果世界 Civa实验室 Civa联网对战选择题 经开记忆 友为传播 优徕城市精选 深高速物业管理系统 花溪26度户型 和深高速在一起 向世界告白 乐湾价值 热气球漫游之旅 哪个词代表您对生活的感受 你有一份原乡游园攻">
-<meta property="og:type" content="website">
-<meta property="og:title" content="我的案例">
-<meta property="og:url" content="https://www.jonnypeng.com/myPages/my_case.html">
+  <meta name="description" content="设计模式  当客户程序不断地访问本体程序，会产生副作用，譬如垃圾请求、不符合规范的请求，或者是本体程序尚未做好准备，所以需要通过代理的规范请求内容，过滤不符合要求的请求，这就是代理模式 123456789101112131415161718192021//本体程序返回数字的倍数var A = function (num)&amp;#123;    return num*2;&amp;#125;//代理程序，检查">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS代理模式">
+<meta property="og:url" content="https://www.jonnypeng.com/2020/11/03/JS代理模式/index.html">
 <meta property="og:site_name" content="重影对话">
-<meta property="og:description" content="评测系统 Civa4s店 Civa航运 Civa审判 Civa农场 Civa蜜园 Civa万圣节 Civa木场 Civa餐厅 Civa飞镖 Civa玩具店 Civa小火车 Civa糖果世界 Civa实验室 Civa联网对战选择题 经开记忆 友为传播 优徕城市精选 深高速物业管理系统 花溪26度户型 和深高速在一起 向世界告白 乐湾价值 热气球漫游之旅 哪个词代表您对生活的感受 你有一份原乡游园攻">
+<meta property="og:description" content="设计模式  当客户程序不断地访问本体程序，会产生副作用，譬如垃圾请求、不符合规范的请求，或者是本体程序尚未做好准备，所以需要通过代理的规范请求内容，过滤不符合要求的请求，这就是代理模式 123456789101112131415161718192021//本体程序返回数字的倍数var A = function (num)&amp;#123;    return num*2;&amp;#125;//代理程序，检查">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-10-18T01:35:18.503Z">
+<meta property="og:updated_time" content="2020-11-03T03:51:46.953Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的案例">
-<meta name="twitter:description" content="评测系统 Civa4s店 Civa航运 Civa审判 Civa农场 Civa蜜园 Civa万圣节 Civa木场 Civa餐厅 Civa飞镖 Civa玩具店 Civa小火车 Civa糖果世界 Civa实验室 Civa联网对战选择题 经开记忆 友为传播 优徕城市精选 深高速物业管理系统 花溪26度户型 和深高速在一起 向世界告白 乐湾价值 热气球漫游之旅 哪个词代表您对生活的感受 你有一份原乡游园攻">
+<meta name="twitter:title" content="JS代理模式">
+<meta name="twitter:description" content="设计模式  当客户程序不断地访问本体程序，会产生副作用，譬如垃圾请求、不符合规范的请求，或者是本体程序尚未做好准备，所以需要通过代理的规范请求内容，过滤不符合要求的请求，这就是代理模式 123456789101112131415161718192021//本体程序返回数字的倍数var A = function (num)&amp;#123;    return num*2;&amp;#125;//代理程序，检查">
   
   
     <link rel="icon" href="/favicon.png">
@@ -69,10 +69,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JS代理模式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/myPages/my_case.html" class="article-date">
-  <time datetime="2018-11-15T06:01:55.000Z" itemprop="datePublished">2018-11-15</time>
+    <a href="/2020/11/03/JS代理模式/" class="article-date">
+  <time datetime="2020-11-03T02:16:43.000Z" itemprop="datePublished">2020-11-03</time>
 </a>
     
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      我的案例
+      JS代理模式
     </h1>
   
 
@@ -92,74 +92,43 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li><a href="http://onlinetest.civaonline.cn/dev-test" target="_blank" rel="noopener">评测系统</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game13">Civa4s店</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game15">Civa航运</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game16">Civa审判</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game17">Civa农场</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game18">Civa蜜园</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game19">Civa万圣节</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game20">Civa木场</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game21">Civa餐厅</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game22">Civa飞镖</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game23">Civa玩具店</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game11">Civa小火车</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game9">Civa糖果世界</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game6">Civa实验室</a></li>
-<li><a href="https://www.jonnypeng.com/ccgame/build/#/game24">Civa联网对战选择题</a></li>
-<li><a href="http://wx.uvcsi.com/html5/sunac/memories/index.php" target="_blank" rel="noopener">经开记忆</a></li>
-<li><a href="http://wx.uvcsi.com/html5/uvcsi/home.php?id=home" target="_blank" rel="noopener">友为传播</a></li>
-<li><a href="http://www.ulifecity.com/" target="_blank" rel="noopener">优徕城市精选</a></li>
-<li><a href="http://www.shengaosuwuye.com/" target="_blank" rel="noopener">深高速物业管理系统</a></li>
-<li><a href="http://wx.uvcsi.com/html5/huaxi26/house-type/" target="_blank" rel="noopener">花溪26度户型</a></li>
-<li><a href="http://wx.uvcsi.com/html5/sgs/2019report/index.php" target="_blank" rel="noopener">和深高速在一起</a></li>
-<li><a href="http://wx.uvcsi.com/html5/ysh/myDream" target="_blank" rel="noopener">向世界告白</a></li>
-<li><a href="http://wx.uvcsi.com/html5/leWan/minApp/cover.php" target="_blank" rel="noopener">乐湾价值</a></li>
-<li><a href="http://wx.uvcsi.com/html5/leWan/balloon/index.php" target="_blank" rel="noopener">热气球漫游之旅</a></li>
-<li><a href="http://wx.uvcsi.com/html5/ysh/invite2018/index.php" target="_blank" rel="noopener">哪个词代表您对生活的感受</a></li>
-<li><a href="http://wx.uvcsi.com/html5/huaxi26/gonglve/" target="_blank" rel="noopener">你有一份原乡游园攻略，请查收</a></li>
-<li><a href="http://wx.uvcsi.com/html5/huaxi26/voice/index.php?id=li" target="_blank" rel="noopener">李太太的温馨之家</a></li>
-<li><a href="http://wx.uvcsi.com/html5/huaxi26/youKnow26/index.php?id=2" target="_blank" rel="noopener">你知道什么是26度吗？</a></li>
-<li><a href="http://wx.uvcsi.com/html5/sgs/sgs_ouzhou/" target="_blank" rel="noopener">10.25我们去瑞士啦！深高速茵特拉根小镇</a></li>
-<li><a href="http://wx.uvcsi.com/html5/sgs/dtcs/" target="_blank" rel="noopener">一幅画作测试你的爱心性格</a></li>
-<li><a href="http://wx.uvcsi.com/html5/ysjz/whileNow/" target="_blank" rel="noopener">年轻就该趁现在</a></li>
-<li><a href="http://wx.uvcsi.com/html5/taihao/5n/" target="_blank" rel="noopener">泰豪品牌</a> </li>
-<li><a href="http://wx.uvcsi.com/html5/taihao/jsj/" target="_blank" rel="noopener">泰豪答题测试</a></li>
-<li><a href="http://wx.uvcsi.com/html5/kuan/" target="_blank" rel="noopener">一封来自深高速·茵特拉根小镇的邀请</a></li>
-<li><a href="http://wx.uvcsi.com/html5/mountain-park/" target="_blank" rel="noopener">生活在 森林里</a></li>
-<li><a href="http://wx.uvcsi.com/html5/jrc-kan/" target="_blank" rel="noopener">点亮商圈价值 共享城市繁华</a></li>
-<li><a href="http://wx.uvcsi.com/html5/ztjrc/jrc_dianliang/" target="_blank" rel="noopener">用你的手 点亮贵州金融城</a></li>
-<li><a href="http://wx.uvcsi.com/html5/ztjrc/jrc_zoujin/" target="_blank" rel="noopener">走进金融城</a></li>
-<li><a href="http://wx.uvcsi.com/html5/ztjrc/jrc_xgcs/" target="_blank" rel="noopener">金融城性格测试</a></li>
-<li><a href="http://wx.uvcsi.com/html5/tuo/diaocha/" target="_blank" rel="noopener">干细胞密集修复精华试⽤问卷调查</a></li>
-<li><a href="http://wx.uvcsi.com/html5/cdvk/blxd_blue/" target="_blank" rel="noopener">百舸争流 强强联盟</a></li>
-<li><a href="http://wx.uvcsi.com/html5/lyc/stroy/" target="_blank" rel="noopener">千年传承 盐味自贡</a></li>
-<li><a href="http://wx.uvcsi.com/html5/lyc/stroy/" target="_blank" rel="noopener">千年传承 盐味自贡 Animation</a></li>
-<li><a href="http://wx.uvcsi.com/html5/lyc/stroy_hight_view_old/" target="_blank" rel="noopener">千年传承 盐味自贡 WOW</a></li>
-<li><a href="http://wx.uvcsi.com/html5/lyc/stroy_hight_view/" target="_blank" rel="noopener">老盐场的故事</a></li>
-<li><a href="http://wx.uvcsi.com/html5/lyc/picShare/" target="_blank" rel="noopener">我为盐都代言</a></li>
-<li><a href="http://wx.uvcsi.com/html5/lyc/spring2018/" target="_blank" rel="noopener">自贡 新春怎么玩？</a></li>
-<li><a href="http://wx.uvcsi.com/html5/uvcsi/home.php?id=home" target="_blank" rel="noopener">友为文投</a></li>
-<li><a href="http://wx.uvcsi.com/html5/ygc/tpbm/index.php" target="_blank" rel="noopener">阳光城：我们去报名吧</a></li>
-<li><a href="http://wx.uvcsi.com/html5/ygc/jvcs/" target="_blank" rel="noopener">阳光城：测一测您的焦虑值</a></li>
-<li><a href="http://wx.uvcsi.com/html5/uvad/qiushang/" target="_blank" rel="noopener">嗨球小酒 球商测试</a></li>
-<li><a href="http://wx.uvcsi.com/html5/uvad/jiupin" target="_blank" rel="noopener">嗨球小酒 酒品测试</a></li>
-<li><a href="http://wx.uvcsi.com/html5/huochebang/girlShow/" target="_blank" rel="noopener">英雄配美女</a>.</li>
-<li><a href="http://wx.uvcsi.com/html5/huochebang/hongbaoyu/" target="_blank" rel="noopener">10万元红包雨</a></li>
-<li><a href="http://wx.uvcsi.com/html5/ysh/myDream" target="_blank" rel="noopener">震惊！贵阳竟然有这样一个平台！</a></li>
-<li><a href="http://wx.uvcsi.com/html5/xiangchou/" target="_blank" rel="noopener">贵山秀水忆乡愁</a></li>
+<li>设计模式</li>
 </ul>
+<p>当客户程序不断地访问本体程序，会产生副作用，譬如垃圾请求、不符合规范的请求，或者是本体程序尚未做好准备，所以需要通过代理的规范请求内容，过滤不符合要求的请求，这就是代理模式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//本体程序返回数字的倍数</span></span><br><span class="line"><span class="keyword">var</span> A = <span class="function"><span class="keyword">function</span> (<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num*<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//代理程序，检查输入的是不是数字</span></span><br><span class="line"><span class="keyword">var</span> B = <span class="function"><span class="keyword">function</span> (<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> num !== <span class="string">'number'</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'你输入的不是数字'</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        A(num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">//客户程序</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    B(<span class="number">3</span>); <span class="comment">//6</span></span><br><span class="line">    B(<span class="string">'3'</span>) <span class="comment">//error</span></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>当客户程序请求本体程序会产生大量的数据及开销时，可以使用代理来处理这些请求，如果发现有缓存的内容，则直接返回数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> A = <span class="function"><span class="keyword">function</span> (<span class="params">id</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="built_in">Math</span>.pow(<span class="number">10</span>,<span class="number">10</span>)).toString(<span class="number">26</span>); <span class="comment">//返回一个随机串</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> B = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> map = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">id</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!map[id])&#123;</span><br><span class="line">          map[id] = A(id);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> map[id];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">B(<span class="number">1</span>); <span class="comment">//"f0jbcp1"</span></span><br><span class="line">B(<span class="number">1</span>); <span class="comment">//"f0jbcp1"</span></span><br><span class="line">B(<span class="number">3</span>); <span class="comment">//"am1mmk5"</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/myPages/my_case.html" data-id="ckh1pwdxy0000pcy55whjcb45" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2020/11/03/JS代理模式/" data-id="ckh1pwdy00001pcy5sx1s8ffc" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2020/11/03/JS观察者模式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JS观察者模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/02/JS的策略模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JS的策略模式</div>
+    </a>
+  
+</nav>
+
   
 </article>
 

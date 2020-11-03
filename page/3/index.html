@@ -70,6 +70,94 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-pixi的webgl导出异常" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/24/pixi的webgl导出异常/" class="article-date">
+  <time datetime="2019-05-24T02:04:42.000Z" itemprop="datePublished">2019-05-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/24/pixi的webgl导出异常/">pixi的webgl导出异常</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Canvas导出图片是没有问题的，但是WebGL模式下导出图片，在IOS上会导致上下逆转，如何解决这个问题，PIXI有专门的插件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> img = app.renderer.plugins.extract.image(app.stage);</span><br></pre></td></tr></table></figure></p>
+<p>这样的话，就不用先导出base64，然后再创建图片，而且也不会发生上下逆转</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2019/05/24/pixi的webgl导出异常/" data-id="ckh1pwdz0001hpcy5opw3rc4l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI/">PIXI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebGL/">WebGL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pix-js的canvas超出容器如何解除时间绑定" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/" class="article-date">
+  <time datetime="2019-05-14T09:03:42.000Z" itemprop="datePublished">2019-05-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/">pix.js的canvas超出容器如何解除事件绑定</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>废话少说，来一段</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">renderer.plugins.interaction.autoPreventDefault = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/" data-id="ckh1pwdyx001bpcy50zv0moe9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-node的memory-cache模块" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/02/20/node的memory-cache模块/" class="article-date">
@@ -107,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/20/node的memory-cache模块/" data-id="ckh0b11ru001464y5goi2eqno" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/20/node的memory-cache模块/" data-id="ckh1pwdyt0010pcy5ask6m0ww" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/memory-cahce/">memory-cahce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node的全局缓存/">node的全局缓存</a></li></ul>
@@ -161,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/18/express的compression/" data-id="ckh0b11ro000q64y5soxrv1u1" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/18/express的compression/" data-id="ckh1pwdyz001epcy50qygqeif" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compress/">compress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gizp/">gizp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
@@ -205,7 +293,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/18/pm2启动node监听80端口/" data-id="ckh0b11rz001h64y5zsxodpb3" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/18/pm2启动node监听80端口/" data-id="ckh1pwdz5001upcy53er4kgwe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/80端口/">80端口</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pm2/">pm2</a></li></ul>
@@ -266,7 +354,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular路由守卫/" data-id="ckh0b11rm000l64y5n2mt76yr" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular路由守卫/" data-id="ckh1pwdym000lpcy5u24681y9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -312,7 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular辅助路由/" data-id="ckh0b11rk000i64y5f3g8u1rm" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular辅助路由/" data-id="ckh1pwdyn000npcy559csu9lh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -367,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular子路由配置/" data-id="ckh0b11rj000e64y5088ihx4k" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular子路由配置/" data-id="ckh1pwdyk000hpcy5c7hpvhme" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -414,7 +502,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular传参的两种模式/" data-id="ckh0b11rf000a64y59ulhcp6q" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular传参的两种模式/" data-id="ckh1pwdyj000gpcy5virkrzz4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -464,104 +552,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/01/node缓冲区/" data-id="ckh0b11rw001864y5warwimnv" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/01/node缓冲区/" data-id="ckh1pwdyw0017pcy51cj247ak" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/缓冲区/">缓冲区</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-node-js的循环下载" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/31/node-js的循环下载/" class="article-date">
-  <time datetime="2019-01-31T03:00:25.000Z" itemprop="datePublished">2019-01-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/31/node-js的循环下载/">node.js的循环下载</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>场景：某些网站图片太多，使用node对其命名规则进行for循环计算，然后下载下载</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/01/31/node-js的循环下载/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/01/31/node-js的循环下载/" data-id="ckh0b11rt001164y5ocltnyyi" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/循环下载/">循环下载</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-使用node对文件夹递归解析为json" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/30/使用node对文件夹递归解析为json/" class="article-date">
-  <time datetime="2019-01-30T06:07:34.000Z" itemprop="datePublished">2019-01-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/30/使用node对文件夹递归解析为json/">使用node对文件夹递归解析为json</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用场景：工作中经常制作H5广告，需要做预加载机制，而文件数据需要通过外部进行加载，使用node的fs模块，可以快速地生成json文件，下面是代码解读;</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/01/30/使用node对文件夹递归解析为json/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/01/30/使用node对文件夹递归解析为json/" data-id="ckh0b11s8002464y5m9zjyxkt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fs/">fs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/path/">path</a></li></ul>
 
     </footer>
   </div>
@@ -627,6 +621,14 @@
       <ul>
         
           <li>
+            <a href="/2020/11/03/JS观察者模式/">JS观察者模式</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/03/JS代理模式/">JS代理模式</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/02/JS的策略模式/">JS的策略模式</a>
           </li>
         
@@ -636,14 +638,6 @@
         
           <li>
             <a href="/2020/11/01/对象创建模式/">对象创建模式</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/18/双指针删除链表的倒数第n个节点/">双指针删除链表的倒数第n个节点</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/17/颜色分类/">颜色分类</a>
           </li>
         
       </ul>
