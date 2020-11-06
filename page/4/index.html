@@ -70,6 +70,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-node缓冲区" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/01/node缓冲区/" class="article-date">
+  <time datetime="2019-02-01T03:29:53.000Z" itemprop="datePublished">2019-02-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/教程/">教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/01/node缓冲区/">node缓冲区</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。</p>
+<p>但在处理像TCP流或文件流时，必须使用到二进制数据。因此在 Node.js中，定义了一个 Buffer 类，该类用来创建一个专门存放二进制数据的缓存区。</p>
+<p>在 Node.js 中，Buffer 类是随 Node 内核一起发布的核心库。Buffer 库为 Node.js 带来了一种存储原始数据的方法，可以让 Node.js 处理二进制数据，每当需要在 Node.js 中处理I/O操作中移动的数据时，就有可能使用 Buffer 库。原始数据存储在 Buffer 类的实例中。一个 Buffer 类似于一个整数数组，但它对应于 V8 堆内存之外的一块原始内存。</p>
+<p><em>在v6.0之前创建Buffer对象直接使用new Buffer()构造函数来创建对象实例，但是Buffer对内存的权限操作相比很大，可以直接捕获一些敏感信息，所以在v6.0以后，官方文档里面建议使用 Buffer.from() 接口去创建Buffer对象</em></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/01/node缓冲区/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2019/02/01/node缓冲区/" data-id="ckh5ovqvi001ap1y5qz9gw8xh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/缓冲区/">缓冲区</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-node-js的循环下载" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/31/node-js的循环下载/" class="article-date">
@@ -105,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/01/31/node-js的循环下载/" data-id="ckh1pwdyq000upcy5geyp7i4x" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/01/31/node-js的循环下载/" data-id="ckh5ovqvd000zp1y5p6qzcbc1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/循环下载/">循环下载</a></li></ul>
@@ -152,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/01/30/使用node对文件夹递归解析为json/" data-id="ckh1pwdz80020pcy5m3zuq4vj" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/01/30/使用node对文件夹递归解析为json/" data-id="ckh5ovqvt0024p1y51j55me3m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fs/">fs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/path/">path</a></li></ul>
@@ -196,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/01/22/解决angluar在Node服务器上的路由问题/" data-id="ckh1pwdzr003apcy593238642" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/01/22/解决angluar在Node服务器上的路由问题/" data-id="ckh5ovqwb0039p1y5uv7ej62b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar/">angluar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar-404/">angluar 404</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
@@ -244,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/12/24/如何利用git远程部署服务器的代码/" data-id="ckh1pwdzh002npcy5pn3y3pcw" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/12/24/如何利用git远程部署服务器的代码/" data-id="ckh5ovqw2002pp1y501ut9gbk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li></ul>
@@ -291,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="ckh1pwdyg000cpcy5itwydxbz" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="ckh5ovqut0008p1y5zqhwgk1l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matter-js/">Matter.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -339,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/09/typeScript的类/" data-id="ckh1pwdz1001kpcy5yij7ovmb" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/09/typeScript的类/" data-id="ckh5ovqvo001sp1y55vsiw702" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/class/">class</a></li></ul>
@@ -385,7 +435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="ckh1pwdzc002dpcy5uhso3bjr" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="ckh5ovqvx002cp1y55ukpba16" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json-server/">json server</a></li></ul>
@@ -431,7 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/05/wget范例/" data-id="ckh1pwdza0026pcy5o7slb5at" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/05/wget范例/" data-id="ckh5ovqvs0022p1y5qivacb49" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BASH/">BASH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
@@ -478,57 +528,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/29/TypeScript的接口/" data-id="ckh1pwdyg000bpcy59ngdo8k2" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/29/TypeScript的接口/" data-id="ckh5ovqv3000gp1y56lbbx4aw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/interface/">interface</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-TypeScript的基本类型" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/27/TypeScript的基本类型/" class="article-date">
-  <time datetime="2018-10-27T08:05:16.000Z" itemprop="datePublished">2018-10-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/27/TypeScript的基本类型/">TypeScript的基本类型</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这两年的时间，花费了太多时间在图形绘制上，自来友为以后，由于我们这个行业的特殊性，所以前端领域在这个H5时代，主要是承接上个时代Flash的工作，所以从svg到canvas，从canvas到webgl，却较少的精力投入到DOM中，一次偶然的机会，接到一个类似APP的web项目，留个自己的时间很少，使用相对比较传统的技术完成，
-        
-          <p class="article-more-link">
-            <a href="/2018/10/27/TypeScript的基本类型/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/27/TypeScript的基本类型/" data-id="ckh1pwe0u0070pcy502zj0tqf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
 
     </footer>
   </div>
@@ -594,6 +597,10 @@
       <ul>
         
           <li>
+            <a href="/2020/11/06/TS模版方法/">TS模版方法</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/03/JS观察者模式/">JS观察者模式</a>
           </li>
         
@@ -607,10 +614,6 @@
         
           <li>
             <a href="/2020/11/02/JS的单例模式/">JS的单例模式</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/01/对象创建模式/">对象创建模式</a>
           </li>
         
       </ul>

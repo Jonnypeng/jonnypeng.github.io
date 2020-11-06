@@ -70,6 +70,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-node保存图片" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/29/node保存图片/" class="article-date">
+  <time datetime="2019-05-29T03:00:38.000Z" itemprop="datePublished">2019-05-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/29/node保存图片/">node保存图片</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>环境是前端发出一张BASE64编码的图片，后端将base64建立缓冲区，并转为字符串，通过fs进行写入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> headImgSave = <span class="function"><span class="keyword">function</span> (<span class="params">image</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> binaryData = Buffer.from(image,<span class="string">"base64"</span>).toString(<span class="string">"binary"</span>);</span><br><span class="line">    <span class="keyword">let</span> openid = <span class="built_in">Math</span>.random().toString(<span class="number">26</span>).substr(<span class="number">2</span>,<span class="number">8</span>);</span><br><span class="line">    <span class="keyword">let</span> imgPath = path.join(__dirname, <span class="string">`upload`</span>);</span><br><span class="line">    <span class="keyword">let</span> headImg = <span class="string">`<span class="subst">$&#123;imgPath&#125;</span>/<span class="subst">$&#123;openid&#125;</span>.jpg`</span>;</span><br><span class="line">        fs.writeFile(headImg,binaryData,<span class="string">'binary'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">err</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2019/05/29/node保存图片/" data-id="ckh5ovqvf0013p1y54huer3qy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NODE/">NODE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/binaryData/">binaryData</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-pixi的webgl导出异常" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/24/pixi的webgl导出异常/" class="article-date">
@@ -102,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/05/24/pixi的webgl导出异常/" data-id="ckh1pwdz0001hpcy5opw3rc4l" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/05/24/pixi的webgl导出异常/" data-id="ckh5ovqvk001ip1y5fhf62i8q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI/">PIXI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebGL/">WebGL</a></li></ul>
@@ -146,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/" data-id="ckh1pwdyx001bpcy50zv0moe9" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/" data-id="ckh5ovqvj001ep1y5vvc0x1ak" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li></ul>
@@ -195,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/20/node的memory-cache模块/" data-id="ckh1pwdyt0010pcy5ask6m0ww" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/20/node的memory-cache模块/" data-id="ckh5ovqvg0016p1y57jagvnj2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/memory-cahce/">memory-cahce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node的全局缓存/">node的全局缓存</a></li></ul>
@@ -249,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/18/express的compression/" data-id="ckh1pwdyz001epcy50qygqeif" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/18/express的compression/" data-id="ckh5ovqvb000vp1y5bxaqb8gj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compress/">compress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gizp/">gizp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
@@ -293,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/18/pm2启动node监听80端口/" data-id="ckh1pwdz5001upcy53er4kgwe" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/18/pm2启动node监听80端口/" data-id="ckh5ovqvm001mp1y5low2552w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/80端口/">80端口</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pm2/">pm2</a></li></ul>
@@ -354,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular路由守卫/" data-id="ckh1pwdym000lpcy5u24681y9" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular路由守卫/" data-id="ckh5ovqv9000op1y5hxosa37x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -400,7 +443,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular辅助路由/" data-id="ckh1pwdyn000npcy559csu9lh" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular辅助路由/" data-id="ckh5ovqv7000lp1y5fdzypmf9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -455,7 +498,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular子路由配置/" data-id="ckh1pwdyk000hpcy5c7hpvhme" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular子路由配置/" data-id="ckh5ovqv5000hp1y5zv1sd2hz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -502,60 +545,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular传参的两种模式/" data-id="ckh1pwdyj000gpcy5virkrzz4" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular传参的两种模式/" data-id="ckh5ovqv1000dp1y5wjhcz4wn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-node缓冲区" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/01/node缓冲区/" class="article-date">
-  <time datetime="2019-02-01T03:29:53.000Z" itemprop="datePublished">2019-02-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/01/node缓冲区/">node缓冲区</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。</p>
-<p>但在处理像TCP流或文件流时，必须使用到二进制数据。因此在 Node.js中，定义了一个 Buffer 类，该类用来创建一个专门存放二进制数据的缓存区。</p>
-<p>在 Node.js 中，Buffer 类是随 Node 内核一起发布的核心库。Buffer 库为 Node.js 带来了一种存储原始数据的方法，可以让 Node.js 处理二进制数据，每当需要在 Node.js 中处理I/O操作中移动的数据时，就有可能使用 Buffer 库。原始数据存储在 Buffer 类的实例中。一个 Buffer 类似于一个整数数组，但它对应于 V8 堆内存之外的一块原始内存。</p>
-<p><em>在v6.0之前创建Buffer对象直接使用new Buffer()构造函数来创建对象实例，但是Buffer对内存的权限操作相比很大，可以直接捕获一些敏感信息，所以在v6.0以后，官方文档里面建议使用 Buffer.from() 接口去创建Buffer对象</em></p>
-        
-          <p class="article-more-link">
-            <a href="/2019/02/01/node缓冲区/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/01/node缓冲区/" data-id="ckh1pwdyw0017pcy51cj247ak" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/缓冲区/">缓冲区</a></li></ul>
 
     </footer>
   </div>
@@ -621,6 +614,10 @@
       <ul>
         
           <li>
+            <a href="/2020/11/06/TS模版方法/">TS模版方法</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/03/JS观察者模式/">JS观察者模式</a>
           </li>
         
@@ -634,10 +631,6 @@
         
           <li>
             <a href="/2020/11/02/JS的单例模式/">JS的单例模式</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/01/对象创建模式/">对象创建模式</a>
           </li>
         
       </ul>

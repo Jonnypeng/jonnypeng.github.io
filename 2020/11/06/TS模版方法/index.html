@@ -5,18 +5,19 @@
   
 
   
-  <title>Tag: 循环下载 | 重影对话</title>
+  <title>TS模版方法 | 重影对话</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jonny Peng&apos;s personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="重影对话">
-<meta property="og:url" content="https://www.jonnypeng.com/tags/循环下载/index.html">
+  <meta name="description" content="设计模式  模版方法是指在父类搭建算法框架，通过子类继承这些算法框架，并调用父类的模版方法对算法框架进行调用，特别是解决众多类具有很多相同算法，只有少量不同的场景 例如泡茶与泡咖啡都有很多相同的流程，只是细节有些差异，就可以通过模版方法进行归纳">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TS模版方法">
+<meta property="og:url" content="https://www.jonnypeng.com/2020/11/06/TS模版方法/index.html">
 <meta property="og:site_name" content="重影对话">
-<meta property="og:description" content="Jonny Peng&apos;s personal blog">
+<meta property="og:description" content="设计模式  模版方法是指在父类搭建算法框架，通过子类继承这些算法框架，并调用父类的模版方法对算法框架进行调用，特别是解决众多类具有很多相同算法，只有少量不同的场景 例如泡茶与泡咖啡都有很多相同的流程，只是细节有些差异，就可以通过模版方法进行归纳">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-11-06T03:17:53.095Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重影对话">
-<meta name="twitter:description" content="Jonny Peng&apos;s personal blog">
+<meta name="twitter:title" content="TS模版方法">
+<meta name="twitter:description" content="设计模式  模版方法是指在父类搭建算法框架，通过子类继承这些算法框架，并调用父类的模版方法对算法框架进行调用，特别是解决众多类具有很多相同算法，只有少量不同的场景 例如泡茶与泡咖啡都有很多相同的流程，只是细节有些差异，就可以通过模版方法进行归纳">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,40 +69,58 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/01/31/node-js的循环下载/" class="archive-article-date">
-  <time datetime="2019-01-31T03:00:25.000Z" itemprop="datePublished">1月 31</time>
+        <section id="main"><article id="post-TS模版方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/06/TS模版方法/" class="article-date">
+  <time datetime="2020-11-06T01:36:08.000Z" itemprop="datePublished">2020-11-06</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/31/node-js的循环下载/">node.js的循环下载</a>
+    <h1 class="article-title" itemprop="name">
+      TS模版方法
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>设计模式</li>
+</ul>
+<p>模版方法是指在父类搭建算法框架，通过子类继承这些算法框架，并调用父类的模版方法对算法框架进行调用，特别是解决众多类具有很多相同算法，只有少量不同的场景</p>
+<p>例如泡茶与泡咖啡都有很多相同的流程，只是细节有些差异，就可以通过模版方法进行归纳</p>
+<a id="more"></a>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> Behavior&#123;</span><br><span class="line">   <span class="comment">// 把水煮开</span></span><br><span class="line">   <span class="keyword">abstract</span> BoilWater():<span class="built_in">void</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 加入原料</span></span><br><span class="line">   <span class="keyword">abstract</span> AddRawMaterials():<span class="built_in">void</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 加入调料</span></span><br><span class="line">   <span class="keyword">abstract</span> AddSeasoning():<span class="built_in">void</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 等待多久时间</span></span><br><span class="line">   <span class="keyword">abstract</span> WaitTimer():<span class="built_in">void</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 开始制作</span></span><br><span class="line">   init()&#123;</span><br><span class="line">       <span class="keyword">this</span>.BoilWater();</span><br><span class="line">       <span class="keyword">this</span>.AddRawMaterials();</span><br><span class="line">       <span class="keyword">this</span>.AddSeasoning();</span><br><span class="line">       <span class="keyword">this</span>.WaitTimer();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Coffe <span class="keyword">extends</span> Behavior&#123;</span><br><span class="line">    BoilWater()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'加入水'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    AddRawMaterials()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'加咖啡'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    AddSeasoning()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'加奶精'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    WaitTimer()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'等待4分钟'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Tea <span class="keyword">extends</span> Behavior&#123;</span><br><span class="line">    BoilWater()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'加入水'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    AddRawMaterials()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'加茶'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    AddSeasoning()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'不加'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    WaitTimer()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'等待4分钟'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> coffe = <span class="keyword">new</span> Coffe();</span><br><span class="line">coffe.init();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tea = <span class="keyword">new</span> Tea();</span><br><span class="line">tea.init();</span><br></pre></td></tr></table></figure>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2020/11/06/TS模版方法/" data-id="ckh5ovqup0005p1y5mvxlhhtp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/03/JS观察者模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JS观察者模式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         
