@@ -5,18 +5,19 @@
   
 
   
-  <title>Tag: memory-cahce | 重影对话</title>
+  <title>TS享元模式 | 重影对话</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jonny Peng&apos;s personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="重影对话">
-<meta property="og:url" content="https://www.jonnypeng.com/tags/memory-cahce/index.html">
+  <meta name="description" content="设计模式  享元模式的核心是共享对象，目的是节省内存开销，分为三个场景，共享对象的内部状态、共享对象的工厂函数、共享对象的外部函数。以共享单车为例，如下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TS享元模式">
+<meta property="og:url" content="https://www.jonnypeng.com/2020/11/07/TS享元模式/index.html">
 <meta property="og:site_name" content="重影对话">
-<meta property="og:description" content="Jonny Peng&apos;s personal blog">
+<meta property="og:description" content="设计模式  享元模式的核心是共享对象，目的是节省内存开销，分为三个场景，共享对象的内部状态、共享对象的工厂函数、共享对象的外部函数。以共享单车为例，如下">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-11-07T07:52:20.941Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重影对话">
-<meta name="twitter:description" content="Jonny Peng&apos;s personal blog">
+<meta name="twitter:title" content="TS享元模式">
+<meta name="twitter:description" content="设计模式  享元模式的核心是共享对象，目的是节省内存开销，分为三个场景，共享对象的内部状态、共享对象的工厂函数、共享对象的外部函数。以共享单车为例，如下">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,40 +69,57 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/20/node的memory-cache模块/" class="archive-article-date">
-  <time datetime="2019-02-20T07:56:10.000Z" itemprop="datePublished">2月 20</time>
+        <section id="main"><article id="post-TS享元模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/07/TS享元模式/" class="article-date">
+  <time datetime="2020-11-07T06:46:05.000Z" itemprop="datePublished">2020-11-07</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/20/node的memory-cache模块/">node的memory-cache模块</a>
+    <h1 class="article-title" itemprop="name">
+      TS享元模式
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>设计模式</li>
+</ul>
+<p>享元模式的核心是共享对象，目的是节省内存开销，分为三个场景，共享对象的内部状态、共享对象的工厂函数、共享对象的外部函数。以共享单车为例，如下</p>
+<a id="more"></a>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> BikeFlyWeight&#123;</span><br><span class="line">    <span class="keyword">protected</span> state:<span class="built_in">number</span> = <span class="number">0</span>; <span class="comment">// 0为未使用，1为使用中</span></span><br><span class="line">    <span class="keyword">abstract</span> ride(userName:<span class="built_in">string</span>):<span class="built_in">void</span>;</span><br><span class="line">    <span class="keyword">abstract</span> back():<span class="built_in">void</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> getState():<span class="built_in">number</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.state;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> MoBikeFlyWeight <span class="keyword">extends</span> BikeFlyWeight&#123;</span><br><span class="line">    <span class="keyword">private</span> bikeId:<span class="built_in">string</span> = <span class="string">''</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">bikeId:<span class="built_in">string</span></span>)&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.bikeId = bikeId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ride(userName:<span class="built_in">string</span>):<span class="built_in">void</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.state = <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;userName&#125;</span>骑<span class="subst">$&#123;this.bikeId&#125;</span>号自行车`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    back():<span class="built_in">void</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.state = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> BikeFlyWeightFactory&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> instance:BikeFlyWeightFactory = <span class="keyword">new</span> BikeFlyWeightFactory();</span><br><span class="line">    <span class="keyword">private</span> pool:Set&lt;BikeFlyWeight&gt; = <span class="keyword">new</span> Set&lt;BikeFlyWeight&gt;();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;<span class="number">2</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">let</span> bikeId:<span class="built_in">string</span> = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">100000</span>).toString(<span class="number">26</span>);</span><br><span class="line">            <span class="keyword">this</span>.pool.add(<span class="keyword">new</span> MoBikeFlyWeight(bikeId));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> getInstance():BikeFlyWeightFactory&#123;</span><br><span class="line">        <span class="keyword">return</span> BikeFlyWeightFactory.instance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> getBike():BikeFlyWeight|<span class="literal">null</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> resultBike:BikeFlyWeight = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> bike of <span class="keyword">this</span>.pool)&#123;</span><br><span class="line">            <span class="keyword">if</span>(bike.getState() === <span class="number">0</span>)&#123;</span><br><span class="line">                resultBike = bike;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> resultBike;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> FlyWeightPattern&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> main():<span class="built_in">void</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> bike1:BikeFlyWeight = BikeFlyWeightFactory.getInstance().getBike();</span><br><span class="line">        bike1.ride(<span class="string">'Jonny'</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> bike2:BikeFlyWeight = BikeFlyWeightFactory.getInstance().getBike();</span><br><span class="line">        bike2.ride(<span class="string">'Candy'</span>);</span><br><span class="line">        bike2.back();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> bike3:BikeFlyWeight = BikeFlyWeightFactory.getInstance().getBike();</span><br><span class="line">        bike3.ride(<span class="string">'Amy'</span>);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(bike2===bike3);  <span class="comment">//是同一辆单车</span></span><br><span class="line"></span><br><span class="line">        bike3.back();</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(bike1===bike3);    <span class="comment">//不是同一辆单车</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">FlyWeightPattern.main();</span><br></pre></td></tr></table></figure>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2020/11/07/TS享元模式/" data-id="ckh7e40f200057qy5s8o1393n" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/06/TS模版方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TS模版方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         

@@ -70,6 +70,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-RXJS的数学类操作符" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/29/RXJS的数学类操作符/" class="article-date">
+  <time datetime="2019-05-29T07:42:15.000Z" itemprop="datePublished">2019-05-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/教程/">教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/29/RXJS的数学类操作符/">RXJS的数学类操作符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="count：-统计数据个数"><a href="#count：-统计数据个数" class="headerlink" title="count： 统计数据个数"></a>count： 统计数据个数</h3><p>顾名思义，就是统计上游数据流所产生的数据的个数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  source = <span class="keyword">of</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>).pipe(</span><br><span class="line">  concat(<span class="keyword">of</span>(<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>))</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">source = source.pipe(</span><br><span class="line">  count()</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">source.subscribe(<span class="function"><span class="params">x</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);   <span class="comment">//8</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/05/29/RXJS的数学类操作符/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2019/05/29/RXJS的数学类操作符/" data-id="ckh7e40f500077qy5ddjhf61c" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rxjs/">rxjs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-node保存图片" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/29/node保存图片/" class="article-date">
@@ -101,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/05/29/node保存图片/" data-id="ckh5ovqvf0013p1y54huer3qy" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/05/29/node保存图片/" data-id="ckh7e40fs00187qy5et52cmmm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NODE/">NODE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/binaryData/">binaryData</a></li></ul>
@@ -145,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/05/24/pixi的webgl导出异常/" data-id="ckh5ovqvk001ip1y5fhf62i8q" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/05/24/pixi的webgl导出异常/" data-id="ckh7e40fy001l7qy5nvx1vr2n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI/">PIXI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebGL/">WebGL</a></li></ul>
@@ -189,7 +237,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/" data-id="ckh5ovqvj001ep1y5vvc0x1ak" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/05/14/pix-js的canvas超出容器如何解除时间绑定/" data-id="ckh7e40fu001c7qy51nc5khjy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li></ul>
@@ -238,7 +286,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/20/node的memory-cache模块/" data-id="ckh5ovqvg0016p1y57jagvnj2" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/20/node的memory-cache模块/" data-id="ckh7e40fv001f7qy5b031p6eu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/memory-cahce/">memory-cahce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node的全局缓存/">node的全局缓存</a></li></ul>
@@ -292,7 +340,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/18/express的compression/" data-id="ckh5ovqvb000vp1y5bxaqb8gj" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/18/express的compression/" data-id="ckh7e40fl000v7qy5ldtjt7yb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compress/">compress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gizp/">gizp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
@@ -336,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/18/pm2启动node监听80端口/" data-id="ckh5ovqvm001mp1y5low2552w" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/18/pm2启动node监听80端口/" data-id="ckh7e40fz001n7qy5zsoza3sz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/80端口/">80端口</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pm2/">pm2</a></li></ul>
@@ -397,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular路由守卫/" data-id="ckh5ovqv9000op1y5hxosa37x" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular路由守卫/" data-id="ckh7e40fj000o7qy5qoy8ezem" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -443,7 +491,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular辅助路由/" data-id="ckh5ovqv7000lp1y5fdzypmf9" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular辅助路由/" data-id="ckh7e40fk000s7qy5lw54w2oq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -498,54 +546,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular子路由配置/" data-id="ckh5ovqv5000hp1y5zv1sd2hz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-angular传参的两种模式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/14/angular传参的两种模式/" class="article-date">
-  <time datetime="2019-02-14T03:30:19.000Z" itemprop="datePublished">2019-02-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/14/angular传参的两种模式/">angular传参的两种模式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="第一种，使用path-router-id-的模式"><a href="#第一种，使用path-router-id-的模式" class="headerlink" title="第一种，使用path/router?id=的模式"></a>第一种，使用path/router?id=的模式</h3>
-        
-          <p class="article-more-link">
-            <a href="/2019/02/14/angular传参的两种模式/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular传参的两种模式/" data-id="ckh5ovqv1000dp1y5wjhcz4wn" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular子路由配置/" data-id="ckh7e40fh000m7qy5yre7ltd4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -614,6 +615,10 @@
       <ul>
         
           <li>
+            <a href="/2020/11/07/TS享元模式/">TS享元模式</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/06/TS模版方法/">TS模版方法</a>
           </li>
         
@@ -627,10 +632,6 @@
         
           <li>
             <a href="/2020/11/02/JS的策略模式/">JS的策略模式</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/02/JS的单例模式/">JS的单例模式</a>
           </li>
         
       </ul>
