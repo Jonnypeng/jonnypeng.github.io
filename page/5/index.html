@@ -70,6 +70,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-wget范例" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/05/wget范例/" class="article-date">
+  <time datetime="2018-11-04T16:08:54.000Z" itemprop="datePublished">2018-11-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/05/wget范例/">wget范例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如何通过规则性计算，下载符合特定规则的图片，就譬如，下载大量图片<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">num=600</span><br><span class="line"><span class="keyword">while</span>((<span class="variable">$num</span>&lt;900))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">		wget -r -p -U Mozila <span class="string">"http://www.abc.com/d/7541228<span class="variable">$&#123;num&#125;</span>.jpg"</span></span><br><span class="line">		<span class="built_in">let</span> <span class="string">"num++"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<p>使用wget下载整个网站</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -c -r -np -k -L -p -U Mozila <span class="string">"http://abc.com/a/"</span></span><br></pre></td></tr></table></figure>
+<p>参数说明：<br>-c 断点续传<br>-r 递归下载，下载指定网页某一目录下（包括子目录）的所有文件<br>-nd 递归下载时不创建一层一层的目录，把所有的文件下载到当前目录<br>-np 递归下载时不搜索上层目录，如wget -c -r <a href="http://www.xxx.org/pub/path/" target="_blank" rel="noopener">www.xxx.org/pub/path/</a><br>没有加参数-np，就会同时下载path的上一级目录pub下的其它文件<br>-k 将绝对链接转为相对链接，下载整个站点后脱机浏览网页，最好加上这个参数<br>-L 递归时不进入其它主机，如wget -c -r <a href="http://www.xxx.org/" target="_blank" rel="noopener">www.xxx.org/</a><br>如果网站内有一个这样的链接：<br><a href="http://www.yyy.org，不加参数-L，就会像大火烧山一样，会递归下载www.yyy.org网站" target="_blank" rel="noopener">www.yyy.org，不加参数-L，就会像大火烧山一样，会递归下载www.yyy.org网站</a><br>-p 下载网页所需的所有文件，如图片等<br>-A 指定要下载的文件样式列表，多个样式用逗号分隔<br>-i 后面跟一个文件，文件内指明要下载的URL</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2018/11/05/wget范例/" data-id="ckh8krovh0029cxy5oyk9er7n" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BASH/">BASH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-TypeScript的接口" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/29/TypeScript的接口/" class="article-date">
@@ -105,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/29/TypeScript的接口/" data-id="ckh7e40fg000i7qy5tzpc090b" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/29/TypeScript的接口/" data-id="ckh8krouq000icxy5obldr4cz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/interface/">interface</a></li></ul>
@@ -152,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/27/TypeScript的基本类型/" data-id="ckh7e40hn006z7qy5nyv48fmd" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/27/TypeScript的基本类型/" data-id="ckh8krowv0070cxy5m9s11305" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -197,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/26/TS添加Jquery/" data-id="ckh7e40fa000b7qy52r6lwown" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/26/TS添加Jquery/" data-id="ckh8krouo000ecxy5hmyuviit" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
@@ -238,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/23/在atom增加自定义的文件类型/" data-id="ckh7e40ge002o7qy562z298te" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/23/在atom增加自定义的文件类型/" data-id="ckh8krovr002scxy5ckm7fddi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/22/MAC写入USB启动盘/" data-id="ckh7e40f500087qy5dxwmf462" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/22/MAC写入USB启动盘/" data-id="ckh8kroue0005cxy5fag957ye" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAC/">MAC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/USB/">USB</a></li></ul>
@@ -328,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/16/在Mac的旧设备中开启AirDrop/" data-id="ckh7e40gd002l7qy5hjctydvv" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/16/在Mac的旧设备中开启AirDrop/" data-id="ckh8krovq002qcxy5leqhemya" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Airdrop/">Airdrop</a></li></ul>
@@ -372,7 +418,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/16/正则表达式获取img的src/" data-id="ckh7e40gm00317qy5v06xb0mj" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/16/正则表达式获取img的src/" data-id="ckh8krovy0038cxy5mzjr7z07" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
@@ -418,7 +464,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/16/微信内视频播放代码片断/" data-id="ckh7e40gi002x7qy5j68xhyxd" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/16/微信内视频播放代码片断/" data-id="ckh8krovx0035cxy56ffpv7i4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信/">微信</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信内播放视频/">微信内播放视频</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/视频/">视频</a></li></ul>
@@ -469,61 +515,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/15/如何快速地将HEXO配置到GitHub-Pages/" data-id="ckh7e40gh002v7qy5jh94qgk1" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/15/如何快速地将HEXO配置到GitHub-Pages/" data-id="ckh8krovv0030cxy5egf11qtj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-Github-Page/">Hexo Github Page</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/14/hello-world/" class="article-date">
-  <time datetime="2018-10-14T08:25:40.000Z" itemprop="datePublished">2018-10-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/14/hello-world/" data-id="ckh7e40fq00147qy5lay6clsg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
 
     </footer>
   </div>
@@ -536,7 +531,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">下一页 &raquo;</a>
   </nav>
 
 </section>
@@ -589,6 +584,10 @@
       <ul>
         
           <li>
+            <a href="/2020/11/07/关于排序的三种算法/">关于排序的三种算法</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/07/TS享元模式/">TS享元模式</a>
           </li>
         
@@ -602,10 +601,6 @@
         
           <li>
             <a href="/2020/11/03/JS代理模式/">JS代理模式</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/02/JS的策略模式/">JS的策略模式</a>
           </li>
         
       </ul>
