@@ -70,6 +70,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-angular辅助路由" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/14/angular辅助路由/" class="article-date">
+  <time datetime="2019-02-14T07:34:01.000Z" itemprop="datePublished">2019-02-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/14/angular辅助路由/">angular辅助路由</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>辅助路由是指在路由出口router-outlet中指定一个name标识符，从而将相应的组件映射道匹配的name的路由上，看路由配置</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes: Routes = [</span><br><span class="line">  &#123;path:<span class="string">''</span>,redirectTo:<span class="string">'/home'</span>,pathMatch:<span class="string">'full'</span>&#125;,</span><br><span class="line">  &#123;path:<span class="string">'chat'</span>,component:ChatComponent,outlet:<span class="string">'aux'</span>&#125;,</span><br><span class="line">  &#123;path:<span class="string">'home'</span>,component:HomeComponent&#125;,</span><br><span class="line">  &#123;path:<span class="string">'product/:id'</span>,component:ProductComponent,children:[</span><br><span class="line">    &#123;path:<span class="string">''</span>,component:ProductDescComponent&#125;,</span><br><span class="line">    &#123;path:<span class="string">'seller/:id'</span>,component:SellerInfoComponent&#125;</span><br><span class="line">  ]&#125;,</span><br><span class="line">  &#123;path:<span class="string">'**'</span>,component:Code404Component&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>入口模版<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/']"</span>&gt;</span>主页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/product',1]"</span>&gt;</span>商品详情<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"商品详情"</span> (<span class="attr">click</span>)=<span class="string">"toProductDetails()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;aux:'chat'&#125;&#125;]"</span>&gt;</span>开始聊天<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;aux:null&#125;&#125;]"</span>&gt;</span>结束聊天<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span> <span class="attr">name</span>=<span class="string">"aux"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>当点击开始聊天时，chat组件就会映射到匹配name的相应路由出口上去,在配置辅助路由同时，也可以配置主路由<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;primary:'home',aux:'chat'&#125;&#125;]"</span>&gt;</span>开始聊天<span class="tag">&lt;/<span class="name">a</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span> <span class="attr">name</span>=<span class="string">"aux"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular辅助路由/" data-id="ckhrc0vyw000vuqy58y8ywzfz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-angular子路由配置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/02/14/angular子路由配置/" class="article-date">
@@ -113,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular子路由配置/" data-id="ckh8krout000ocxy59n899a73" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular子路由配置/" data-id="ckhrc0vyu000quqy55iy8waqg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -160,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/14/angular传参的两种模式/" data-id="ckh8krous000kcxy5yxcoeala" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/14/angular传参的两种模式/" data-id="ckhrc0vyt000ouqy5ma8n3rfr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular-路由/">angular 路由</a></li></ul>
@@ -210,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/02/01/node缓冲区/" data-id="ckh8krov6001fcxy5s9abqbkw" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/02/01/node缓冲区/" data-id="ckhrc0vz6001juqy58ppwpzyx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/缓冲区/">缓冲区</a></li></ul>
@@ -257,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/01/31/node-js的循环下载/" data-id="ckh8krov10016cxy5pcolibsn" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/01/31/node-js的循环下载/" data-id="ckhrc0vz2001auqy5lju35o7f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/循环下载/">循环下载</a></li></ul>
@@ -304,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/01/30/使用node对文件夹递归解析为json/" data-id="ckh8krovj002ecxy5z77g1j3g" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/01/30/使用node对文件夹递归解析为json/" data-id="ckhrc0vzi002euqy5igzqkn8c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fs/">fs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/path/">path</a></li></ul>
@@ -348,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/01/22/解决angluar在Node服务器上的路由问题/" data-id="ckh8krow1003fcxy57wpy6tln" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2019/01/22/解决angluar在Node服务器上的路由问题/" data-id="ckhrc0w03003fuqy57vye9vpm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar/">angluar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar-404/">angluar 404</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
@@ -396,7 +442,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/12/24/如何利用git远程部署服务器的代码/" data-id="ckh8krovu002xcxy5v9upa49v" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/12/24/如何利用git远程部署服务器的代码/" data-id="ckhrc0vzp002uuqy5a2kepdor" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li></ul>
@@ -443,7 +489,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="ckh8kroup000fcxy5qigx1dho" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="ckhrc0vyp000guqy59gbh9vrz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matter-js/">Matter.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -491,56 +537,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/09/typeScript的类/" data-id="ckh8krovc001wcxy5qwdz59fw" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/09/typeScript的类/" data-id="ckhrc0vzc001yuqy5kdy7egzj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/class/">class</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-前端模拟后端数据的神器Json-Server" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/05/前端模拟后端数据的神器Json-Server/" class="article-date">
-  <time datetime="2018-11-05T06:20:33.000Z" itemprop="datePublished">2018-11-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/05/前端模拟后端数据的神器Json-Server/">前端模拟后端数据的神器json-Server</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="install-Json-Server"><a href="#install-Json-Server" class="headerlink" title="install Json Server"></a>install Json Server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g json-server</span><br></pre></td></tr></table></figure>
-<h3 id="在指定目录下创建db-json"><a href="#在指定目录下创建db-json" class="headerlink" title="在指定目录下创建db.json"></a>在指定目录下创建db.json</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"posts"</span>: [</span><br><span class="line">    &#123; <span class="attr">"id"</span>: <span class="number">1</span>, <span class="attr">"title"</span>: <span class="string">"json-server"</span>, <span class="attr">"author"</span>: <span class="string">"typicode"</span> &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"comments"</span>: [</span><br><span class="line">    &#123; <span class="attr">"id"</span>: <span class="number">1</span>, <span class="attr">"body"</span>: <span class="string">"some comment"</span>, <span class="attr">"postId"</span>: <span class="number">1</span> &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"profile"</span>: &#123; <span class="attr">"name"</span>: <span class="string">"typicode"</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="启动服务并监听文件"><a href="#启动服务并监听文件" class="headerlink" title="启动服务并监听文件"></a>启动服务并监听文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json-server --watch db.json</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/typicode/json-server" target="_blank" rel="noopener">项目文档</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="ckh8krovp002mcxy5snoq2z0j" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json-server/">json server</a></li></ul>
 
     </footer>
   </div>
@@ -606,6 +606,10 @@
       <ul>
         
           <li>
+            <a href="/2020/11/21/TS状态模式/">JS状态模式</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/07/关于排序的三种算法/">关于排序的三种算法</a>
           </li>
         
@@ -619,10 +623,6 @@
         
           <li>
             <a href="/2020/11/03/JS观察者模式/">JS观察者模式</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/03/JS代理模式/">JS代理模式</a>
           </li>
         
       </ul>

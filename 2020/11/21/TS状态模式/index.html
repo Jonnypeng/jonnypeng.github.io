@@ -5,18 +5,19 @@
   
 
   
-  <title>Tag: angular router | 重影对话</title>
+  <title>JS状态模式 | 重影对话</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jonny Peng&apos;s personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="重影对话">
-<meta property="og:url" content="https://www.jonnypeng.com/tags/angular-router/index.html">
+  <meta name="description" content="将每个状态封装成类，通过场景进行映射相关的状态类，从而实现状态模式 下面制作一个关于灯光的场景，灯光按钮有三种状态，按每一个按钮，都会触发一个信号，并把下一个状态传递给下一个类  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS状态模式">
+<meta property="og:url" content="https://www.jonnypeng.com/2020/11/21/TS状态模式/index.html">
 <meta property="og:site_name" content="重影对话">
-<meta property="og:description" content="Jonny Peng&apos;s personal blog">
+<meta property="og:description" content="将每个状态封装成类，通过场景进行映射相关的状态类，从而实现状态模式 下面制作一个关于灯光的场景，灯光按钮有三种状态，按每一个按钮，都会触发一个信号，并把下一个状态传递给下一个类  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-11-21T06:49:25.645Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重影对话">
-<meta name="twitter:description" content="Jonny Peng&apos;s personal blog">
+<meta name="twitter:title" content="JS状态模式">
+<meta name="twitter:description" content="将每个状态封装成类，通过场景进行映射相关的状态类，从而实现状态模式 下面制作一个关于灯光的场景，灯光按钮有三种状态，按每一个按钮，都会触发一个信号，并把下一个状态传递给下一个类  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,97 +69,54 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/14/angular路由守卫/" class="archive-article-date">
-  <time datetime="2019-02-14T07:50:29.000Z" itemprop="datePublished">2月 14</time>
+        <section id="main"><article id="post-TS状态模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/21/TS状态模式/" class="article-date">
+  <time datetime="2020-11-21T04:52:22.000Z" itemprop="datePublished">2020-11-21</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/14/angular路由守卫/">angular路由守卫</a>
+    <h1 class="article-title" itemprop="name">
+      JS状态模式
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/14/angular辅助路由/" class="archive-article-date">
-  <time datetime="2019-02-14T07:34:01.000Z" itemprop="datePublished">2月 14</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/14/angular辅助路由/">angular辅助路由</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/14/angular子路由配置/" class="archive-article-date">
-  <time datetime="2019-02-14T06:35:55.000Z" itemprop="datePublished">2月 14</time>
-</a>
+        <p>将每个状态封装成类，通过场景进行映射相关的状态类，从而实现状态模式</p>
+<p>下面制作一个关于灯光的场景，灯光按钮有三种状态，按每一个按钮，都会触发一个信号，并把下一个状态传递给下一个类</p>
+<!-- more · -->
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是灯光状态的抽象类</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> LightState&#123;</span><br><span class="line">    <span class="keyword">abstract</span> state:<span class="built_in">string</span>;</span><br><span class="line">    light:Light;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">light:Light</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.light = light;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    print()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.state);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">abstract</span> changeState():<span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//关灯</span></span><br><span class="line"><span class="keyword">class</span> OffLightState <span class="keyword">extends</span> LightState&#123;</span><br><span class="line">    state:<span class="built_in">string</span> = <span class="string">'off'</span>;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">light:Light</span>)&#123;</span><br><span class="line">        <span class="keyword">super</span>(light);</span><br><span class="line">    &#125;</span><br><span class="line">    changeState()&#123;</span><br><span class="line">        <span class="keyword">this</span>.light.setState(<span class="keyword">this</span>.light.weakState);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//暖灯</span></span><br><span class="line"><span class="keyword">class</span> WeakLightState <span class="keyword">extends</span> LightState&#123;</span><br><span class="line">    state:<span class="built_in">string</span> = <span class="string">'weak'</span>;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">light:Light</span>)&#123;</span><br><span class="line">        <span class="keyword">super</span>(light);</span><br><span class="line">    &#125;</span><br><span class="line">    changeState()&#123;</span><br><span class="line">        <span class="keyword">this</span>.light.setState(<span class="keyword">this</span>.light.strongState);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//强灯</span></span><br><span class="line"><span class="keyword">class</span> StrongLightState <span class="keyword">extends</span> LightState&#123;</span><br><span class="line">    state:<span class="built_in">string</span> = <span class="string">'strong'</span>;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">light:Light</span>)&#123;</span><br><span class="line">        <span class="keyword">super</span>(light);</span><br><span class="line">    &#125;</span><br><span class="line">    changeState()&#123;</span><br><span class="line">        <span class="keyword">this</span>.light.setState(<span class="keyword">this</span>.light.offLightState);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Light&#123;</span><br><span class="line">    offLightState:OffLightState = <span class="keyword">new</span> OffLightState(<span class="keyword">this</span>);</span><br><span class="line">    weakState:WeakLightState = <span class="keyword">new</span> WeakLightState(<span class="keyword">this</span>);</span><br><span class="line">    strongState:StrongLightState = <span class="keyword">new</span> StrongLightState(<span class="keyword">this</span>);</span><br><span class="line">    currentState:LightState = <span class="keyword">this</span>.offLightState;</span><br><span class="line"></span><br><span class="line">    setState(newState:LightState)&#123;</span><br><span class="line">        <span class="keyword">this</span>.currentState = newState;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//点击事件</span></span><br><span class="line">    onPress()&#123;</span><br><span class="line">        <span class="keyword">this</span>.currentState.print();</span><br><span class="line">        <span class="keyword">this</span>.currentState.changeState();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> light = <span class="keyword">new</span> Light();</span><br><span class="line"></span><br><span class="line">light.onPress();<span class="comment">//off</span></span><br><span class="line">light.onPress();<span class="comment">//weak</span></span><br><span class="line">light.onPress();<span class="comment">//strong</span></span><br></pre></td></tr></table></figure>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/14/angular子路由配置/">angular子路由配置</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/14/angular传参的两种模式/" class="archive-article-date">
-  <time datetime="2019-02-14T03:30:19.000Z" itemprop="datePublished">2月 14</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2020/11/21/TS状态模式/" data-id="ckhrc0vyl000cuqy5r05kaxdi" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/14/angular传参的两种模式/">angular传参的两种模式</a>
-    </h1>
-  
-
-    </header>
+      
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/11/07/关于排序的三种算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于排序的三种算法</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
