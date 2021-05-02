@@ -70,6 +70,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-解决angluar在Node服务器上的路由问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/22/解决angluar在Node服务器上的路由问题/" class="article-date">
+  <time datetime="2019-01-22T14:13:57.000Z" itemprop="datePublished">2019-01-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/教程/">教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/22/解决angluar在Node服务器上的路由问题/">解决angluar在Node服务器上的路由问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>官方教程中没有涉及到node服务器对angluar的编译文件解决路由的问题，其实原理与apahce是一样的，当路由返回404的时候，应该让路由再直接找index.html这个源文件，具体代码如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 这里是设置中间件，让编译文件的静态文件可以被获取 */</span></span><br><span class="line">app.use(express.static(<span class="string">"dist/w-app"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 这里是不管url地址是什么，路由都统一在index.html上进行查询，然后获取到真实的Angluar的路由 */</span></span><br><span class="line">app.get(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    res.sendFile(path.join(__dirname,<span class="string">'dist/w-app/index.html'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"server is running"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2019/01/22/解决angluar在Node服务器上的路由问题/" data-id="cko72s6rc003swdy59a52vyvm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar/">angluar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angluar-404/">angluar 404</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-如何利用git远程部署服务器的代码" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/12/24/如何利用git远程部署服务器的代码/" class="article-date">
@@ -106,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/12/24/如何利用git远程部署服务器的代码/" data-id="cko5wgsvh00393wy5cmucfbh8" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/12/24/如何利用git远程部署服务器的代码/" data-id="cko72s6r30034wdy5y6k37mo2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li></ul>
@@ -153,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="cko5wgsud000g3wy54tj6rk8j" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" data-id="cko72s6q1000gwdy564ys37c2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matter-js/">Matter.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -201,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/09/typeScript的类/" data-id="cko5wgsv100243wy5i2fcnbxx" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/09/typeScript的类/" data-id="cko72s6qp0021wdy5qwm6aqhw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/class/">class</a></li></ul>
@@ -247,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="cko5wgsvc002x3wy5g2j4899i" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/05/前端模拟后端数据的神器Json-Server/" data-id="cko72s6r0002vwdy5mxuc9cyf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json-server/">json server</a></li></ul>
@@ -293,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/11/05/wget范例/" data-id="cko5wgsv5002g3wy5jbm4ry11" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/11/05/wget范例/" data-id="cko72s6qt002ewdy5m4r844l7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BASH/">BASH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
@@ -340,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/29/TypeScript的接口/" data-id="cko5wgsug000m3wy5oqysp2j2" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/29/TypeScript的接口/" data-id="cko72s6q4000lwdy5ce23kcc3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/interface/">interface</a></li></ul>
@@ -387,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/27/TypeScript的基本类型/" data-id="cko5wgsuf000j3wy5difo2kxo" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/27/TypeScript的基本类型/" data-id="cko72s6q3000jwdy5k4hm3mox" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -432,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/26/TS添加Jquery/" data-id="cko5wgsua000c3wy5q084nd9u" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/26/TS添加Jquery/" data-id="cko72s6q0000fwdy5epnrd27h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
@@ -473,56 +517,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/23/在atom增加自定义的文件类型/" data-id="cko5wgsvg00363wy587v8eevo" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2018/10/23/在atom增加自定义的文件类型/" data-id="cko72s6r20031wdy5r3apm4f4" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-MAC写入USB启动盘" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/22/MAC写入USB启动盘/" class="article-date">
-  <time datetime="2018-10-22T06:46:05.000Z" itemprop="datePublished">2018-10-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/MAC写入USB启动盘/">MAC写入USB启动盘</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先，先抹掉USB设备的内容，最好格式化为MS－DOS格式，然后卸载USB设备；</p>
-<p>其次，假设ISO文件路径为/Path/A.iso ，而我需要输出的USB路径为/Path/USB</p>
-<p>最后，打开终端，运行以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo dd if=/Path/A.iso of=/Path/USB bs=10m</span><br><span class="line"></span><br><span class="line">#参数if- 输入文件名，就是iso的文件名</span><br><span class="line">#参数of- 输出文件名</span><br><span class="line">#参数bs- 同时设置读写块的大小，单位是bytes</span><br></pre></td></tr></table></figure>
-<p>等待结束，就可以安装啦</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/10/22/MAC写入USB启动盘/" data-id="cko5wgsu200063wy5acczrdhk" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAC/">MAC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/USB/">USB</a></li></ul>
-
     </footer>
   </div>
   
@@ -587,6 +584,10 @@
       <ul>
         
           <li>
+            <a href="/2021/05/02/将有序数组转换为二叉搜索树/">将有序数组转换为二叉搜索树</a>
+          </li>
+        
+          <li>
             <a href="/2021/05/01/二叉树遍历/">二叉树遍历</a>
           </li>
         
@@ -600,10 +601,6 @@
         
           <li>
             <a href="/2020/11/21/TS状态模式/">JS状态模式</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/07/关于排序的三种算法/">关于排序的三种算法</a>
           </li>
         
       </ul>

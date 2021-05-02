@@ -5,20 +5,19 @@
   
 
   
-  <title>three.js的线与三角形的笔记 | 重影对话</title>
+  <title>将有序数组转换为二叉搜索树 | 重影对话</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="线line: 1234567891011121314var line3 = new THREE.Line3();      line3.start = new THREE.Vector3(0,0,0);      line3.end = new THREE.Vector3(0,0,10);      var center = new THREE.Vector3();      //line3.ge">
-<meta name="keywords" content="three.js">
+  <meta name="description" content="给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵高度平衡二叉搜索树。高度平衡二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过1」的二叉树。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="three.js的线与三角形的笔记">
-<meta property="og:url" content="https://www.jonnypeng.com/2019/06/16/three-js的线与三角形的笔记/index.html">
+<meta property="og:title" content="将有序数组转换为二叉搜索树">
+<meta property="og:url" content="https://www.jonnypeng.com/2021/05/02/将有序数组转换为二叉搜索树/index.html">
 <meta property="og:site_name" content="重影对话">
-<meta property="og:description" content="线line: 1234567891011121314var line3 = new THREE.Line3();      line3.start = new THREE.Vector3(0,0,0);      line3.end = new THREE.Vector3(0,0,10);      var center = new THREE.Vector3();      //line3.ge">
+<meta property="og:description" content="给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵高度平衡二叉搜索树。高度平衡二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过1」的二叉树。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-17T01:26:59.000Z">
+<meta property="og:updated_time" content="2021-05-02T11:13:09.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="three.js的线与三角形的笔记">
-<meta name="twitter:description" content="线line: 1234567891011121314var line3 = new THREE.Line3();      line3.start = new THREE.Vector3(0,0,0);      line3.end = new THREE.Vector3(0,0,10);      var center = new THREE.Vector3();      //line3.ge">
+<meta name="twitter:title" content="将有序数组转换为二叉搜索树">
+<meta name="twitter:description" content="给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵高度平衡二叉搜索树。高度平衡二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过1」的二叉树。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -70,16 +69,12 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-three-js的线与三角形的笔记" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-将有序数组转换为二叉搜索树" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/06/16/three-js的线与三角形的笔记/" class="article-date">
-  <time datetime="2019-06-16T14:00:43.000Z" itemprop="datePublished">2019-06-16</time>
+    <a href="/2021/05/02/将有序数组转换为二叉搜索树/" class="article-date">
+  <time datetime="2021-05-02T11:09:44.000Z" itemprop="datePublished">2021-05-02</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码片段/">代码片段</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -88,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      three.js的线与三角形的笔记
+      将有序数组转换为二叉搜索树
     </h1>
   
 
@@ -96,40 +91,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>线line:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> line3 = <span class="keyword">new</span> THREE.Line3();</span><br><span class="line"></span><br><span class="line">      line3.start = <span class="keyword">new</span> THREE.Vector3(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">      line3.end = <span class="keyword">new</span> THREE.Vector3(<span class="number">0</span>,<span class="number">0</span>,<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> center = <span class="keyword">new</span> THREE.Vector3();</span><br><span class="line">      <span class="comment">//line3.getCenter(center);</span></span><br><span class="line">      <span class="comment">//center = center.addVectors(line3.start,line3.end).multiplyScalar(0.5);</span></span><br><span class="line">      <span class="keyword">let</span> distance = line3.distance();</span><br><span class="line"></span><br><span class="line">      <span class="built_in">console</span>.log(distance);<span class="comment">//10</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">//console.log(Math.sqrt(2*2 + 2*2));</span></span><br><span class="line">      <span class="comment">//console.log(line3.start.distanceTo(line3.end))</span></span><br></pre></td></tr></table></figure>
+        <p>给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵高度平衡二叉搜索树。高度平衡二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过1」的二叉树。</p>
 <a id="more"></a>
-<p>射线ray:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> THREE.Vector3(<span class="number">0</span>,<span class="number">5</span>,<span class="number">-8</span>);</span><br><span class="line">      <span class="keyword">var</span> p2 = <span class="keyword">new</span> THREE.Vector3(<span class="number">-10</span>,<span class="number">-5</span>,<span class="number">-8</span>);</span><br><span class="line">      <span class="keyword">var</span> p3 = <span class="keyword">new</span> THREE.Vector3(<span class="number">10</span>,<span class="number">-5</span>,<span class="number">-8</span>);</span><br><span class="line">      <span class="keyword">var</span> ray = <span class="keyword">new</span> THREE.Ray();</span><br><span class="line">      ray.origin = <span class="keyword">new</span> THREE.Vector3(<span class="number">0</span>,<span class="number">0</span>,<span class="number">3</span>);</span><br><span class="line">      ray.direction = <span class="keyword">new</span> THREE.Vector3(<span class="number">0</span>,<span class="number">0</span>,<span class="number">-10</span>).normalize();  </span><br><span class="line">      <span class="keyword">var</span> result = ray.intersectTriangle(p1,p2,p3);</span><br><span class="line">      <span class="built_in">console</span>.log(result);  <span class="comment">// &#123;"x":0,"y":0,"z":-8&#125;</span></span><br></pre></td></tr></table></figure>
-<p>三角形traiangle:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> triangle = <span class="keyword">new</span> THREE.Triangle();</span><br><span class="line">     triangle.a = <span class="keyword">new</span> THREE.Vector3(<span class="number">0</span>,<span class="number">5</span>,<span class="number">-8</span>);</span><br><span class="line">     triangle.b = <span class="keyword">new</span> THREE.Vector3(<span class="number">-10</span>,<span class="number">-5</span>,<span class="number">-8</span>);</span><br><span class="line">     triangle.c = <span class="keyword">new</span> THREE.Vector3(<span class="number">10</span>,<span class="number">-5</span>,<span class="number">-8</span>);</span><br><span class="line">     </span><br><span class="line">     <span class="comment">//var area = triangle.getArea();</span></span><br><span class="line">     <span class="comment">//console.log(area);  // 100</span></span><br><span class="line">     <span class="keyword">var</span> midpoint = <span class="keyword">new</span> THREE.Vector3();</span><br><span class="line">     midpoint = triangle.getMidpoint(midpoint);</span><br><span class="line">     <span class="built_in">console</span>.log(midpoint); <span class="comment">//&#123;"x":0,"y":-1.6666666666666665,"z":-8&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 递归函数,采用中序遍历法还原高度平衡二叉搜索树</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> createNode = <span class="function">(<span class="params">nums:<span class="built_in">number</span>[],start:<span class="built_in">number</span>,end:<span class="built_in">number</span></span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(start&gt;end)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">const</span> mid = <span class="built_in">Math</span>.floor((start + end)*<span class="number">0.5</span>);</span><br><span class="line">        <span class="keyword">const</span> root = <span class="keyword">new</span> TreeNode(nums[mid]);</span><br><span class="line">        root.left = createNode(nums,start,mid - <span class="number">1</span>);</span><br><span class="line">        root.right = createNode(nums,mid+<span class="number">1</span>,end);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortedArrayToBST</span>(<span class="params">nums: <span class="built_in">number</span>[]</span>): <span class="title">TreeNode</span> | <span class="title">null</span> </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> n: <span class="built_in">number</span> = nums.length;</span><br><span class="line">    <span class="keyword">if</span> (n === <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> createNode(nums,<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2019/06/16/three-js的线与三角形的笔记/" data-id="cko72s6qm001uwdy5uwww7f35" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2021/05/02/将有序数组转换为二叉搜索树/" data-id="cko72s6rb003pwdy5i1lshfws" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/three-js/">three.js</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2019/07/18/webpack简易配置/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          webpack简易配置
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/05/29/测试webgl目前所使用显卡信息/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/05/01/二叉树遍历/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">测试webgl目前所使用显卡信息</div>
+      <div class="article-nav-title">二叉树遍历</div>
     </a>
   
 </nav>
