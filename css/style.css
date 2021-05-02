@@ -311,6 +311,11 @@ body {
   height: 30%;
   position: relative;
   border-bottom: 1px solid #ddd;
+  background: url("https://i.picsum.photos/id/62/900/500.jpg?hmac=F6HI-TlboQB_FIQFJUN9_Yw0HAytMe-3sIxscLMgcxg") no-repeat;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  background-size: 100% auto;
+  background-position: center;
 }
 #header:before,
 #header:after {
