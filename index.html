@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>重影对话</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Jonny Peng&apos;s personal blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="重影对话">
+<meta property="og:url" content="https://www.jonnypeng.com/index.html">
+<meta property="og:site_name" content="重影对话">
+<meta property="og:description" content="Jonny Peng&apos;s personal blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="重影对话">
+<meta name="twitter:description" content="Jonny Peng&apos;s personal blog">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">重影对话</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Jonny Peng&#39;s personal blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="https://github.com/Jonnypeng">GitHub</a>
+        
+          <a class="main-nav-link" href="https://codepen.io/dashboard/">Codepen</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://www.jonnypeng.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-适配器模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/08/15/适配器模式/" class="article-date">
+  <time datetime="2021-08-15T06:56:13.000Z" itemprop="datePublished">2021-08-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/15/适配器模式/">适配器模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>适配器模式可以是一个类，将需要适配的对象进行成员实例化，同时继承原对象，在保持原对象原方法接口不变的情况下，覆写原方法，调用成员实例的方法实现新的功能</p>
+<p>见代码</p>
+        
+          <p class="article-more-link">
+            <a href="/2021/08/15/适配器模式/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2021/08/15/适配器模式/" data-id="cksczr7200040lxy5r8l1p5hp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-判断二叉树是否为一个平衡二叉树" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/05/22/判断二叉树是否为一个平衡二叉树/" class="article-date">
+  <time datetime="2021-05-22T07:06:22.000Z" itemprop="datePublished">2021-05-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/22/判断二叉树是否为一个平衡二叉树/">判断二叉树是否为一个平衡二叉树</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> height = (node: TreeNode):<span class="function"><span class="params">number</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(node===<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(height(node.left),height(node.right)) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBalanced</span>(<span class="params">root: TreeNode | <span class="literal">null</span></span>): <span class="title">boolean</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root===<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(height(root.left) - height(root.right)) &lt;=<span class="number">1</span> &amp;&amp; isBalanced(root.left) &amp;&amp; isBalanced(root.right);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2021/05/22/判断二叉树是否为一个平衡二叉树/" data-id="cksczr71j002vlxy58ukhn4b9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-将有序数组转换为二叉搜索树" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/05/02/将有序数组转换为二叉搜索树/" class="article-date">
+  <time datetime="2021-05-02T11:09:44.000Z" itemprop="datePublished">2021-05-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/02/将有序数组转换为二叉搜索树/">将有序数组转换为二叉搜索树</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵高度平衡二叉搜索树。高度平衡二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过1」的二叉树。</p>
+        
+          <p class="article-more-link">
+            <a href="/2021/05/02/将有序数组转换为二叉搜索树/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2021/05/02/将有序数组转换为二叉搜索树/" data-id="cksczr71s003hlxy54twpw1te" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-二叉树遍历" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/05/01/二叉树遍历/" class="article-date">
+  <time datetime="2021-05-01T15:08:27.000Z" itemprop="datePublished">2021-05-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/01/二叉树遍历/">二叉树遍历</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>废话少说,看代码!</p>
+        
+          <p class="article-more-link">
+            <a href="/2021/05/01/二叉树遍历/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2021/05/01/二叉树遍历/" data-id="cksczr71e002jlxy5w0u4h0fy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-动态规划-区域检索" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/04/10/动态规划-区域检索/" class="article-date">
+  <time datetime="2021-04-10T08:46:27.000Z" itemprop="datePublished">2021-04-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/10/动态规划-区域检索/">动态规划-区域检索</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给定一个整数数组  nums，求出数组从索引 i 到 j（i ≤ j）范围内元素的总和，包含 i、j 两点。</p>
+<p>实现 NumArray 类：</p>
+<p>NumArray(int[] nums) 使用数组 nums 初始化对象<br>int sumRange(int i, int j) 返回数组 nums 从索引 i 到 j（i ≤ j）范围内元素的总和，包含 i、j 两点（也就是 sum(nums[i], nums[i + 1], … , nums[j])）</p>
+        
+          <p class="article-more-link">
+            <a href="/2021/04/10/动态规划-区域检索/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2021/04/10/动态规划-区域检索/" data-id="cksczr71m0031lxy55ajbzqj5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Typescript的装饰器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/05/Typescript的装饰器/" class="article-date">
+  <time datetime="2021-01-05T02:01:30.000Z" itemprop="datePublished">2021-01-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/05/Typescript的装饰器/">Typescript的装饰器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="类装饰器"><a href="#类装饰器" class="headerlink" title="类装饰器"></a>类装饰器</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">age</span>(<span class="params">target: <span class="built_in">Function</span></span>) </span>&#123;</span><br><span class="line">  target.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"hello jonny"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@age</span></span><br><span class="line"><span class="keyword">class</span> Login &#123;</span><br><span class="line">  <span class="keyword">public</span> username: <span class="built_in">string</span> = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">public</span> password: <span class="built_in">string</span> = <span class="string">""</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> login: <span class="built_in">any</span> = <span class="keyword">new</span> Login();</span><br><span class="line">login.sayName(); <span class="comment">//"hello jonny"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setAge</span>(<span class="params">param: <span class="built_in">string</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">target: <span class="built_in">any</span></span>) </span>&#123;</span><br><span class="line">    target.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(param);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@setAge</span>(<span class="string">"Hello Candy!"</span>)</span><br><span class="line"><span class="keyword">class</span> Login &#123;</span><br><span class="line">  <span class="keyword">public</span> username: <span class="built_in">string</span> = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">public</span> password: <span class="built_in">string</span> = <span class="string">""</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> login: <span class="built_in">any</span> = <span class="keyword">new</span> Login();</span><br><span class="line">login.sayName();  <span class="comment">//'hello candy'</span></span><br></pre></td></tr></table></figure>
+<h4 id="属性装饰器"><a href="#属性装饰器" class="headerlink" title="属性装饰器"></a>属性装饰器</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hName</span>(<span class="params">param: <span class="built_in">string</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">target: <span class="built_in">any</span>, propertyName: <span class="built_in">string</span></span>) </span>&#123;</span><br><span class="line">    target[propertyName] = param;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Hello &#123;</span><br><span class="line">  <span class="meta">@hName</span>(<span class="string">"Jonny"</span>)</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Hello().name); <span class="comment">// 输出: Jonny</span></span><br></pre></td></tr></table></figure>
+<h4 id="方法装饰器"><a href="#方法装饰器" class="headerlink" title="方法装饰器"></a>方法装饰器</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GET</span>(<span class="params">url: <span class="built_in">string</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">target, methodName: <span class="built_in">string</span>, descriptor: PropertyDescriptor</span>) </span>&#123;</span><br><span class="line">    target.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"ok"</span>);</span><br><span class="line">      descriptor.value();</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> HelloService &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">  <span class="meta">@GET</span>(<span class="string">"xx"</span>)</span><br><span class="line">  getUser() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"no"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> instance: <span class="built_in">any</span> = <span class="keyword">new</span> HelloService();</span><br><span class="line"></span><br><span class="line">instance.run();  <span class="comment">//ok,no</span></span><br></pre></td></tr></table></figure>
+<h4 id="参数装饰器"><a href="#参数装饰器" class="headerlink" title="参数装饰器"></a>参数装饰器</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">PathParam</span>(<span class="params">paramName: <span class="built_in">string</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">target, methodName: <span class="built_in">string</span>, paramIndex: <span class="built_in">number</span></span>) </span>&#123;</span><br><span class="line">    !target.$Meta &amp;&amp; (target.$Meta = &#123;&#125;);</span><br><span class="line">    target.$Meta[paramIndex] = paramName;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> HelloService &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">  getUser(<span class="meta">@PathParam</span>(<span class="string">"userId"</span>) userId: <span class="built_in">string</span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log((&lt;<span class="built_in">any</span>&gt;HelloService).prototype.$Meta); <span class="comment">// &#123;'0':'userId'&#125;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2021/01/05/Typescript的装饰器/" data-id="cksczr70p000qlxy5pudb5id5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TS状态模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/21/TS状态模式/" class="article-date">
+  <time datetime="2020-11-21T04:52:22.000Z" itemprop="datePublished">2020-11-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/21/TS状态模式/">JS状态模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>将每个状态封装成类，通过场景进行映射相关的状态类，从而实现状态模式</p>
+<p>下面制作一个关于灯光的场景，灯光按钮有三种状态，按每一个按钮，都会触发一个信号，并把下一个状态传递给下一个类</p>
+<!-- more · -->
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是灯光状态的抽象类</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> LightState&#123;</span><br><span class="line">    <span class="keyword">abstract</span> state:<span class="built_in">string</span>;</span><br><span class="line">    light:Light;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">light:Light</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.light = light;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    print()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.state);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">abstract</span> changeState():<span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//关灯</span></span><br><span class="line"><span class="keyword">class</span> OffLightState <span class="keyword">extends</span> LightState&#123;</span><br><span class="line">    state:<span class="built_in">string</span> = <span class="string">'off'</span>;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">light:Light</span>)&#123;</span><br><span class="line">        <span class="keyword">super</span>(light);</span><br><span class="line">    &#125;</span><br><span class="line">    changeState()&#123;</span><br><span class="line">        <span class="keyword">this</span>.light.setState(<span class="keyword">this</span>.light.weakState);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//暖灯</span></span><br><span class="line"><span class="keyword">class</span> WeakLightState <span class="keyword">extends</span> LightState&#123;</span><br><span class="line">    state:<span class="built_in">string</span> = <span class="string">'weak'</span>;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">light:Light</span>)&#123;</span><br><span class="line">        <span class="keyword">super</span>(light);</span><br><span class="line">    &#125;</span><br><span class="line">    changeState()&#123;</span><br><span class="line">        <span class="keyword">this</span>.light.setState(<span class="keyword">this</span>.light.strongState);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//强灯</span></span><br><span class="line"><span class="keyword">class</span> StrongLightState <span class="keyword">extends</span> LightState&#123;</span><br><span class="line">    state:<span class="built_in">string</span> = <span class="string">'strong'</span>;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">light:Light</span>)&#123;</span><br><span class="line">        <span class="keyword">super</span>(light);</span><br><span class="line">    &#125;</span><br><span class="line">    changeState()&#123;</span><br><span class="line">        <span class="keyword">this</span>.light.setState(<span class="keyword">this</span>.light.offLightState);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Light&#123;</span><br><span class="line">    offLightState:OffLightState = <span class="keyword">new</span> OffLightState(<span class="keyword">this</span>);</span><br><span class="line">    weakState:WeakLightState = <span class="keyword">new</span> WeakLightState(<span class="keyword">this</span>);</span><br><span class="line">    strongState:StrongLightState = <span class="keyword">new</span> StrongLightState(<span class="keyword">this</span>);</span><br><span class="line">    currentState:LightState = <span class="keyword">this</span>.offLightState;</span><br><span class="line"></span><br><span class="line">    setState(newState:LightState)&#123;</span><br><span class="line">        <span class="keyword">this</span>.currentState = newState;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//点击事件</span></span><br><span class="line">    onPress()&#123;</span><br><span class="line">        <span class="keyword">this</span>.currentState.print();</span><br><span class="line">        <span class="keyword">this</span>.currentState.changeState();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> light = <span class="keyword">new</span> Light();</span><br><span class="line"></span><br><span class="line">light.onPress();<span class="comment">//off</span></span><br><span class="line">light.onPress();<span class="comment">//weak</span></span><br><span class="line">light.onPress();<span class="comment">//strong</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2020/11/21/TS状态模式/" data-id="cksczr70l000flxy5g4nagplw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-关于排序的三种算法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/07/关于排序的三种算法/" class="article-date">
+  <time datetime="2020-11-07T11:48:46.000Z" itemprop="datePublished">2020-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/07/关于排序的三种算法/">关于排序的三种算法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>算法</li>
+</ul>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。</p>
+<p>它重复地走访过要排序的元素列，依次比较两个相邻的元素，如果顺序（如从大到小、首字母从Z到A）错误就把他们交换过来。走访元素的工作是重复地进行直到没有相邻元素需要交换，也就是说该元素列已经排序完成。</p>
+<p>这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名“冒泡排序”。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">let</span> bubbleSort = <span class="function"><span class="keyword">function</span> (<span class="params">arr:<span class="built_in">number</span>[]</span>):<span class="title">number</span>[]</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> temp:<span class="built_in">number</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>;j&lt;arr.length;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i]&lt;arr[j])&#123;</span><br><span class="line">                <span class="keyword">let</span> temp = arr[j];</span><br><span class="line">                arr[j] = arr[i];</span><br><span class="line">                arr[i] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> result = bubbleSort([<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">7</span>,<span class="number">56</span>,<span class="number">45</span>,<span class="number">4</span>,<span class="number">34</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2020/11/07/关于排序的三种算法/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2020/11/07/关于排序的三种算法/" data-id="cksczr71i002rlxy5fzmzh5dg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TS享元模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/07/TS享元模式/" class="article-date">
+  <time datetime="2020-11-07T06:46:05.000Z" itemprop="datePublished">2020-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/07/TS享元模式/">TS享元模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>设计模式</li>
+</ul>
+<p>享元模式的核心是共享对象，目的是节省内存开销，分为三个场景，共享对象的内部状态、共享对象的工厂函数、共享对象的外部函数。以共享单车为例，如下</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/11/07/TS享元模式/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2020/11/07/TS享元模式/" data-id="cksczr70g000alxy59p087ojf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TS模版方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/06/TS模版方法/" class="article-date">
+  <time datetime="2020-11-06T01:36:08.000Z" itemprop="datePublished">2020-11-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/06/TS模版方法/">TS模版方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>设计模式</li>
+</ul>
+<p>模版方法是指在父类搭建算法框架，通过子类继承这些算法框架，并调用父类的模版方法对算法框架进行调用，特别是解决众多类具有很多相同算法，只有少量不同的场景</p>
+<p>例如泡茶与泡咖啡都有很多相同的流程，只是细节有些差异，就可以通过模版方法进行归纳</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/11/06/TS模版方法/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.jonnypeng.com/2020/11/06/TS模版方法/" data-id="cksczr70h000blxy525sk8np2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Docs/">Docs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码片段/">代码片段</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/命令行/">命令行</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/文档翻译/">文档翻译</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/80端口/">80端口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Airdrop/">Airdrop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BASH/">BASH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-Github-Page/">Hexo Github Page</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matter-js/">Matter.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NODE/">NODE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PIXI/">PIXI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PIXI-js/">PIXI.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USB/">USB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGL/">WebGL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angluar/">angluar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angluar-404/">angluar 404</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular-router/">angular router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular-路由/">angular 路由</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/binaryData/">binaryData</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/class/">class</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compress/">compress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fs/">fs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gizp/">gizp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5/">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interface/">interface</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json-server/">json server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memory-cahce/">memory-cahce</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta/">meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node的全局缓存/">node的全局缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/path/">path</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phaser/">phaser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pm2/">pm2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rxjs/">rxjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/three-js/">three.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vsc/">vsc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webgl/">webgl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双指针/">双指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/循环下载/">循环下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信/">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信内播放视频/">微信内播放视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/缓冲区/">缓冲区</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/视频/">视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/80端口/" style="font-size: 10px;">80端口</a> <a href="/tags/Airdrop/" style="font-size: 10px;">Airdrop</a> <a href="/tags/BASH/" style="font-size: 10px;">BASH</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HEXO/" style="font-size: 13.33px;">HEXO</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hexo-Github-Page/" style="font-size: 10px;">Hexo Github Page</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MAC/" style="font-size: 10px;">MAC</a> <a href="/tags/Matter-js/" style="font-size: 10px;">Matter.js</a> <a href="/tags/NODE/" style="font-size: 10px;">NODE</a> <a href="/tags/PIXI/" style="font-size: 10px;">PIXI</a> <a href="/tags/PIXI-js/" style="font-size: 13.33px;">PIXI.js</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/TypeScript/" style="font-size: 16.67px;">TypeScript</a> <a href="/tags/USB/" style="font-size: 10px;">USB</a> <a href="/tags/WebGL/" style="font-size: 10px;">WebGL</a> <a href="/tags/angluar/" style="font-size: 10px;">angluar</a> <a href="/tags/angluar-404/" style="font-size: 10px;">angluar 404</a> <a href="/tags/angular/" style="font-size: 16.67px;">angular</a> <a href="/tags/angular-router/" style="font-size: 16.67px;">angular router</a> <a href="/tags/angular-路由/" style="font-size: 16.67px;">angular 路由</a> <a href="/tags/binaryData/" style="font-size: 10px;">binaryData</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/compress/" style="font-size: 10px;">compress</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fs/" style="font-size: 10px;">fs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/git部署服务器/" style="font-size: 10px;">git部署服务器</a> <a href="/tags/gizp/" style="font-size: 10px;">gizp</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/json-server/" style="font-size: 10px;">json server</a> <a href="/tags/memory-cahce/" style="font-size: 10px;">memory-cahce</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/node/" style="font-size: 20px;">node</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/node的全局缓存/" style="font-size: 10px;">node的全局缓存</a> <a href="/tags/path/" style="font-size: 10px;">path</a> <a href="/tags/phaser/" style="font-size: 10px;">phaser</a> <a href="/tags/pm2/" style="font-size: 10px;">pm2</a> <a href="/tags/rxjs/" style="font-size: 10px;">rxjs</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/three-js/" style="font-size: 10px;">three.js</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vsc/" style="font-size: 10px;">vsc</a> <a href="/tags/webgl/" style="font-size: 10px;">webgl</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/双指针/" style="font-size: 13.33px;">双指针</a> <a href="/tags/循环下载/" style="font-size: 10px;">循环下载</a> <a href="/tags/微信/" style="font-size: 13.33px;">微信</a> <a href="/tags/微信内播放视频/" style="font-size: 10px;">微信内播放视频</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/算法/" style="font-size: 13.33px;">算法</a> <a href="/tags/缓冲区/" style="font-size: 10px;">缓冲区</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a> <a href="/tags/链表/" style="font-size: 10px;">链表</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/08/15/适配器模式/">适配器模式</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/22/判断二叉树是否为一个平衡二叉树/">判断二叉树是否为一个平衡二叉树</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/02/将有序数组转换为二叉搜索树/">将有序数组转换为二叉搜索树</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/01/二叉树遍历/">二叉树遍历</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/10/动态规划-区域检索/">动态规划-区域检索</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner" style="text-align:center;font-size:1rem;">
+      &copy; 2021 Jonny Peng<br>
+      <a href="https://beian.miit.gov.cn" style="color:white;">黔ICP备14004365号-2</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="https://github.com/Jonnypeng" class="mobile-nav-link">GitHub</a>
+  
+    <a href="https://codepen.io/dashboard/" class="mobile-nav-link">Codepen</a>
+  
+</nav>
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
