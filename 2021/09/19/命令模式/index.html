@@ -5,20 +5,20 @@
   
 
   
-  <title>如何利用git远程部署服务器的代码 | 重影对话</title>
+  <title>命令模式 | 重影对话</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用场景ftp部署代码很麻烦，因为需要隔离出已经修改与为修改的部分，并进行上传，但是git很方便，如果在远程服务器已经绑定了ssh免密码登陆就更加方便，只需要推送，就可以将代码部署到服务器,而且不用去区分哪一些是修改过的，哪一些是没有修改过的。 远程服务目录结构1234567891011121314151617├── html  └── myApp // 项目   └── site // 这是工作">
-<meta name="keywords" content="git,git部署服务器">
+  <meta name="description" content="命令模式把一个请求或者操作封装到一个对象中。 命令模式允许系统使用不同的请求把客户端参数化，对请求排队或者记录请求日志，可以提供命令的撤销和恢复功能">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何利用git远程部署服务器的代码">
-<meta property="og:url" content="https://www.jonnypeng.com/2018/12/24/如何利用git远程部署服务器的代码/index.html">
+<meta property="og:title" content="命令模式">
+<meta property="og:url" content="https://www.jonnypeng.com/2021/09/19/命令模式/index.html">
 <meta property="og:site_name" content="重影对话">
-<meta property="og:description" content="使用场景ftp部署代码很麻烦，因为需要隔离出已经修改与为修改的部分，并进行上传，但是git很方便，如果在远程服务器已经绑定了ssh免密码登陆就更加方便，只需要推送，就可以将代码部署到服务器,而且不用去区分哪一些是修改过的，哪一些是没有修改过的。 远程服务目录结构1234567891011121314151617├── html  └── myApp // 项目   └── site // 这是工作">
+<meta property="og:description" content="命令模式把一个请求或者操作封装到一个对象中。 命令模式允许系统使用不同的请求把客户端参数化，对请求排队或者记录请求日志，可以提供命令的撤销和恢复功能">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-08-15T07:19:28.370Z">
+<meta property="og:updated_time" content="2021-09-19T02:21:24.926Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何利用git远程部署服务器的代码">
-<meta name="twitter:description" content="使用场景ftp部署代码很麻烦，因为需要隔离出已经修改与为修改的部分，并进行上传，但是git很方便，如果在远程服务器已经绑定了ssh免密码登陆就更加方便，只需要推送，就可以将代码部署到服务器,而且不用去区分哪一些是修改过的，哪一些是没有修改过的。 远程服务目录结构1234567891011121314151617├── html  └── myApp // 项目   └── site // 这是工作">
+<meta name="twitter:title" content="命令模式">
+<meta name="twitter:description" content="命令模式把一个请求或者操作封装到一个对象中。 命令模式允许系统使用不同的请求把客户端参数化，对请求排队或者记录请求日志，可以提供命令的撤销和恢复功能">
   
   
     <link rel="icon" href="/favicon.png">
@@ -70,16 +70,12 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-如何利用git远程部署服务器的代码" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-命令模式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/12/24/如何利用git远程部署服务器的代码/" class="article-date">
-  <time datetime="2018-12-24T07:04:43.000Z" itemprop="datePublished">2018-12-24</time>
+    <a href="/2021/09/19/命令模式/" class="article-date">
+  <time datetime="2021-09-19T01:36:45.000Z" itemprop="datePublished">2021-09-19</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/教程/">教程</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -88,7 +84,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      如何利用git远程部署服务器的代码
+      命令模式
     </h1>
   
 
@@ -96,23 +92,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>ftp部署代码很麻烦，因为需要隔离出已经修改与为修改的部分，并进行上传，但是git很方便，如果在远程服务器已经绑定了ssh免密码登陆就更加方便，只需要推送，就可以将代码部署到服务器,而且不用去区分哪一些是修改过的，哪一些是没有修改过的。</p>
-<h3 id="远程服务目录结构"><a href="#远程服务目录结构" class="headerlink" title="远程服务目录结构"></a>远程服务目录结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">├── html</span><br><span class="line">  └── myApp // 项目</span><br><span class="line">   └── site // 这是工作区,手工创建空目录</span><br><span class="line">       ├── index.php</span><br><span class="line">       ├── test2.php</span><br><span class="line">       ├── test3.php</span><br><span class="line">       └── test.php</span><br><span class="line">   └── gitLab // 这是版本区</span><br><span class="line">        ├── branches</span><br><span class="line">        ├── config</span><br><span class="line">        ├── description</span><br><span class="line">        ├── HEAD</span><br><span class="line">        ├── hooks // post-receive钩子代码写在这里面</span><br><span class="line">        ├── index</span><br><span class="line">        ├── info</span><br><span class="line">        ├── objects</span><br><span class="line">        └── refs</span><br></pre></td></tr></table></figure>
+        <p>命令模式把一个请求或者操作封装到一个对象中。 命令模式允许系统使用不同的请求把客户端参数化，对请求排队或者记录请求日志，可以提供命令的撤销和恢复功能</p>
 <a id="more"></a>
-<p>在远程gitLab目录中的hooks，创建文件post-receive，写如下代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定我的代码检出目录,就是工作区</span></span><br><span class="line">DIR=/var/www/html/myApp/site</span><br><span class="line">git --work-tree=<span class="variable">$&#123;DIR&#125;</span> clean -fd</span><br><span class="line"><span class="comment"># 直接强制检出</span></span><br><span class="line">git --work-tree=<span class="variable">$&#123;DIR&#125;</span> checkout --force</span><br></pre></td></tr></table></figure>
-<p>这个文件请授权<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R u+x post-receive</span><br></pre></td></tr></table></figure></p>
-<p>将工作区授权<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R a=wxr site</span><br></pre></td></tr></table></figure></p>
-<p>然后返回本地计算机，添加远程库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin root@abc.com:/var/www/html/myApp/gitLab</span><br></pre></td></tr></table></figure></p>
-<p>最后就是各种推送，我着这里就不再赘述</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 命令</span></span><br><span class="line"><span class="keyword">interface</span> Command &#123;</span><br><span class="line">  execute: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行者Amy</span></span><br><span class="line"><span class="keyword">class</span> Amy &#123;</span><br><span class="line">  <span class="comment">// 跳舞</span></span><br><span class="line">  <span class="keyword">public</span> dance() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我是Amy，我在跳舞'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 唱歌</span></span><br><span class="line">  <span class="keyword">public</span> sing() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我是Amy，我在唱歌'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行者Jonny</span></span><br><span class="line"><span class="keyword">class</span> Jonny &#123;</span><br><span class="line">  <span class="comment">// 阅读</span></span><br><span class="line">  <span class="keyword">public</span> read() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我是Jonny，我在阅读'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//吃饭</span></span><br><span class="line">  <span class="keyword">public</span> eatingRice() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我是Jonny，我在吃饭'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Command1 <span class="keyword">implements</span> Command &#123;</span><br><span class="line">  <span class="keyword">private</span> r1: Jonny = <span class="keyword">new</span> Jonny;</span><br><span class="line">  <span class="keyword">private</span> r2: Amy = <span class="keyword">new</span> Amy;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> execute() &#123;</span><br><span class="line">    <span class="keyword">this</span>.r1.eatingRice();</span><br><span class="line">    <span class="keyword">this</span>.r2.dance();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Command2 <span class="keyword">implements</span> Command&#123;</span><br><span class="line">  <span class="keyword">private</span> r1: Jonny = <span class="keyword">new</span> Jonny;</span><br><span class="line">  <span class="keyword">private</span> r2: Amy = <span class="keyword">new</span> Amy;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> execute()&#123;</span><br><span class="line">    <span class="keyword">this</span>.r1.read();</span><br><span class="line">    <span class="keyword">this</span>.r2.sing();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> c1 = <span class="keyword">new</span> Command1();</span><br><span class="line">  <span class="keyword">const</span> c2 = <span class="keyword">new</span> Command2();</span><br><span class="line">  c1.execute();</span><br><span class="line">  c2.execute();</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.jonnypeng.com/2018/12/24/如何利用git远程部署服务器的代码/" data-id="cktqlfxm700312uy58nxozwvt" class="article-share-link">Share</a>
+      <a data-url="https://www.jonnypeng.com/2021/09/19/命令模式/" data-id="cktqlfxm1002o2uy54ptoopb3" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git部署服务器/">git部署服务器</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
 
     </footer>
   </div>
@@ -120,19 +110,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/01/22/解决angluar在Node服务器上的路由问题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          解决angluar在Node服务器上的路由问题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/11/11/TypeScript模式下为PIXI添加Matter物理引擎的尝试/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/09/06/外观模式/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">TypeScript模式下为PIXI添加Matter物理引擎的尝试</div>
+      <div class="article-nav-title">外观模式</div>
     </a>
   
 </nav>
